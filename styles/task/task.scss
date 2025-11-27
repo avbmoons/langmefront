@@ -1,0 +1,1039 @@
+//@use "sass:math1";
+@use "sass:list";
+
+@import "../vars/vars.scss";
+
+$viewport-width: var(--viewport-width);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: space-between;
+    .index-cover {
+        margin: 0;
+        width: $site-width;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include flex-vertical();
+        background-color: rgba(15,26,28,0.5);   // $color-dark;
+        //opacity: 50%;
+        .info {
+            margin: 0 auto;
+            width: 45%;
+            height: 55%;
+            @include flex-vertical();
+            justify-content: space-between;
+            background-color: rgba(247,213,161,1);  // $color-blick-light;
+            .info-header {
+                margin: 0 auto;
+                margin-top: 3%; // 20px;
+                width: 100%;
+                height: fit-content;
+                @include flex-horizontal();
+                justify-content: space-between;
+                img {
+                    margin-left: 3%;
+                }
+                button {
+                    margin-right: 3%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+            .info-main {
+                margin: 0 auto;
+                width: 70%;
+                height: fit-content;
+                @include flex-vertical();
+                @include text-font(16px,300,20px,0);
+                text-align: center;
+                p {
+                    margin-bottom: 1.8%;
+                }
+                .terve {
+                    @include text-font(20px,500,20px,0);
+                }
+            }
+            .info-button {
+                margin: 0 auto;
+                margin-bottom: 7%;
+                width: 100%;
+                height: 15%;    // fit-content;
+                @include flex-horizontal();
+                .btn-go {
+                    width: 40%; // 30%;
+                    height: 100%;
+                    text-align: center;
+                    @include text-font(20px,300,20px,0);
+                    background-color: $color-grey;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+                .btn-go:hover {
+                    background-color: $color-grey-dark;
+                }
+            }
+        }
+    }
+    .top {
+        margin: 0 auto;width: $site-width;
+        height: auto;
+        @include flex-vertical();
+        justify-content: flex-start;
+        flex-grow: 1;
+        header {
+            margin: 0 auto;
+            width: $header-width;
+            height: $header-height;
+            // position: fixed;
+            // top: 0;
+            @include flex-horizontal();
+            background-color: $color-grey;
+            border: 1px solid black;
+            .header-left {
+                margin: 0 auto;
+                width: 0.5*($site-width - $block-width);
+                height: 100%;
+                @include flex-vertical();
+                justify-content: flex-end;
+                border: 1px solid blue;
+                .header-left-block {
+                    margin: 0 auto;    // 0 auto;
+                    width: 100%;
+                    height: 100%;   // fit-content;
+                    @include flex-horizontal();
+                    //justify-content: flex-end;
+                    align-items: end;
+                    img {
+                        margin: 0 auto;
+                        margin-right: 8%;
+                        height: 80%;
+                        width: auto;
+                        align-items: end;
+                    }
+                }
+            }
+            .header-center {
+                margin: 0 auto;
+                width: $block-width;
+                height: 100%;
+                @include flex-vertical();
+                justify-content: flex-end;
+                border: 1px solid red;
+                .header-center-block {
+                    margin: 0 auto;
+                    width: 100%;
+                    height: fit-content;    // 100%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    //align-items: flex-end;
+                    menu {
+                        margin: 0 auto;
+                        width: 70%; // auto;    // fit-content;
+                        height:100%;    // fit-content;
+                        @include flex-horizontal();
+                        justify-content: flex-start;
+                        align-items: end;
+                        //border: 1px solid grey;
+                        .menu-item {
+                            margin: auto 0;   // 0 auto;
+                            margin-right: 4%;
+                            width: fit-content;
+                            height: fit-content;
+                            //align-items: center;
+                            border: none;
+                            background: none;
+                            @include text-font(16px,300,16px,0);
+                            cursor: pointer;
+                            //border: 1px solid grey;
+                        }
+                        .menu-item:hover {
+                            color: $color-accent;
+                            font-weight: 500;
+                        }
+                    }
+                    .service-time {
+                        margin: 0 auto;
+                        width: 30%; // fit-content;
+                        height:100%;    // fit-content;
+                        @include text-font(14px,300,14px,0);
+                        align-items: end;
+                        text-align: right;
+                        //border: 1px solid grey;
+                    }
+                }
+            }
+            .header-right {
+                margin: 0 auto;
+                width: 0.5*($site-width - $block-width);
+                height: 100%;
+                @include flex-vertical();
+                justify-content: flex-end;
+                border: 1px solid blue;
+                .header-right-block {
+                    margin: 0 auto;    // 0 auto;
+                    width: 100%;
+                    height: 100%;   // fit-content;
+                    @include flex-horizontal();
+                    //justify-content: flex-end;
+                    align-items: end;
+                    menu {
+                        margin: 0 auto;
+                        width: 100%;    // 70%; // auto;    // fit-content;
+                        height:100%;    // fit-content;
+                        @include flex-horizontal();
+                        justify-content: flex-start;
+                        align-items: end;
+                        //border: 1px solid grey;
+                        .menu-item {
+                            margin: 0;  // 0 auto; // auto 0;   // 0 auto;
+                            margin-left: 8%;
+                            width: fit-content;
+                            height: fit-content;
+                            //align-items: center;
+                            border: none;
+                            background: none;
+                            @include text-font(16px,300,16px,0);
+                            cursor: pointer;
+                            align-items: end;
+                            border: 1px solid grey;
+                            img {
+                                margin: 0 auto;
+                                height: 16px;
+                                width: auto;
+                                align-items: end;
+                            }                            
+                        }
+                        .header {
+                            margin-left: 15%;
+                        }
+                        .menu-item:hover {
+                            color: $color-accent;
+                            font-weight: 500;
+                        }
+                        .menu-item:hover path {
+                            fill: $color-accent;
+                        }
+                        .combo-block {
+                            margin: 0;  // auto;
+                            width: fit-content; // 100%;
+                            height: auto;
+                            @include flex-vertical();
+                            position: relative;
+                            // top: 100%;
+                            // z-index: 99;
+                            // //display: none;
+                            #appLangEng, #appLangRus, #appLangEngChoice {
+                                margin-left: 40%;   // 20px;
+                                margin-top: 15%;
+                                opacity: 1;
+                                border: none;
+                                outline: none;
+                            }
+                            .combo-list {
+                                margin: 0;  // auto;
+                                width: 100%;
+                                height: auto;
+                                @include flex-vertical();
+                                border: 2px solid $color-grey;
+                                background-color: $color-grey;
+                                opacity: 1;
+                                position: absolute;
+                                top: -100%;
+                                z-index: 99;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            margin: 0 auto;
+            //margin-top: $header-height;
+            width: $site-width;
+            min-height: $min-main-height;
+            @include flex-horizontal();
+            border: 1px solid black;
+            .main-left {
+                margin: auto;
+                width: 0.5*($site-width - $block-width);
+                height: $min-main-height;
+                border: 1px solid green;
+            }
+            .main-center {
+                margin: 0 auto;
+                width: $block-width;
+                height: $min-main-height;
+                @include flex-vertical();
+                border: 1px solid green;
+                .task-info {
+                    margin: 0 auto;
+                    margin-top:1%;  // 2%; //40px;
+                    width: 100%;
+                    height: 8%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    border: 1px solid blue;
+                    .info-title-block {
+                        margin: 0;  // auto;
+                        width: 20%; // 25%;
+                        height: 100%;
+                        @include flex-vertical();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .info-title {
+                            @include text-font(1.67vw, 400, 1.67vw, 0); // 24px
+                            //@include text-font(1.94vw, 400, 1.94vw, 0); // 28px
+                            //@include text-font(2.73vh, 400, 2.73vh, 0);
+                            color: $color-dark;
+                            //@include text-size($maket-width,$viewport-width,32px);
+                            //font-weight: 400;
+                        }
+                    }
+                    .info-content-block {
+                        margin: 0 auto;
+                        width: 60%; // 50%;
+                        height: 100%;
+                        @include flex-vertical();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .task-description {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 40%;    // 50%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            .info-content {
+                                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
+                                //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                @include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+                        .task-langs {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 30%;    // 25%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            .info-content {
+                                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
+                                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                @include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+                        .task-themes {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 30%;    // 25%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            flex-wrap: wrap;
+                            .info-content {
+                                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
+                                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                @include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+
+                    }
+                    .info-service-block {
+                        margin: 0;  // auto;
+                        width: 20%; // 25%;
+                        height: 100%;
+                        @include flex-vertical();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .btn-link {
+                            margin-bottom: 2%;
+                            @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                            color: $color-dark;
+                            align-self: flex-end;
+                            text-align: right;
+                            text-decoration: underline;
+                            background-color: $color-light;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        .btn-link:hover {
+                            color: $color-accent;
+                        }
+                    }
+                }
+                .task-settings {
+                    margin: 0 auto;
+                    margin-top:1%;  // 2%; //40px;
+                    width: 100%;
+                    height: 4%; // 10%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    border: 1px solid green;
+                    .counter {
+                        margin: auto;
+                        width: 32%;
+                        height: 100%;
+                        @include flex-horizontal();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        align-items: center;
+                        .counter-label {
+                            @include text-font(1.11vw, 300, 1.11vw, 0);
+                            color: $color-dark;
+                        }
+                        .counter-btn {
+                            width: 1.67vw;
+                            @include text-font(1.67vw, 300, 1.67vw, 0);
+                            color: $color-dark;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        #btnPrevNumWords, #btnPrevNumOpt {
+                            margin-left: 0.69vw;
+                        }
+                        #btnNextNumWords, #btnNextNumOpt {
+                            margin-right: 0.69vw;
+                        }
+                        .counter-value {
+                            width: 2.08vw;
+                            @include text-font(1.11vw, 300, 1.11vw, 0);
+                            color: $color-dark;
+                            text-align: right;
+                        }
+                    }
+                }
+                .task-mode-block {
+                    margin: 0 auto;
+                    //margin-top: 1.39vw;
+                    width: 100%;
+                    height:74%; // 70%;
+                    @include flex-vertical();
+                    justify-content: space-around;  // space-between;
+                    overflow-y: auto;
+                    border: 2px solid red;
+                    .task-mode {
+                        margin: 0 auto;
+                        width: 100%;    // 65%;
+                        height: 48%;    // 70%; // 55%;
+                        @include flex-horizontal();
+                        justify-content: space-around;
+                        //flex-wrap: wrap;
+                        border: 1px solid violet;
+                        .item-card {
+                            margin: auto 0;  // auto;
+                            width: 18%; // 48%;
+                            height: 96%;    // 100%;   // 48%;
+                            @include flex-vertical();
+                            justify-content: flex-start;    // space-between;
+                            border: 1px solid $color-grey-dark;
+                            .item-heading {
+                                width: 100%;
+                                height:25%; // 10%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-grey;
+                                border: 1px solid $color-grey-dark;
+                                .heading-text {
+                                    //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                    @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                    //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                    color: $color-dark; 
+                                    text-align: center;                               
+                                }
+                            }
+                            .item-option {
+                                width: 100%;
+                                height:25%; // 30%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-lang-light;
+                                border: 1px solid $color-grey-dark;
+                                .option-word-block {
+                                    width: 80%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                    .option-word {
+                                        margin-bottom: 8%;
+                                        //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                        @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }  
+                                    .option-spell {
+                                        @include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                        //@include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }
+                                }
+                                .option-radio-block {
+                                    width: 20%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                }
+
+                                .base {
+                                    @include text-font(1.39vw, 400, 1.39vw, 0); //20px
+                                }
+
+                            }
+                            .base {
+                                font-weight: 400;
+                                background-color: $color-blick-light;
+                            }
+                        }
+                    }                    
+                }
+                .task-navi {
+                    margin: 0 auto;
+                    //margin-bottom: 4%; //40px;
+                    width: 100%;
+                    height: 7%; // 5%; // 10%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 1px solid green;
+                    .navi-buttons {
+                        height: 70%;
+                        width: fit-content;
+                        @include flex-horizontal();
+                        align-self: center;
+                        align-items: center;
+                        .btn-link {
+                            //margin-bottom: 2%;
+                            padding: 0 1.39vw;
+                            height: 100%;   // 70%;
+                            @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                            color: $color-dark;
+                            align-self: flex-end;
+                            text-align: right;
+                            text-decoration: underline;
+                            background-color: $color-light;
+                            border: none;
+                            border: 1px solid red;
+                            outline: none;
+                            cursor: pointer;
+                            @include flex-horizontal();
+                            align-self: center;
+                            align-items: center;
+                            img {
+                                height: 100%;
+                                width: auto;
+                                align-self: center;
+                            }
+                        }
+                        .btn-link:hover {
+                            color: $color-accent;
+                        }                        
+                    }
+
+                }
+                .task-results {
+                    margin: 0 auto;
+                    margin-bottom:1%;   // 2%; //40px;
+                    width: 100%;
+                    height: 4%; //6%; // 10%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    border: 1px solid green;
+                    .results-buttons {
+                        height:100%;    // 80%;
+                        width: 30%;
+                        @include flex-horizontal();
+                        align-self: center;
+                        align-items: center;
+                        .set-get {
+                            margin: 0;  // auto;
+                            //margin-left: 40px;
+                            width: 100%;    // 30%;
+                            height: 100%;
+                            @include flex-horizontal();
+                            align-items: center;
+                            align-self: center;
+                            background-color: $color-grey;
+                            @include text-font(1.11vw,400,1.11vw,0);    // 20px
+                            cursor: pointer;
+                            border: 1px solid grey;
+                            img {
+                                height: 100%;
+                                width: auto;
+                                align-self: center;
+                            }
+                        }
+                        .set-get:hover {
+                            background-color: $color-grey-dark;
+                        }                        
+                    }
+                    .totals {
+                        margin: 0;  // auto;
+                        //margin-left: 1,5%;  // 20px;
+                        width: 45%;
+                        height: 100%;
+                        @include flex-vertical();
+                        background-color: $color-grey;
+                        border: 1px solid grey;
+                        .totals-block {
+                            margin: 0;  // auto;
+                            height: 100%;
+                            @include flex-horizontal();
+                            justify-content: space-between;
+                            .total-item {
+                                margin: auto;
+                                height: 100%;
+                                @include flex-horizontal();
+                                justify-content: space-between;
+                                align-items: center;
+                                p {
+                                    @include text-font(0.97vw,400, 0.97vw,0);    // 14px
+                                    //@include text-font(1.11vw,400,1.11vw,0);    // 16px
+                                    margin-left: 2.3%;
+                                }
+                                img {
+                                    //margin-right: 1.39vw;
+                                    height: 90%;    // 100%;
+                                    width: auto;
+                                    align-self: center;
+                                }
+                            }                            
+                        }
+
+                    }
+                }
+            }
+            .main-right {
+                margin: auto;
+                width: 0.5*($site-width - $block-width);
+                height: $min-main-height;
+                border: 1px solid green;
+            }
+        }
+    }
+    .modal-settings {
+        margin: 0;
+        width: $site-width;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include flex-vertical();
+        background-color: rgba(15,26,28,0.5);   // $color-dark;
+        display: none;
+        .info {
+            margin: 0 auto;
+            width: 45%;
+            height: 100vh - $header-height - $footer-height;    // 55%;
+            @include flex-vertical();
+            justify-content: space-between;
+            background-color: rgba(252,252,252,1);  // $color-blick-light;
+            overflow-y: auto;
+            .info-header {
+                margin: 0 auto;
+                margin-top: 3%; // 20px;
+                width: 100%;
+                height: fit-content;
+                @include flex-horizontal();
+                justify-content: space-between;
+                //border: 1px solid blue;
+                img {
+                    margin-left: 3%;
+                }
+                button {
+                    margin-right: 3%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+                .modal-title {
+                    @include text-font(16px,500,16px,0);
+                    align-self: center;
+                    text-align: center;
+                }
+            }
+            .info-main {
+                margin: 0 auto;
+                width: 90%; // 70%;
+                height: fit-content;
+                @include flex-vertical();                
+                text-align: center;
+                //border: 1px solid blue;
+                .combo-block {
+                    margin: 0 auto;
+                    margin-bottom: 2%;
+                    width: 100%;
+                    height: auto;                    
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;                    
+                    .combo-label {
+                        width: 34%;
+                        @include text-font(16px,300,20px,0);
+                        text-align: left;
+                        align-self: center;
+                    }
+                    .mode {
+                        width: 14%;
+                    }
+                    .choice {
+                        width: 20%;
+                        //border: 1px solid $color-dark;
+                    }
+                    .combo-input {
+                        margin-left: 10px;
+                        padding: 5px;
+                        width: 60%;
+                        @include text-font(12px,300,12px,0);
+                        color: $color-dark;
+                        //position: relative;
+                    }
+                    .combo-input::placeholder {
+                        padding: 10px 5px 10px 10px;
+                        color: $color-grey-dark;
+                        font-style: italic;
+                        @include text-font(12px,300,12px,0)
+                    }
+                    .combo-button {
+                        padding: 5px;
+                        width: 6%;  // 5.2%;
+                        @include text-font(14px,300,14px,0);
+                        text-align: center;
+                        background-color: $color-grey;
+                        border: none;
+                        outline: none;
+                    }
+                    .combo-button:hover {
+                        background-color: $color-blick;
+                    }
+                    .mode-button {
+                        margin-left: 2%;    // 4%;
+                        //padding: 5px;
+                        width:18%;  // 22%;
+                        // @include text-font(14px,300,14px,0);
+                        // color: red;
+                        // text-align: center;
+                        // background-color: $color-grey;
+                        // border: none;
+                        // outline: none;
+                        label {
+                            @include text-font(14px,300,14px,0);
+                            color: red;
+                            text-align: center;
+                        }
+                    }
+                    .mode-button-label {
+                        @include text-font(14px,300,14px,0);
+                        //color: red;
+                        text-align: center;
+                        align-self: center;
+                    }
+                    .mode-button:hover {
+                        background-color: $color-blick;
+                    }
+                    .combo-text {
+                        margin-left: 10px;
+                        padding: 5px;
+                        width: 96%;
+                        @include text-font(14px,300,14px,0);
+                        color: $color-dark;
+                    }
+                    .combo-text::placeholder {
+                        padding: 10px 5px 10px 10px;
+                        color: $color-grey-dark;
+                        font-style: italic;
+                        @include text-font(12px,300,12px,0)
+                    }
+                    .combo-list {
+                        margin:auto;    // auto 0;   // 0;  // auto;
+                        //margin-left: 10px;
+                        padding: 10px;
+                        width: 100%;    // fit-content; // 60%;
+                        //min-height: 0.5*(100vh - $header-height - $footer-height);
+                        height: auto;
+                        max-height: 0.5*(100vh - $header-height - $footer-height);
+                        @include flex-vertical();
+                        justify-content: space-between;
+                        //align-items: center;
+                        overflow-y: auto;
+                        display: none;
+                        background-color: $color-light; // $color-blick-light;
+                        border: 2px solid $color-grey;
+                        position: absolute;
+                        top: 100%;
+                        z-index: 99;
+                        .combo-list-item {
+                            margin-bottom: 2%;
+                            width: auto;    // inherit; // 90%;
+                            @include flex-horizontal();
+                            //justify-content: space-between;
+                            align-items: center;
+                            .combo-list-input {
+                                padding: 5px;
+                                //width: 70%;
+                                @include text-font(12px,300,12px,0);
+                                color: $color-dark;
+                                img {
+                                    height: 100%;
+                                    width: auto;
+                                }
+                            }
+                            .btn-choose {
+                                padding: 5px;
+                                width: 15%; // 25%;
+                                height: 100%;
+                                @include text-font(12px,300,12px,0);
+                            } 
+                            label {
+                                margin-left: 10px;
+                                width: 70%;
+                                @include text-font(12px,300,12px,0);
+                                text-align: left;
+                            } 
+                            .search {
+                                margin-right: 20px;
+                                width: 70%;
+                            }                          
+                        }
+                        .combo-list-choice {
+                            margin: auto;
+                            padding: 10px;
+                            width: 100%;
+                            height: auto;
+                            @include flex-vertical();
+                            justify-content: space-between;
+                            display: none;
+                            background-color: $color-light;
+                        }                    
+                    }
+                    #modeChoice {
+                        margin-right: 4%;
+                        width:80%;  // 90%;
+                        height: 100%;
+                        @include flex-horizontal();
+                        justify-content: space-between;
+                        align-self: center;
+                    }
+                    .user-choice {
+                        margin-left: 10px;
+                        padding: 5px;
+                        width: 80%; // 96%;
+                        height: auto;
+                        border: 1px solid $color-dark;
+                        @include flex-vertical();
+                        justify-content: space-between;
+                        align-self: center;
+                        .user-choice-result {
+                            margin: 0 auto;
+                            padding: 5px 0;
+                            width: 100%;
+                            height: fit-content;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            align-items: center;
+                            .result-label {
+                                width: 20%;
+                                @include text-font(12px,300,12px,0);
+                                align-self: flex-start;
+                                text-align: left;
+                            }
+                            .result-field {
+                                padding: 0 5px;
+                                width: 80%;
+                                height: auto;
+                                @include text-font(12px,300,12px,0);
+                                @include flex-vertical();
+                                //align-self: center;
+                                align-items: center;
+                                align-content: center;
+                                text-align: left;
+                                border: none;
+                                outline: none;
+                                background-color: $color-light;
+                                resize: none;
+                            }
+                        }
+                    }
+                }
+                #userChoiceBlock {
+                        margin-top: 4%;
+                }
+            }
+            .info-button {
+                margin: 0 auto;
+                margin-bottom: 7%;
+                width: 100%;
+                height: 14%;    // fit-content;
+                @include flex-horizontal();
+                .btn-go {
+                    width: 40%; // 30%;
+                    height: 100%;
+                    text-align: center;
+                    @include text-font(20px,300,20px,0);
+                    background-color: $color-grey;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+                .btn-go:hover {
+                    background-color: $color-grey-dark;
+                }
+            }
+        }
+    }
+    footer {
+        margin: 0 auto;
+        width: $footer-width;
+        height: $footer-height;
+        @include flex-horizontal();
+        background-color: $color-grey;
+        border: 1px solid black;
+        .footer-left {
+            margin: 0 auto;
+            width: 0.5*($site-width - $block-width);
+            height: 100%;
+            @include flex-vertical();
+            //justify-content: flex-start;
+            border: 1px solid blue;
+            .footer-left-block {
+                margin: 0 auto;    // 0 auto;
+                width: 100%;
+                height: 100%;   // fit-content;
+                @include flex-horizontal();
+                //justify-content: flex-end;
+                align-items: center;
+                img {
+                    margin: 0 auto;
+                    margin-right: 8%;
+                    height: 50%;
+                    width: auto;
+                    align-items: center;
+                }
+            }
+        }
+        .footer-center {
+            margin: 0 auto;
+            width: $block-width;
+            height: 100%;
+            @include flex-vertical();
+            //justify-content: flex-end;
+            border: 1px solid red;
+            .footer-center-block {
+                margin: 0 auto;
+                width: 100%;
+                height: fit-content;    // 100%;
+                @include flex-horizontal();
+                justify-content: space-between;
+                //align-items: flex-end;
+                menu {
+                    margin: 0 auto;
+                    width: 70%; // auto;    // fit-content;
+                    height:100%;    // fit-content;
+                    @include flex-horizontal();
+                    justify-content: flex-end;
+                    align-items: center;
+                    //border: 1px solid grey;
+                    .menu-item {
+                        margin: auto 0;   // 0 auto;
+                        margin-right: 4%;
+                        width: fit-content;
+                        height: fit-content;
+                        //align-items: center;
+                        border: none;
+                        background: none;
+                        @include text-font(14px,300,14px,0);
+                        cursor: pointer;
+                        //border: 1px solid grey;
+                    }
+                    .menu-item:hover {
+                        color: $color-accent;
+                        font-weight: 500;
+                    }
+                }
+                .copyright {
+                    margin: 0 auto;
+                    width: 30%; // fit-content;
+                    height:100%;    // fit-content;
+                    @include text-font(14px,300,14px,0);
+                    align-items: center;
+                    text-align: left;
+                    //border: 1px solid grey;
+                }
+            }
+        }
+        .footer-right {
+            margin: 0 auto;
+            width: 0.5*($site-width - $block-width);
+            height: 100%;
+            @include flex-vertical();
+            //justify-content: flex-end;
+            border: 1px solid blue;
+                .footer-right-block {
+                    margin: 0 auto;    // 0 auto;
+                    width: 100%;
+                    height: 100%;   // fit-content;
+                    @include flex-horizontal();
+                    //justify-content: flex-end;
+                    align-items: center;
+                    menu {
+                        margin: 0 auto;
+                        width: 100%;    // 70%; // auto;    // fit-content;
+                        height:100%;    // fit-content;
+                        @include flex-horizontal();
+                        justify-content: flex-start;
+                        align-items: center;
+                        //border: 1px solid grey;
+                        .menu-item {
+                            margin: 0;  // 0 auto; // auto 0;   // 0 auto;
+                            margin-left: 8%;
+                            width: fit-content;
+                            height: fit-content;
+                            //align-items: center;
+                            border: none;
+                            background: none;
+                            @include text-font(16px,300,16px,0);
+                            cursor: pointer;
+                            align-items: center;
+                            border: 1px solid grey;
+                            img {
+                                margin: 0 auto;
+                                height: 16px;
+                                width: auto;
+                                align-items: end;
+                            }
+                        }
+                        .menu-item:hover {
+                            color: $color-accent;
+                            font-weight: 500;
+                        }
+                        .menu-item:hover path {
+                            fill: $color-accent;
+                        }
+                    }
+                }
+        }        
+    }
+}
