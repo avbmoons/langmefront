@@ -5,13 +5,19 @@ const getButton = document.getElementById("getButton");
 
 const modalSettings = document.getElementById('settings');  //[0];
 
+const primLang = document.getElementById("primLang");
+const resultPrimLang = document.getElementById('resultPrim');
 const comboPrimLangsList = document.getElementById("primLangChoice");
 const comboPrimLangChoiceList = document.getElementById("primLangChoiceList");
 // const comboPrimLangRus = document.getElementById("primRus");
 // console.log(comboPrimLangRus);
+const compLangs = document.getElementById("compLang");
+const resultCompLangs = document.getElementById("resultComp");
 const comboCompLangsList = document.getElementById("compLangChoice");
 const comboCompLangChoiceList = document.getElementById("compLangChoiceList");
 
+const themesLangs = document.getElementById("themeList");
+const resultThemesLangs = document.getElementById("resultThemes");
 const comboThemesList = document.getElementById("themeChoice");
 const comboThemeChoiceList = document.getElementById("themeChoiceList");
 
@@ -19,19 +25,56 @@ const btnOpenPrimLang = document.getElementById("btnOpenPrimLang");
 const btnOpenCompLang = document.getElementById("btnOpenCompLang");
 const btnOpenThemes = document.getElementById("btnOpenThemes");
 
-//const modeButtons = document.getElementsByClassName("mode-button");  //mode buttons array
-const modeButtons = document.querySelectorAll('input[name="modeButton"]');
+const modeButtons = document.getElementsByClassName("mode-button");  //mode buttons array
+//const modeButtons = document.querySelectorAll('input[name="modeButton"]');
+//console.log(modeButtons);
+
+const resultMode = document.getElementById("resultMode");
 
 const comboAppLangChoice = document.getElementById("appLangChoice");
 
 //console.log(setModeCheck);
 
-console.log(modalSettings);
+//console.log(modalSettings);
 
 const openModalSettings = () => {
-    modalSettings.style.display = "flex";
-    const modeButtonPlain = document.getElementById("setModePlain");
-    modeButtonPlain.checked = true;
+    primLang.value = localStorage.getItem('primLang');
+    console.log(primLang.value);
+    resultPrimLang.value = localStorage.getItem('primLang');
+
+    compLangs.value = localStorage.getItem('compLangs');
+    console.log(compLangs.value);
+    resultCompLangs.textContent = localStorage.getItem('compLangs');
+
+    themesLangs.value = localStorage.getItem('themesLangs');
+    console.log(themesLangs.value);
+    resultThemesLangs.textContent = localStorage.getItem('themesLangs');
+
+    resultMode.value = localStorage.getItem('modeChoice');
+    console.log(resultMode.value);
+    
+    modalSettings.style.display = "flex";    
+
+    //console.log(modeButtons);
+
+    let modeButtonsLength = modeButtons.length;
+    //console.log(modeButtonsLength);
+
+    for (i=0; i<modeButtonsLength; i++) {
+        let item = modeButtons[i].id;
+        //console.log(item);
+        if (item.includes(resultMode.value)) {
+            //console.log(item);
+            modeButtons[i].checked = true;
+            break;
+        } else {
+            const modeButtonPlain = document.getElementById("setModePlain");
+            modeButtonPlain.checked = true;
+        }
+    }
+    
+
+
 };
 
 const closeModalSettings = () => {
@@ -134,6 +177,7 @@ function choosedItemRadio(radioName, resultName) {
     for (const item of arrItems) {
         if (item.checked == true) {
             document.getElementById(radioName).value = item.value;
+            document.getElementById(resultName).value = '';
             document.getElementById(resultName).value += item.value + '\n';
             break;
         }
@@ -165,40 +209,54 @@ function choosedModeItemRadio(radioName, resultName) {
     for (const item of arrItems) {
         if (item.checked == true) {
             //document.getElementById(radioName).value = item.value;
+            document.getElementById(resultName).value = '';
             document.getElementById(resultName).value += item.value + '\n';
             break;
         }
     }
 }
 
-// const arrItems = document.getElementsByName("primLang");
-//     for (const item of arrItems) {
-//         if (item.checked == true) {
-//             document.getElementById("primLang").value = item.value;
-//             break;
-//         }
-//     }
-
-// submit settings button code
-//console.log(modeButtons);
 function submitTaskSettings() { 
-    window.location.href='../pages/home.html';
-    // for (let i = 0; i < 4; i++) {  
-    // if (modeButtons[i].checked) { 
-    //     setButton.style.borderWidth = "2px";
-    //     setButton.style.borderStyle = "solid";
-    //     setButton.style.borderColor = 'red';    
-    //     window.location.href='../pages/home.html';
-        
-    // } else {        
-    //     window.location.href='../pages/home.html';
-    //     }
-    
-    // }
+    //arrCompLangs = str.split(',');
+    let strPrimLang = document.getElementById("resultPrim").value;
+    console.log(strPrimLang);
+    localStorage.setItem('primLang',strPrimLang);
+
+    let strCompLangsN = document.getElementById("resultComp").value;
+    let strCompLangs = strCompLangsN.replace(/\n/g, '');
+    console.log(strCompLangs);
+    localStorage.setItem('compLangs',strCompLangs);
+    //localStorage.removeItem('compLamgs');
+
+    let strThemesN = document.getElementById("resultThemes").value;
+    let strThemes = strThemesN.replace(/\n/g, '');
+    console.log(strThemes);
+    localStorage.setItem('themesLangs', strThemes);
+
+    let strModeChoice = document.getElementById('resultMode').value;
+    console.log(strModeChoice);
+    localStorage.setItem('modeChoice', strModeChoice);
+
+    //window.location.href='../pages/home.html';
+    getTaskPage();
+
 }
 
-// for (let i = 0; i < 4; i++) {
-//     if (modeButtons[i].checked = "false")
-//     {console.log(modeButtons[i]);} else {console.log("checked")};
-
+// function getTaskPage() {
+//     let modeChoice = resultMode.value.trim();
+//     console.log(modeChoice);
+    
+//     if (modeChoice == "Plain") {
+//         window.location.href = "../pages/hometaskPlain.html";
+//     } else if (modeChoice == "Choice") {
+//         window.location.href = "../pages/taskChoice.html";
+//     }  else if (modeChoice == "Lang")      {
+//         window.location.href = "../pages/taskLang.html";
+//     } else if (modeChoice == "Mix") {
+//         window.location.href = "../pages/taskMix.html";
+//     } else {
+//         window.location.href = "../pages/home.html";
+//     }          
+        
 // }
+

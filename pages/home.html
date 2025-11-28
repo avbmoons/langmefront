@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../styles/home/home.css">
     <script defer src="../data/langs.js"></script> 
     <script defer src="../data/themes.js"></script> 
-    <script defer src="../data/modes.js"></script>  
+    <script defer src="../data/modes.js"></script> 
+    <script defer src="../scripts/homeLoading.js"></script>
+    <script defer src="../scripts/pageLoading.js"></script> 
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
     <script defer src="../scripts/listLangs.js"></script>
@@ -59,7 +61,7 @@
                 <div class="main-center">
                     <div class="settings">
                         <button class="set-get" id="setButton" onclick="openModalSettings()"><img src="../assets/icons/png/icon-settings-regular.png" alt="settings">Set Your Task</button>
-                        <button class="set-get" id="getButton"><img src="../assets/icons/png/icon-arrow-next.png" alt="to-task">Get Your Task</button>
+                        <button class="set-get" id="getButton" onclick="getTask()"><img src="../assets/icons/png/icon-arrow-next.png" alt="to-task">Get Your Task</button>
                     </div>
                     <div class="modes">
                         <div class="mode-item plain">
@@ -199,7 +201,8 @@
                     </div>
                 </div>
                 <div class="info-button">
-                    <button type="submit" class="btn-go" onclick="submitTaskSettings()">Confirm</button>
+                    <!-- <button type="submit" class="btn-go" onclick="submitTaskSettings()">Confirm</button> -->
+                    <button type="button" class="btn-go" onclick="submitTaskSettings()">Confirm</button>
                 </div>                
             </div>
         </form>
