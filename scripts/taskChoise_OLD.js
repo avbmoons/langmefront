@@ -222,204 +222,147 @@ for (let i=0; i<arrSelectedThemesLength; i++) {
 console.log("Selected words:")
 console.log(selectedWords);
 
-//Define words arrays for each patterns 
+//Define array with name = "_pattern"+"langAlias"
 
-let patternPrimName = "_pattern" + selectedPrimLang.langAlias;
+let patternBaseName = "_pattern" + selectedPrimLang.langAlias;
 
-console.log("Pattern for prim lang:");
-console.log(patternPrimName);
+// const myArrays = {
+//     cars: ["asdf", "ghjk", "lkjh"],
+//     bikes: ["hgfds", "vcxza", "nbvfd"]
+// }
 
-let patternsCompNames = [];
+// const arrayName = "cars";
 
-for (let i=0; i<selectedCompLangs.length; i++) {
-    patternsCompNames[i] = "_pattern" + selectedCompLangs[i].langAlias;
+// console.log(myArrays[arrayName]);
+
+const objPatterns = {
+    _patternRus: _patternRus,
+    _patternEng: _patternEng,
+    _patternArm: _patternArm,
+    _patternGre: _patternGre,
+    _patternFin: _patternFin,
+    _patternLav: _patternLav,
 }
 
-console.log("Patterns for comp langs:");
-console.log(patternsCompNames);
+const objPatternBaseName = patternBaseName;
+console.log("Base pattern: " + patternBaseName);
 
-let primWords =[];
+//console.log(arrPatterns[arrPatternName]);
+let basePattern = objPatterns[objPatternBaseName];
 
+console.log("Base pattern: ");
+console.log(basePattern);
+//let basePatternLength = basePattern.length;
 
+//Define base selected words array
 
-// for (let i=0; i<selectedCompLangs.length; i++) {
-//     for (let j=0; j<patterns.length; j++) {
-//         if (patterns[j].patternName.includes(selectedCompLangs[i].langAlias)) {
-//             choosePattern();        
-//         }
-//     }
-// }
+let baseSelectedWords = [];
 
-// console.log(selectPattern);
+for (let i=0; i<arrSelectedThemesLength; i++) {
+    for (let j=0; j<basePattern.length; j++) {
+        if (basePattern[j].idTheme == selectedThemes[i].id) {
+            baseSelectedWords.push(basePattern[j]);
+        }
+    }
+}
 
-// function choosePattern()
-//      {
-//         switch (patterns.patternName) {
-//             case "_patternRus":
-//                 selectPattern = _patternRus;
-//                 break;
-//             case "_patternEng":
-//                 selectPattern = _patternEng;
-//                 break;
-//             case "_patternArm":
-//                 selectPattern = _patternArm;
-//                 break;
-//             case "_patternGre":
-//                 selectPattern = _patternGre;
-//                 break;
-//             case "_patternFin":
-//                 selectPattern = _patternFin;
-//                 break;
-//             case "_patternLav":
-//                 selectPattern = _patternLav;
-//                 break;        
-//             default:
-//                 break;
-//         }
-//      }
+console.log("Base selected words:")
+console.log(baseSelectedWords);
 
+let arrPatterns = Object.entries(objPatterns);
 
-// //Define array with name = "_pattern"+"langAlias"
+console.log("All patterns: ");
+console.log(arrPatterns);
+// console.log(arrPatterns[1][0]);
+// console.log(arrPatterns[1][1][1].idWord);
 
-// let patternBaseName = "_pattern" + selectedPrimLang.langAlias;
+//Define patterns for comp langs
 
-// // const myArrays = {
-// //     cars: ["asdf", "ghjk", "lkjh"],
-// //     bikes: ["hgfds", "vcxza", "nbvfd"]
-// // }
+let compPatterns = [];
 
-// // const arrayName = "cars";
+for (let i=0; i<selectedCompLangs.length; i++) {
+    let alias = selectedCompLangs[i].langAlias;
+    //console.log(alias);
+    for (let j=0; j<arrPatterns.length; j++) {
+        //console.log(arrPatterns[j][0]);
+        if (arrPatterns[j][0] == "_pattern" + alias) {
+            compPatterns.push(arrPatterns[j]);
+        }
+    }
+}
 
-// // console.log(myArrays[arrayName]);
+console.log("Comp patterns:");
+console.log(compPatterns);
 
-// const objPatterns = {
-//     _patternRus: _patternRus,
-//     _patternEng: _patternEng,
-//     _patternArm: _patternArm,
-//     _patternGre: _patternGre,
-//     _patternFin: _patternFin,
-//     _patternLav: _patternLav,
-// }
+// //Define words array from comp patterns
 
-// const objPatternBaseName = patternBaseName;
-// console.log("Base pattern: " + patternBaseName);
+// let compPatternWords = [[]];
+let compPatternsWords = [];
+let compWords = [];
+let wordsLength;
 
-// //console.log(arrPatterns[arrPatternName]);
-// let basePattern = objPatterns[objPatternBaseName];
+for (let i=0; i<compPatterns.length; i++) {
+    compPatternsWords[i] = compPatterns[i][1];
+    wordsLength = compPatterns[i][1].length;
+}
 
-// console.log("Base pattern: ");
-// console.log(basePattern);
-// //let basePatternLength = basePattern.length;
+console.log("Comp patterns words:");
+console.log(compPatternsWords);
+console.log("Words array length = " + wordsLength);
 
-// //Define base selected words array
+for (let i=0; i<compPatterns.length; i++) {
+    for (let j=0; j<wordsLength; j++) {
+        compWords.push(compPatternsWords[i][j]);
+    }
+}
 
-// let baseSelectedWords = [];
+console.log("Comp words:");
+console.log(compWords);
 
-// for (let i=0; i<arrSelectedThemesLength; i++) {
-//     for (let j=0; j<basePattern.length; j++) {
-//         if (basePattern[j].idTheme == selectedThemes[i].id) {
-//             baseSelectedWords.push(basePattern[j]);
-//         }
-//     }
-// }
+let selectedCompWords = [];
 
-// console.log("Base selected words:")
-// console.log(baseSelectedWords);
+for (let i=0; i<selectedWords.length; i++) {
+    for (let j=0; j<compWords.length; j++) {
+        if (compWords[j].id == selectedWords[i].id) {
+            selectedCompWords.push(compWords[j]);
+        }
+    }
+}
 
-// let arrPatterns = Object.entries(objPatterns);
+console.log("Selected comp words:");
+console.log(selectedCompWords);
 
-// console.log("All patterns: ");
-// console.log(arrPatterns);
-// // console.log(arrPatterns[1][0]);
-// // console.log(arrPatterns[1][1][1].idWord);
+//Define rows for words base --> comps by idWords for each theme
 
-// //Define patterns for comp langs
+let wordsRows = [[]];
 
-// let compPatterns = [];
+ for (let i=0; i<baseSelectedWords.length; i++) {
+    wordsRows[i] = baseSelectedWords[i];
+    for (let j=0; j<selectedCompWords.length; j++) {
+        if ( selectedCompWords[j].id == baseSelectedWords[i].id) {
+            wordsRows[i][j] = selectedCompWords[j];
+        }
+    }
+ }
 
-// for (let i=0; i<selectedCompLangs.length; i++) {
-//     let alias = selectedCompLangs[i].langAlias;
-//     //console.log(alias);
-//     for (let j=0; j<arrPatterns.length; j++) {
-//         //console.log(arrPatterns[j][0]);
-//         if (arrPatterns[j][0] == "_pattern" + alias) {
-//             compPatterns.push(arrPatterns[j]);
-//         }
-//     }
-// }
+ console.log("Words rows: ");
+ console.log(wordsRows);
 
-// console.log("Comp patterns:");
-// console.log(compPatterns);
+ console.log(wordsRows[1]);
+ console.log(wordsRows[1][5]);
 
-// // //Define words array from comp patterns
+ // test --> filter by theme = 5
+let testTheme = [];
+//for (let i=0; i< selectedThemes.length; i++) {
+    // for (let j=0; j<wordsRows.length; j++) {
+    //     if (wordsRows.idTheme == 4) {
+    //         testTheme.push(wordsRows[j]);
+    //     }
+    // }
+//}
+testTheme = wordsRows.filter((row) => row.idTheme == 4);
+console.log(testTheme);
 
-// // let compPatternWords = [[]];
-// let compPatternsWords = [];
-// let compWords = [];
-// let wordsLength;
-
-// for (let i=0; i<compPatterns.length; i++) {
-//     compPatternsWords[i] = compPatterns[i][1];
-//     wordsLength = compPatterns[i][1].length;
-// }
-
-// console.log("Comp patterns words:");
-// console.log(compPatternsWords);
-// console.log("Words array length = " + wordsLength);
-
-// for (let i=0; i<compPatterns.length; i++) {
-//     for (let j=0; j<wordsLength; j++) {
-//         compWords.push(compPatternsWords[i][j]);
-//     }
-// }
-
-// console.log("Comp words:");
-// console.log(compWords);
-
-// let selectedCompWords = [];
-
-// for (let i=0; i<selectedWords.length; i++) {
-//     for (let j=0; j<compWords.length; j++) {
-//         if (compWords[j].id == selectedWords[i].id) {
-//             selectedCompWords.push(compWords[j]);
-//         }
-//     }
-// }
-
-// console.log("Selected comp words:");
-// console.log(selectedCompWords);
-
-// //Define rows for words base --> comps by idWords for each theme
-
-// let wordsRows = [[]];
-
-//  for (let i=0; i<baseSelectedWords.length; i++) {
-//     wordsRows[i] = baseSelectedWords[i];
-//     for (let j=0; j<selectedCompWords.length; j++) {
-//         if ( selectedCompWords[j].id == baseSelectedWords[i].id) {
-//             wordsRows[i][j] = selectedCompWords[j];
-//         }
-//     }
-//  }
-
-//  console.log("Words rows: ");
-//  console.log(wordsRows);
-
-//  console.log(wordsRows[1]);
-//  console.log(wordsRows[1][5]);
-
-//  // test --> filter by theme = 5
-// let testTheme = [];
-// //for (let i=0; i< selectedThemes.length; i++) {
-//     // for (let j=0; j<wordsRows.length; j++) {
-//     //     if (wordsRows.idTheme == 4) {
-//     //         testTheme.push(wordsRows[j]);
-//     //     }
-//     // }
-// //}
-// testTheme = wordsRows.filter((row) => row.idTheme == 4);
-// console.log(testTheme);
-
-// //console.log()
+//console.log()
 
 

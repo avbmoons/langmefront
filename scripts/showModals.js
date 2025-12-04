@@ -223,7 +223,7 @@ function submitTaskSettings() {
     localStorage.setItem('primLang',strPrimLang);
 
     let strCompLangsN = document.getElementById("resultComp").value;
-    let strCompLangs = strCompLangsN.replace(/\n/g, '');
+    let strCompLangs = strCompLangsN.replace(/\n/g, '')
     console.log(strCompLangs);
     localStorage.setItem('compLangs',strCompLangs);
     //localStorage.removeItem('compLamgs');

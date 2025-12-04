@@ -425,7 +425,7 @@ const _patternFin = [
     {
         id: 48,
         idTheme: 3,
-        idWord: 40,
+        idWord: 48,
         idLang: 5,
         wordName: "musta",
         spellBase: "[муста]",
