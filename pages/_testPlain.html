@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>langMe-home</title>
-    <link rel="stylesheet" href="../styles/home/home.css">
+    <title>langMe-test-Plain</title>
+    <link rel="stylesheet" href="../styles/task/task.css">
+    <script defer src="../scripts/pageLoading.js"></script>
     <script defer src="../data/langs.js"></script> 
     <script defer src="../data/themes.js"></script> 
-    <script defer src="../data/modes.js"></script> 
+    <script defer src="../data/modes.js"></script>
+    <script defer src="../data/words.js"></script>
+    <script defer src="../data/patterns.js"></script>
+    <script defer src="../data/_patternRus.js"></script>
+    <script defer src="../data/_patternEng.js"></script>
+    <script defer src="../data/_patternArm.js"></script>
+    <script defer src="../data/_patternGre.js"></script>
+    <script defer src="../data/_patternFin.js"></script>
+    <script defer src="../data/_patternLav.js"></script>
     <script defer src="../scripts/homeLoading.js"></script>
-    <script defer src="../scripts/pageLoading.js"></script> 
+    <script defer src="../scripts/pageLoading.js"></script>  
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
     <script defer src="../scripts/listLangs.js"></script>
     <script defer src="../scripts/listThemes.js"></script>
     <script defer src="../scripts/listModes.js"></script>
+    <script defer src="../scripts/counter.js"></script>
+    <!-- <script defer src="../scripts/taskChoice.js"></script> -->
+    <script defer src="../scripts/_test.js"></script>
+    <script defer src="../scripts/_testModes.js"></script>
+    <!-- <script defer src="../scripts/_modes.js"></script> -->
+    <script defer src="../scripts/_modePlain.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -45,6 +60,8 @@
                             <div class="combo-block" id="appLang">
                                 <button class="menu-item header" id="appLangEngChoice" onclick="openAppLangChoiceList()">Eng</button>
                                 <div class="combo-list" id="appLangChoice">
+                                    <!-- <button class="menu-item header" id="appLangEng">Eng</button>
+                                   <button class="menu-item header" id="appLangRus">Rus</button>  -->
                                 </div>                                
                             </div>
                             <button class="menu-item header">
@@ -59,42 +76,79 @@
             <main>
                 <div class="main-left"></div>
                 <div class="main-center">
-                    <div class="settings">
-                        <button class="set-get" id="setButton" onclick="openModalSettings()"><img src="../assets/icons/png/icon-settings-regular.png" alt="settings">Set Your Task</button>
-                        <button class="set-get" id="getButton" onclick="getTask()"><img src="../assets/icons/png/icon-arrow-next.png" alt="to-task">Get Your Task</button>
-                    </div>
-                    <div class="modes">
-                        <div class="mode-item plain">
-                            <button class="mode-item-btn" onclick="window.location.href='taskPlain.html'">
-                                <p class="title">PLAIN</p>
-                                <p class="title">mode</p>
-                                <p class="info">Plain visualization of words by themes on selected languages</p>
-                            </button>
+                    <div class="task-info">
+                        <div class="info-title-block">
+                            <p class="info-title">Plain mode</p>
                         </div>
-                        <div class="mode-item choice">
-                            <button class="mode-item-btn" onclick="window.location.href='taskChoice.html'" id="modeItemChoice">
-                                <p class="title">CHOICE</p>
-                                <p class="title">mode</p>
-                                <p class="info">Choosing the right translation for each selected languages</p>
-                            </button>
+                        <div class="info-content-block">
+                            <div class="task-description">
+                                <p class="info-content" id="taskDescription">Plain visualization of words by checked themes on selected languages</p>
+                            </div>
+                            <div class="task-langs">
+                                <p class="info-content" id="taskPrimLang">Russian -></p>
+                                <p class="info-content" id="taskCompLang">Armenian, Greek, Finnish, Latvian</p>
+                            </div>
+                            <div class="task-themes">
+                                <p class="info-content">World sides, Seasons, Months, Weekdays, Personal data</p>
+                            </div>                            
                         </div>
-                        <div class="mode-item lang" onclick="window.location.href='taskLang.html'">
-                            <button class="mode-item-btn">
-                                <p class="title">LANG</p>
-                                <p class="title">mode</p>
-                                <p class="info">Choosing the right language for spelling translation</p>
-                            </button>
-                        </div>
-                        <div class="mode-item mix" onclick="window.location.href='taskMix.html'">
-                            <button class="mode-item-btn">
-                                <p class="title">MIX</p>
-                                <p class="title">mode</p>
-                                <p class="info">Choosing the correct spelling translation for a given language</p>
-                            </button>
+                        <div class="info-service-block">
+                            <button class="btn-link">Change mode</button>
+                            <button class="btn-link" onclick="openModalSettings()">Change settings</button>
                         </div>
                     </div>
-                    <div class="results">
-                        <button class="set-get"><img src="../assets/icons/png/icon-finish-flag.png" alt="results">Results</button>
+                    <div class="task-settings">
+                        <div class="counter" id="counterWords">
+                            <label class="counter-label" for="">Show</label>
+                            <button class="counter-btn" id="btnPrevNumWords" onclick="minusFunction(numWordsValue)">&#9668;</button>
+                            <input class="counter-value" id="numWordsValue" type="text" value="2" title="2 words recomended" readonly>
+                            <button class="counter-btn" id="btnNextNumWords" onclick="plusFunction(numWordsValue)">&#9658;</button>
+                            <label class="counter-label" for="">words on the list</label>
+                        </div>
+                        <div class="counter" id="counterOptions">
+                            <label class="counter-label" for="">Show</label>
+                            <button class="counter-btn" id="btnPrevNumOpt" onclick="minusFunction(numOptionsValue)">&#9668;</button>
+                            <input class="counter-value" id="numOptionsValue" type="text" value="3" title="3 options recomended" readonly>
+                            <button class="counter-btn" id="btnNextNumOpt" onclick="plusFunction(numOptionsValue)">&#9658;</button>
+                            <label class="counter-label" for="">options for each word</label>
+                        </div>
+                        <div class="counter" id="radioSpell">
+                            <label class="counter-label" for="">Show spelling on</label>
+                            <input class="counter-value" type="radio" name="spellChoice" id="spellRus" checked>
+                            <label class="counter-label" for="spellRus">Rus</label>
+                            <input class="counter-value" type="radio" name="spellChoice" id="spellEng">
+                            <label class="counter-label" for="spellEng">Eng</label>
+                            <input class="counter-value" type="radio" name="spellChoice" id="spellNone">
+                            <label class="counter-label" for="spellNone">None</label>
+                        </div>
+                    </div>
+                    <div class="task-mode-block" id="taskModeChoice">
+                        <div class="task-mode" name="row1" id="item1">
+                            <div class="item-card base" name="itemCardBase" id="item1Base">
+                                <!-- <div class="item-heading">
+                                    <p class="heading-text" id="item1HeadingBase">Russian</p>
+                                </div>
+                                <div class="item-option base">
+                                    <p class="item-word base" id="item1WordBase">Пятница</p>
+                                </div> -->
+                            </div>
+                            <!-- <div class="item-card" name="itemCardComp1Plain" id="item1Comp1">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="task-navi">
+                        <div class="navi-buttons">
+                            <button class="btn-link">Previous&nbsp;&#9668;</button>
+                            <button class="btn-link">&#9658;&nbsp;Next</button>
+                        </div>
+                        <div class="navi-buttons">
+                            <button class="btn-link">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
+                        </div>
+                    </div>
+                    <div class="task-results">
+                        <div class="results-buttons">
+                            <button class="set-get"><img src="../assets/icons/png/icon-finish-flag.png" alt="results">Results</button>                            
+                        </div>
                         <div class="totals">
                             <div class="totals-block">
                                 <div class="total-item title">
@@ -172,14 +226,25 @@
                             <div class="combo-list-choice" id="themeChoiceList"></div>
                         </div>
                     </div>
+
+                    <!-- <div class="combo-block" id="modeButtonsBlock">
+                        <label class="combo-label" for="modeButtons">Mode:</label>
+                        <button type="button" class="mode-button" id="setModePlain">Plain</button>
+                        <button type="button" class="mode-button" id="setModeChoice">Choice</button>
+                        <button type="button" class="mode-button" id="setModeLang">Lang</button>
+                        <button type="button" class="mode-button" id="setModeMix">Mix</button>
+                    </div> -->
+
                     <div class="combo-block" id="modeButtonsBlock">
                         <label class="combo-label mode" for="modeButtons">Mode:</label>
                         
                         <div class="combo-block-choice" id="modeChoice"></div>
                         <button type="button" class="combo-button" onclick="choosedModeItemRadio('modeButton', 'resultMode')">&check;</button>
                     </div>
+
                     <div class="combo-block" id="userChoiceBlock">
                         <label class="combo-label choice" for="userChoice">Your choice:</label>
+                        <!-- <textarea class="combo-text" name="userChoice" id="userChoice" placeholder="Your task settings here..." rows="5" readonly></textarea> -->
                         <div class="user-choice">
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultPrim">Primary: </label>
@@ -187,10 +252,12 @@
                             </div>
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultComp">Compared: </label>
+                                <!-- <input class="result-field" type="text" id="resultComp" name="resultComp"> -->
                                 <textarea class="result-field" name="resultComp" id="resultComp" readonly></textarea>
                             </div>
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultThemes">Themes: </label>
+                                <!-- <input class="result-field" type="text" id="resultThemes" name="resultThemes"> -->
                                 <textarea class="result-field" name="resultThemes" id="resultThemes" readonly></textarea>
                             </div>
                             <div class="user-choice-result">

@@ -1,6 +1,9 @@
 //@use "sass:math1";
+@use "sass:list";
 
 @import "../vars/vars.scss";
+
+$viewport-width: var(--viewport-width);
 
 * {
     margin: 0;
@@ -14,7 +17,7 @@ body {
 .wrapper {
     margin: 0 auto;
     width: $site-width;
-    height: auto;
+    height: 100vh;  // auto;
     @include flex-vertical();
     justify-content: space-between;
     .index-cover {
@@ -275,101 +278,379 @@ body {
                 border: 1px solid green;
             }
             .main-center {
-                margin: auto;
+                margin: 0 auto;
                 width: $block-width;
                 height: $min-main-height;
                 @include flex-vertical();
-                border: 1px solid green;
-                .settings {
+                //overflow-y: auto;
+                border: 2px solid green;
+                .task-info {
                     margin: 0 auto;
-                    margin-top: 4%; //40px;
+                    margin-top:1%;  // 2%; //40px;
                     width: 100%;
-                    height: 10%;
+                    height: 8%;
                     @include flex-horizontal();
                     justify-content: space-between;
-                    border: 1px solid green;
-                    .set-get {
+                    border: 1px solid blue;
+                    .info-title-block {
                         margin: 0;  // auto;
-                        //margin-left: 40px;
-                        width: 30%;
+                        width: 20%; // 25%;
                         height: 100%;
-                        @include flex-horizontal();
-                        align-items: center;
-                        background-color: $color-grey;
-                        @include text-font(16px,400,16px,0);
-                        cursor: pointer;
-                        border: 1px solid grey;
-                        .mode-check {
-                            visibility: hidden;
-                        }
-                    }
-                    .set-get:hover {
-                        background-color: $color-grey-dark;
-                    }
-                }
-                .modes {
-                    margin: auto;
-                    width: 65%;
-                    height: 55%;
-                    @include flex-horizontal();
-                    flex-wrap: wrap;
-                    border: 1px solid violet;
-                    .mode-item {
-                        margin: auto;
-                        width: 48%;
-                        height: 48%;
                         @include flex-vertical();
-                        justify-content: space-between;
-                        border: 1px solid blue;
-                        .mode-item-btn {
-                            margin: auto;
-                            width: 100%;
-                            height: 100%;
-                            align-items: center;
-                            background-color: $color-grey;
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .info-title {
+                            @include text-font(1.67vw, 400, 1.67vw, 0); // 24px
+                            //@include text-font(1.94vw, 400, 1.94vw, 0); // 28px
+                            //@include text-font(2.73vh, 400, 2.73vh, 0);
+                            color: $color-dark;
+                            //@include text-size($maket-width,$viewport-width,32px);
+                            //font-weight: 400;
+                        }
+                    }
+                    .info-content-block {
+                        margin: 0 auto;
+                        width: 60%; // 50%;
+                        height: 100%;
+                        @include flex-vertical();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .task-description {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 40%;    // 50%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            .info-content {
+                                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
+                                //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                @include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+                        .task-langs {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 30%;    // 25%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            .info-content {
+                                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
+                                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                @include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+                        .task-themes {
+                            margin: 0 auto;
+                            width: 96%;
+                            height: 30%;    // 25%;
+                            @include flex-horizontal();
+                            justify-content: flex-start;
+                            flex-wrap: wrap;
+                            .info-content {
+                                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
+                                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                @include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                color: $color-dark;
+                                text-align: left;
+                            }
+                        }
+
+                    }
+                    .info-service-block {
+                        margin: 0;  // auto;
+                        width: 20%; // 25%;
+                        height: 100%;
+                        @include flex-vertical();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
+                        .btn-link {
+                            margin-bottom: 2%;
+                            @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                            color: $color-dark;
+                            align-self: flex-end;
+                            text-align: right;
+                            text-decoration: underline;
+                            background-color: $color-light;
+                            border: none;
+                            outline: none;
                             cursor: pointer;
-                            .title {
-                                margin-bottom: 2.2%;    // 10px;
-                                @include text-font(16px,400,16px,0);
-                            }
-                            .info {
-                                margin-top: 4.4%;
-                                @include text-font(14px,400,14px,0);
-                            }
                         }
-                        .mode-item-btn:hover {
-                            background-color: $color-grey-dark;
-                        }
-                        #modeItemChoice {
-                            background-color: $color-right;
-                        }
-                        #modeItemChoice:hover {
-                            background-color: $color-right-dark;
+                        .btn-link:hover {
+                            color: $color-accent;
                         }
                     }
                 }
-                .results {
+                .task-settings {
                     margin: 0 auto;
-                    margin-bottom: 4%; //40px;
+                    margin-top:1%;  // 2%; //40px;
                     width: 100%;
-                    height: 10%;
+                    height: 4%; // 10%;
                     @include flex-horizontal();
                     justify-content: space-between;
                     border: 1px solid green;
-                    .set-get {
-                        margin: 0;  // auto;
-                        //margin-left: 40px;
-                        width: 30%;
+                    .counter {
+                        margin: auto;
+                        width: 32%;
                         height: 100%;
                         @include flex-horizontal();
+                        justify-content: flex-start;
+                        border: 1px solid orangered;
                         align-items: center;
-                        background-color: $color-grey;
-                        @include text-font(16px,400,16px,0);
-                        cursor: pointer;
-                        border: 1px solid grey;
+                        .counter-label {
+                            @include text-font(1.11vw, 300, 1.11vw, 0);
+                            color: $color-dark;
+                        }
+                        .counter-btn {
+                            width: 1.67vw;
+                            @include text-font(1.67vw, 300, 1.67vw, 0);
+                            color: $color-dark;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        #btnPrevNumWords, #btnPrevNumOpt {
+                            margin-left: 0.69vw;
+                        }
+                        #btnNextNumWords, #btnNextNumOpt {
+                            margin-right: 0.69vw;
+                        }
+                        .counter-value {
+                            width: 2.08vw;
+                            @include text-font(1.11vw, 300, 1.11vw, 0);
+                            color: $color-dark;
+                            text-align: right;
+                        }
                     }
-                    .set-get:hover {
-                        background-color: $color-grey-dark;
+                }
+                .task-mode-block {
+                    margin: 0 auto;
+                    //margin-top: 1.39vw;
+                    width: 100%;
+                    height: 74%;    // 0.74*80vh;  // 74%; // 70%;
+                    @include flex-vertical();
+                    justify-content: space-around;  // space-between;
+                    overflow-y: auto;
+                    border: 2px solid red;
+                    .task-mode {
+                        margin: 0 auto;
+                        width: 100%;    // 65%;
+                        height: 48%;    // 0.48*(0.74*80vh);   // 48%;    // 70%; // 55%;
+                        @include flex-horizontal();
+                        justify-content: space-around;
+                        //flex-wrap: wrap;
+                        border: 1px solid violet;
+                        .item-card {
+                            margin: auto 0;  // auto;
+                            width: 18%; // 48%;
+                            height: 96%;    // 100%;   // 48%;
+                            @include flex-vertical();
+                            justify-content: flex-start;    // space-between;
+                            border: 1px solid $color-grey-dark;
+                            .item-heading {
+                                width: 100%;
+                                height:25%; // 10%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-grey;
+                                border: 1px solid $color-grey-dark;
+                                .heading-text {
+                                    //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                    @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                    //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                    color: $color-dark; 
+                                    text-align: center;                               
+                                }
+                            }
+                            .item-option {
+                                width: 100%;
+                                height:25%; // 30%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-lang-light;
+                                border: 1px solid $color-grey-dark;
+                                .option-word-block {
+                                    width: 80%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                    .option-word {
+                                        //margin-bottom: 8%;
+                                        //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                        @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }  
+                                    .option-spell {
+                                        @include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                        //@include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }
+                                }
+                                .option-radio-block {
+                                    width: 20%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                }
+
+                                .base {
+                                    @include text-font(1.39vw, 400, 1.39vw, 0); //20px
+                                }
+
+                            }
+                            .base {
+                                font-weight: 400;
+                                background-color: $color-blick-light;
+                            }
+                        }
+                        .item-card base {
+                            margin: auto 0;  // auto;
+                            width: 18%; // 48%;
+                            height: 96%;    // 100%;   // 48%;
+                            @include flex-vertical();
+                            justify-content: flex-start;    // space-between;
+                            border: 1px solid $color-grey-dark;
+                            .item-heading {
+                                width: 100%;
+                                height:25%; // 10%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-grey;
+                                border: 1px solid $color-grey-dark;
+                                .heading-text {
+                                    //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                    @include text-font(1.11vw, 400, 1.11vw, 0); //16px
+                                    //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                    color: red; // $color-dark; 
+                                    text-align: center;                               
+                                }
+                            }
+                            .item-option {
+                                width: 100%;
+                                height:25%; // 30%;
+                                @include flex-horizontal();
+                                align-items: center;
+                                background-color: $color-blick-light;    // $color-lang-light;
+                                border: 1px solid $color-grey-dark;
+                                .option-word-block {
+                                    width: 80%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                    .option-word {
+                                        //margin-bottom: 8%;
+                                        //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
+                                        @include text-font(1.11vw, 400, 1.11vw, 0); //16px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }  
+                                    .option-spell {
+                                        @include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                                        //@include text-font(0.83vw, 300, 0.83vw, 0); //12px
+                                        color: $color-dark;
+                                        text-align: center;
+                                    }
+                                }
+                                .option-radio-block {
+                                    width: 20%;
+                                    height: 100%;
+                                    @include flex-vertical();
+                                }
+
+                                .base {
+                                    @include text-font(1.39vw, 400, 1.39vw, 0); //20px
+                                }
+
+                            }
+                            .base {
+                                font-weight: 400;
+                                background-color: $color-blick-light;
+                            }
+                        }
+                    }                    
+                }
+                .task-navi {
+                    margin: 0 auto;
+                    //margin-bottom: 4%; //40px;
+                    width: 100%;
+                    height: 7%; // 5%; // 10%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 1px solid green;
+                    .navi-buttons {
+                        height: 70%;
+                        width: fit-content;
+                        @include flex-horizontal();
+                        align-self: center;
+                        align-items: center;
+                        .btn-link {
+                            //margin-bottom: 2%;
+                            padding: 0 1.39vw;
+                            height: 100%;   // 70%;
+                            @include text-font(1.11vw, 300, 1.11vw, 0); //16px
+                            color: $color-dark;
+                            align-self: flex-end;
+                            text-align: right;
+                            text-decoration: underline;
+                            background-color: $color-light;
+                            border: none;
+                            border: 1px solid red;
+                            outline: none;
+                            cursor: pointer;
+                            @include flex-horizontal();
+                            align-self: center;
+                            align-items: center;
+                            img {
+                                height: 100%;
+                                width: auto;
+                                align-self: center;
+                            }
+                        }
+                        .btn-link:hover {
+                            color: $color-accent;
+                        }                        
+                    }
+
+                }
+                .task-results {
+                    margin: 0 auto;
+                    margin-bottom:1%;   // 2%; //40px;
+                    width: 100%;
+                    height: 4%; //6%; // 10%;
+                    @include flex-horizontal();
+                    justify-content: space-between;
+                    border: 1px solid green;
+                    .results-buttons {
+                        height:100%;    // 80%;
+                        width: 30%;
+                        @include flex-horizontal();
+                        align-self: center;
+                        align-items: center;
+                        .set-get {
+                            margin: 0;  // auto;
+                            //margin-left: 40px;
+                            width: 100%;    // 30%;
+                            height: 100%;
+                            @include flex-horizontal();
+                            align-items: center;
+                            align-self: center;
+                            background-color: $color-grey;
+                            @include text-font(1.11vw,400,1.11vw,0);    // 20px
+                            cursor: pointer;
+                            border: 1px solid grey;
+                            img {
+                                height: 100%;
+                                width: auto;
+                                align-self: center;
+                            }
+                        }
+                        .set-get:hover {
+                            background-color: $color-grey-dark;
+                        }                        
                     }
                     .totals {
                         margin: 0;  // auto;
@@ -381,16 +662,25 @@ body {
                         border: 1px solid grey;
                         .totals-block {
                             margin: 0;  // auto;
+                            height: 100%;
                             @include flex-horizontal();
                             justify-content: space-between;
                             .total-item {
                                 margin: auto;
+                                height: 100%;
                                 @include flex-horizontal();
                                 justify-content: space-between;
                                 align-items: center;
                                 p {
-                                    @include text-font(16px,400,16px,0);
+                                    @include text-font(0.97vw,400, 0.97vw,0);    // 14px
+                                    //@include text-font(1.11vw,400,1.11vw,0);    // 16px
                                     margin-left: 2.3%;
+                                }
+                                img {
+                                    //margin-right: 1.39vw;
+                                    height: 90%;    // 100%;
+                                    width: auto;
+                                    align-self: center;
                                 }
                             }                            
                         }

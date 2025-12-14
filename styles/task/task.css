@@ -481,6 +481,7 @@ body {
   box-sizing: border-box;
   justify-content: space-between;
   border: 1px solid green;
+  display: none;
 }
 .wrapper .top main .main-center .task-settings .counter {
   margin: auto;
@@ -549,7 +550,7 @@ body {
   justify-content: space-around;
   border: 1px solid violet;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base {
   margin: auto 0;
   width: 18%;
   height: 96%;
@@ -560,7 +561,7 @@ body {
   justify-content: flex-start;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading {
   width: 100%;
   height: 25%;
   display: flex;
@@ -570,7 +571,7 @@ body {
   background-color: #dae6e8;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading .heading-text {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading .heading-text, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading .heading-text {
   font-size: 1.11vw;
   font-weight: 300;
   line-height: 1.11vw;
@@ -578,7 +579,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option {
   width: 100%;
   height: 25%;
   display: flex;
@@ -588,7 +589,7 @@ body {
   background-color: #f2f7f7;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block {
   width: 80%;
   height: 100%;
   display: flex;
@@ -596,8 +597,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-word {
-  margin-bottom: 8%;
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-word, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-word {
   font-size: 1.11vw;
   font-weight: 300;
   line-height: 1.11vw;
@@ -605,7 +605,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-spell {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-spell, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-spell {
   font-size: 0.97vw;
   font-weight: 300;
   line-height: 0.97vw;
@@ -613,7 +613,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-radio-block {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-radio-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-radio-block {
   width: 20%;
   height: 100%;
   display: flex;
@@ -621,13 +621,13 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .base {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .base {
   font-size: 1.39vw;
   font-weight: 400;
   line-height: 1.39vw;
   letter-spacing: 0;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .base {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .base {
   font-weight: 400;
   background-color: #f7d5a1;
 }
@@ -642,7 +642,7 @@ body {
   align-items: center;
   border: 1px solid green;
 }
-.wrapper .top main .main-center .task-navi .navi-buttons {
+.wrapper .top main .main-center .task-navi .navi-buttons, .wrapper .top main .main-center .task-navi .navi-buttons-exit {
   height: 70%;
   width: -moz-fit-content;
   width: fit-content;
@@ -652,7 +652,7 @@ body {
   align-self: center;
   align-items: center;
 }
-.wrapper .top main .main-center .task-navi .navi-buttons .btn-link {
+.wrapper .top main .main-center .task-navi .navi-buttons .btn-link, .wrapper .top main .main-center .task-navi .navi-buttons-exit .btn-link {
   padding: 0 1.39vw;
   height: 100%;
   font-size: 1.11vw;
@@ -674,13 +674,33 @@ body {
   align-self: center;
   align-items: center;
 }
-.wrapper .top main .main-center .task-navi .navi-buttons .btn-link img {
+.wrapper .top main .main-center .task-navi .navi-buttons .btn-link img, .wrapper .top main .main-center .task-navi .navi-buttons-exit .btn-link img {
   height: 100%;
   width: auto;
   align-self: center;
 }
-.wrapper .top main .main-center .task-navi .navi-buttons .btn-link:hover {
+.wrapper .top main .main-center .task-navi .navi-buttons .btn-link:hover, .wrapper .top main .main-center .task-navi .navi-buttons-exit .btn-link:hover {
   color: #d91a60;
+}
+.wrapper .top main .main-center .task-navi .navi-buttons .pagination-list, .wrapper .top main .main-center .task-navi .navi-buttons-exit .pagination-list {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+.wrapper .top main .main-center .task-navi .navi-buttons .pagination-list .pagination-item, .wrapper .top main .main-center .task-navi .navi-buttons-exit .pagination-list .pagination-item {
+  padding: 0 1.39vw;
+  list-style-type: none;
+  font-size: 1.39vw;
+  font-weight: 300;
+  line-height: 1.39vw;
+  letter-spacing: 0;
+  color: #0f1a1c;
+  cursor: pointer;
+}
+.wrapper .top main .main-center .task-navi .navi-buttons .pagination-list .active, .wrapper .top main .main-center .task-navi .navi-buttons-exit .pagination-list .active {
+  color: #d91a60;
+  font-weight: 400;
 }
 .wrapper .top main .main-center .task-results {
   margin: 0 auto;
@@ -755,17 +775,25 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.wrapper .top main .main-center .task-results .totals .totals-block .total-item p {
-  font-size: 0.97vw;
+.wrapper .top main .main-center .task-results .totals .totals-block .total-item .total-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 1.25vw;
   font-weight: 400;
-  line-height: 0.97vw;
+  line-height: 0;
   letter-spacing: 0;
   margin-left: 2.3%;
+  align-items: center;
 }
 .wrapper .top main .main-center .task-results .totals .totals-block .total-item img {
-  height: 90%;
+  height: 80%;
   width: auto;
   align-self: center;
+}
+.wrapper .top main .main-center .task-results .totals .totals-block .neutral {
+  display: none;
 }
 .wrapper .top main .main-right {
   margin: auto;

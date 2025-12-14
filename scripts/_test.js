@@ -435,6 +435,8 @@ function compPatternsFilterBySelectedThemes() {
 //Define task row
 
 let taskPatterns = [].concat(primPattern, compPatterns);
+
+console.log("Task patterns : ");
 console.log(taskPatterns);
 
 let taskRows = [];
@@ -477,4 +479,77 @@ for (let i=0; i<primWords.length; i++) {
 
 console.log("Task rows: ");
 console.log(taskRows);
+
+// console.log(selectedPrimLang);
+// console.log(selectedCompLangs);
+// console.log(selectedCompLangs.length);
+
+console.log("Selected Prim lang id = " + selectedPrimLang[0].id);
+
+
+
+
+// let optionsChoice = [];///////////////////
+// let taskRowsOptions = [];////////////////////////
+// let compWordsTheme = [];//////////////////////
+// let compOptionsChoise = [];//////////////////
+
+
+// //Pagination on the page
+// const itemsPerPage = 2;
+// let data = document.getElementsByClassName("task-mode");
+// console.log("Rows num on this page = " + data.length);
+// let currentPage = 1;
+
+// const contentContainer = document.getElementById("taskModeChoice");
+// const paginationContainer = document.getElementById("pagination");
+
+// //const paginateData = data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+// function renderPage(page) {
+//     const start = (page - 1) * itemsPerPage;
+//     const end = start + itemsPerPage;
+//     const paginateData = data.slice(start, end);
+
+//     contentContainer.innerHTML = '';
+//     paginateData.forEach(item => {
+//     const div = document.createElement('div');
+//     div.textContent = item;
+//     contentContainer.appendChild(div);
+//     });
+
+//     renderPaginationButtons(page);
+// }
+
+// function renderPaginationButtons(currentPage) {
+//     paginationContainer.innerHTML = '';
+//     const totalPages = Math.ceil(data.length / itemsPerPage);
+
+//     //Button "Prev"
+//     const prevButton = document.createElement('button');
+//     prevButton.textContent = 'Previous&nbsp;&#9668;';
+//     prevButton.disabled = currentPage === 1;
+//     prevButton.onclick = () => renderPage(currentPage - 1);
+//     paginationContainer.appendChild(prevButton);
+
+//     // //Buttons with pages numbers
+//     // for (let i=1; i <= totalPages; i++) {
+//     //     const button = document.createElement('button');
+//     //     button.textContent = i;
+//     //     button.className = i === currentPage ? 'active' : '';
+//     //     button.onclick = () => renderPage(i);
+//     //     paginationContainer.appendChild(button);
+//     // }
+
+//     //Button "Next"
+//     const nextButton = document.createElement('button');
+//     nextButton.textContent = '&#9658;&nbsp;Next';
+//     nextButton.disabled = currentPage === totalPages;
+//     nextButton.onclick = () => renderPage(currentPage + 1);
+//     paginationContainer.appendChild(nextButton);
+
+// }
+
+// //renderPage(currentPage);
+
 

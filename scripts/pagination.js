@@ -1,0 +1,246 @@
+// const products = [
+//     {
+//         id: "q1",
+//         info: "info1",
+//     },
+//     {
+//         id: "q2",
+//         info: "info2",
+//     },
+//     {
+//         id: "q3",
+//         info: "info3",
+//     },
+//     {
+//         id: "q4",
+//         info: "info4",
+//     },
+//     {
+//         id: "q5",
+//         info: "info5",
+//     },
+//     {
+//         id: "q6",
+//         info: "info6",
+//     },
+//     {
+//         id: "q7",
+//         info: "info7",
+//     },
+//     {
+//         id: "q8",
+//         info: "info8",
+//     },
+//     {
+//         id: "q9",
+//         info: "info9",
+//     },
+//     {
+//         id: "q10",
+//         info: "info10",
+//     },
+//     {
+//         id: "q11",
+//         info: "info11",
+//     },
+//     {
+//         id: "q12",
+//         info: "info12",
+//     },
+//     {
+//         id: "q13",
+//         info: "info13",
+//     },
+// ];
+
+// const func = (products) => {
+//     console.log(products);
+// }
+
+// func(products);
+// //console.log(products);
+
+const products = taskRowsTest;
+
+//let productsOnPage = [];
+
+const paginate = (products) => {
+    //console.log('products: ', products);
+    let productCount = 2;   // 7;   // num products on each page
+    let currentPage = 1;    // current page
+
+    const productContainer = document.querySelector('#taskModeChoice');   // product list
+    const pagination = document.querySelector('.navi-buttons');  //container for pagination
+    const btnPrevPagination = document.querySelector('#prevBtn');
+    const btnNextPagination = document.querySelector('#nextBtn');
+
+
+
+    // function for render products
+    const renderProducts = (products, container, numberOfProducts, page) => {
+
+        productContainer.innerHTML = "";
+        //console.log(productContainer);
+
+        const firstProductIndex = numberOfProducts * page - numberOfProducts;
+        console.log('firstProductIndex: ', firstProductIndex);
+
+        const lastProductIndex = firstProductIndex + numberOfProducts;
+        console.log('lastProductIndex: ', lastProductIndex);
+
+        const productsOnPage = products.slice(firstProductIndex, lastProductIndex);
+        console.log('productsOnPage: ', productsOnPage);
+
+        pageRowsCompChoiceDom(firstProductIndex, lastProductIndex);
+
+        // productsOnPage.forEach(({id, info}) => {
+        //     const div = document.createElement('div');
+        //     //console.log(div);
+        //     div.classList.add('row');
+        //     div.innerHTML = `<div class="row">
+        //                         <p class="this-id">${id}</p>
+        //                         <p class="this-info">${info}</p>
+        //                     </div>`;
+        //     container.append(div);
+        //     //productContainer.appendChild(div);
+        // });
+
+    };
+
+    // function for render pages
+    const renderPagination = (products, numberOfProducts) => {
+
+        const pagesCount = Math.ceil(products.length / numberOfProducts)//;
+        console.log('pagesCount: ', pagesCount);
+
+        const ul = document.querySelector('.pagination-list');
+
+        for (let i=1; i <= pagesCount; i++) {
+            const li = renderBtn(i);
+            ul.append(li);
+        }
+
+        managePagination(pagesCount);
+
+        pagination.classList.remove('hidden');
+    };
+
+    // function for render each page button between Prev and Next
+    const renderBtn = (page) => {
+
+        const li = document.createElement('li');
+        li.classList.add('pagination-item');
+        li.textContent = page;
+
+        if (currentPage === page) {
+            li.classList.add('active');
+        }
+
+        return li;
+    };    
+
+    // function for update pagination
+    const updatePagination = () => {
+        pagination.addEventListener('click', (event) => {
+            if(!event.target.closest('.pagination-item')) {
+                return;
+            } else {
+                currentPage = event.target.textContent;
+                //console.log('currentPage: ', currentPage);
+                console.log('Click on none');
+                renderProducts(products, productContainer, productCount, currentPage);
+
+                let currentLi = document.querySelector('.pagination-item.active');
+                currentLi.classList.remove('active');
+                event.target.classList.add('active');
+            }
+        });
+    };
+
+    // function for too long pagination hide to ...
+    const managePagination = (pagesCount) => {
+        const container = document.querySelector('.pagination-list');
+        const links = container.querySelectorAll('li');
+        const totalPages = pagesCount;
+        
+        if (totalPages > 8) {
+            for (let i=1; i < links.length -1; i++) {
+                links[i].style.display = 'none';
+            }
+
+            let ellipsis = container.querySelector('span');
+            if (!ellipsis) {
+                ellipsis = document.createElement('span');
+                ellipsis.textContent = '...';
+                container.insertBefore(ellipsis, links[links.length - 1]);
+            }
+            ellipsis.style.display = '';
+            // show first and last parts
+            for (let j=1; j < 8; j++) {
+                links[j].style.display = '';
+            }
+            //links[0].style.display = '';
+            links[links.length - 1].style.display = '';
+        } else {
+            links.forEach(link => link.style.display = '');
+            const ellipsis = container.querySelector('span');
+            if (ellipsis) {
+                ellipsis.style.display = 'none';
+            }
+        }
+    };
+
+    // document.addEventListener('DOMContentLoaded', managePagination);
+    // window.addEventListener('resize', managePagination);
+
+    renderProducts(products, productContainer, productCount, currentPage);
+    renderPagination(products, productCount);
+    updatePagination();
+
+    // all page's buttons
+    const liElements = document.querySelectorAll('.pagination-item');
+
+    // function for hanle pagination by Prev & Next buttons
+    const handlePagination = (event) => {
+        const currentActiveLi = document.querySelector('.pagination-item.active');  // this active page button
+        let newActiveLi;    // this new active page button
+
+        if (event.target.closest('#nextBtn')) {
+            newActiveLi = currentActiveLi.nextElementSibling;
+            console.log('newActiveLi: ', newActiveLi);
+
+            currentPage++;
+        } else {
+            newActiveLi = currentActiveLi.previousElementSibling;
+            console.log('newActiveLi: ', newActiveLi);
+
+            currentPage--;
+        }
+
+        if (!newActiveLi && event.target.closest('#nextBtn')) {
+            newActiveLi = liElements[0];
+        } else if (!newActiveLi) {
+            newActiveLi = liElements[liElements.length - 1];
+        }
+
+        currentActiveLi.classList.remove('active');
+        newActiveLi.classList.add('active');
+
+        // condition for circle render
+        if (currentPage > liElements.length) {
+            currentPage = 1;
+        } else if (currentPage < 1) {
+            currentPage = liElements.length;
+        }
+
+        renderProducts(products, productContainer, productCount, currentPage);
+
+    };
+
+    btnNextPagination.addEventListener('click', handlePagination);
+    btnPrevPagination.addEventListener('click', handlePagination);
+
+};
+
+paginate(products);
+
