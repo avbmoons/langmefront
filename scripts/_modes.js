@@ -264,7 +264,7 @@ class ItemOptionCompPlain {
         this.spellEng = spellEng;
     }
     render() {
-        return `<div class="item-option" id="item${this.idWord}Comp${this.idLang}Option1" style="height: 25%;">
+        return `<div class="item-option" id="item${this.idWord}Comp${this.idLang}Option1" style="height: 25%;>
                     <div class="option-word-block">
                         <p class="option-word" id="item${this.idWord}Comp${this.idLang}Option1Word">${this.wordName}</p>
                         <p class="option-spell" id="item${this.idWord}Comp${this.idLang}Option1Spell">${this.spellEng}</p>

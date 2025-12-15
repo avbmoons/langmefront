@@ -503,6 +503,9 @@ body {
                                 }
 
                             }
+                            .item-option:hover {
+                                background-color: $color-blick-light;
+                            }
                             .base {
                                 font-weight: 400;
                                 background-color: $color-blick-light;

@@ -30,6 +30,7 @@
     <script defer src="../scripts/testModes.js"></script>
     <!-- <script defer src="../scripts/_modes.js"></script> -->
     <script defer src="../scripts/_modeMix.js"></script>
+    <script defer src="../scripts/pagination.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -137,12 +138,18 @@
                         </div>
                     </div>
                     <div class="task-navi">
-                        <div class="navi-buttons">
-                            <button class="btn-link">Previous&nbsp;&#9668;</button>
-                            <button class="btn-link">&#9658;&nbsp;Next</button>
+                        <div class="navi-buttons" id="naviButtons">
+                            <button class="btn-link" id="prevBtn">Previous&nbsp;&#9668;</button>
+                            <ul class="pagination-list">
+                                <!-- <li class="pagination-item">1</li>
+                                <li class="pagination-item">2</li>
+                                <li class="pagination-item">3</li>
+                                <li class="pagination-item">4</li> -->
+                            </ul>
+                            <button class="btn-link" id="nextBtn">&#9658;&nbsp;Next</button>
                         </div>
                         <div class="navi-buttons">
-                            <button class="btn-link">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
+                            <button class="btn-link" onclick="window.location.href='home.html'">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
                         </div>
                     </div>
                     <div class="task-results">
@@ -152,19 +159,19 @@
                         <div class="totals">
                             <div class="totals-block">
                                 <div class="total-item title">
-                                    <p>Totals:</p>
+                                    <p class="total-text">Totals:</p>
                                 </div>
                                 <div class="total-item enjoy">
-                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">
-                                    <p>&nbsp;&mdash;&nbsp;64%</p>
+                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">&nbsp;&#8594;&nbsp;
+                                    <p class="total-text" id="enjoy">0</p>
                                 </div>
                                 <div class="total-item neutral">
-                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">
-                                    <p>&nbsp;&mdash;&nbsp;28%</p>
+                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">&nbsp;&mdash;&nbsp;
+                                    <p class="total-text" id="neutral">0</p>
                                 </div>
                                 <div class="total-item worry">
-                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">
-                                    <p>&nbsp;&mdash;&nbsp;8%</p>
+                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">&nbsp;&#8594;&nbsp;
+                                    <p class="total-text" id="worry">0</p>
                                 </div>                                
                             </div>
                         </div>

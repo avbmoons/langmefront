@@ -627,6 +627,9 @@ body {
   line-height: 1.39vw;
   letter-spacing: 0;
 }
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option:hover, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option:hover {
+  background-color: #f7d5a1;
+}
 .wrapper .top main .main-center .task-mode-block .task-mode .item-card .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .base {
   font-weight: 400;
   background-color: #f7d5a1;

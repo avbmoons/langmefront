@@ -346,6 +346,12 @@ body {
                         #modeItemChoice:hover {
                             background-color: $color-right-dark;
                         }
+                        #modeItemPlain {
+                            background-color: $color-right;
+                        }
+                        #modeItemPlain:hover {
+                            background-color: $color-right-dark;
+                        }
                     }
                 }
                 .results {

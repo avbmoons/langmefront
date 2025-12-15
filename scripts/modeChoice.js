@@ -964,11 +964,11 @@ function pageRowsCompChoiceDom(firstIndex, lastIndex) {
     }
 }
 
-console.log("Total enjoy:");
-console.log(totalEnjoy);
+// console.log("Total enjoy:");
+// console.log(totalEnjoy);
 
-console.log("Total worry:");
-console.log(totalWorry);
+// console.log("Total worry:");
+// console.log(totalWorry);
 
 //pageRowsCompChoiceDom(3, 6);
 

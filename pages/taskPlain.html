@@ -9,6 +9,14 @@
     <script defer src="../data/langs.js"></script> 
     <script defer src="../data/themes.js"></script> 
     <script defer src="../data/modes.js"></script>
+    <script defer src="../data/words.js"></script>
+    <script defer src="../data/patterns.js"></script>
+    <script defer src="../data/patternRus.js"></script>
+    <script defer src="../data/patternEng.js"></script>
+    <script defer src="../data/patternArm.js"></script>
+    <script defer src="../data/patternGre.js"></script>
+    <script defer src="../data/patternFin.js"></script>
+    <script defer src="../data/patternLav.js"></script>
     <script defer src="../scripts/homeLoading.js"></script>
     <script defer src="../scripts/pageLoading.js"></script>  
     <script defer src="../scripts/timenow.js"></script>
@@ -17,6 +25,14 @@
     <script defer src="../scripts/listThemes.js"></script>
     <script defer src="../scripts/listModes.js"></script>
     <script defer src="../scripts/counter.js"></script>
+    <!-- <script defer src="../scripts/taskChoice.js"></script> -->
+    <script defer src="../scripts/test.js"></script>
+    <script defer src="../scripts/testModes.js"></script>
+    <!-- <script defer src="../scripts/_modes.js"></script> 
+    <script defer src="../scripts/_testModePlain.js"></script>-->
+    <script defer src="../scripts/modePlain.js"></script>
+    <!-- <script defer src="../scripts/_modePlain.js"></script>--> 
+    <script defer src="../scripts/paginationPlain.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -88,11 +104,11 @@
                         <div class="counter" id="counterWords">
                             <label class="counter-label" for="">Show</label>
                             <button class="counter-btn" id="btnPrevNumWords" onclick="minusFunction(numWordsValue)">&#9668;</button>
-                            <input class="counter-value" id="numWordsValue" type="text" value="5" title="5 words recomended" readonly>
+                            <input class="counter-value" id="numWordsValue" type="text" value="2" title="2 words recomended" readonly>
                             <button class="counter-btn" id="btnNextNumWords" onclick="plusFunction(numWordsValue)">&#9658;</button>
                             <label class="counter-label" for="">words on the list</label>
                         </div>
-                        <div class="counter" id="counterOptions" style="visibility: hidden;">
+                        <div class="counter" id="counterOptions">
                             <label class="counter-label" for="">Show</label>
                             <button class="counter-btn" id="btnPrevNumOpt" onclick="minusFunction(numOptionsValue)">&#9668;</button>
                             <input class="counter-value" id="numOptionsValue" type="text" value="3" title="3 options recomended" readonly>
@@ -109,722 +125,33 @@
                             <label class="counter-label" for="spellNone">None</label>
                         </div>
                     </div>
-                    <div class="task-mode-block" id="taskModePlain" style="justify-content: center;">
-                        <div class="task-mode" name="row1" id="item1" style="height: 30%;">
-                            <div class="item-card base" id="item1Base" style="height: 100%;">
-                                <div class="item-heading" style="height: 50%;">
+                    <div class="task-mode-block" id="taskModePlain">
+                        <div class="task-mode" name="row" id="item">
+                            <div class="item-card base" name="itemCardBase" id="itemBase">
+                                <!-- <div class="item-heading">
                                     <p class="heading-text" id="item1HeadingBase">Russian</p>
                                 </div>
-                                <div class="item-option base" style="height: 50%;">
-                                    <p class="item-word base" id="item1WordBase">Четверг</p>
-                                </div>
+                                <div class="item-option base">
+                                    <p class="item-word base" id="item1WordBase">Пятница</p>
+                                </div> -->
                             </div>
-                            <div class="item-card" id="item1Comp1" style="height: 100%;">
-                                <div class="item-heading" style="height: 50%;">
-                                    <p class="heading-text" id="item1Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item1Comp1Option1" style="height: 50%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option1Word">Հինգշաբթի</p>
-                                        <p class="option-spell" id="item1Comp1Option1Spell">hингшабtи</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option1Radio" checked>
-                                    </div>                                    
-                                </div>
-                                <div class="item-option" id="item1Comp1Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option2Word"></p>
-                                        <p class="option-spell" id="item1Comp1Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp1Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option3Word"></p>
-                                        <p class="option-spell" id="item1Comp1Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp2" style="height: 100%;">
-                                <div class="item-heading" style="height: 50%;">
-                                    <p class="heading-text" id="item1Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item1Comp2Option1" style="height: 50%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option1Word">Πέμπτη</p>
-                                        <p class="option-spell" id="item1Comp2Option1Spell">пе́мпти</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option1Radio">
-                                    </div>                                    
-                                </div>
-                                <div class="item-option" id="item1Comp2Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option2Word"></p>
-                                        <p class="option-spell" id="item1Comp2Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp2Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option3Word"></p>
-                                        <p class="option-spell" id="item1Comp2Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option3Radio" checked>
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp3" style="height: 100%;">
-                                <div class="item-heading" style="height: 50%;">
-                                    <p class="heading-text" id="item1Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item1Comp3Option1" style="height: 50%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option1Word">Torstai</p>
-                                        <p class="option-spell" id="item1Comp3Option1Spell">торстай</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option1Radio">
-                                    </div>                                    
-                                </div>
-                                <div class="item-option" id="item1Comp3Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option2Word"></p>
-                                        <p class="option-spell" id="item1Comp3Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp3Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option3Word"></p>
-                                        <p class="option-spell" id="item1Comp3Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option3Radio" checked>
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp4" style="height: 100%;">
-                                <div class="item-heading" style="height: 50%;">
-                                    <p class="heading-text" id="item1Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item1Comp4Option1" style="height: 50%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option1Word">Ceturtdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option1Spell">цетурдиена</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item1Comp4Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option2Word">Piektdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option2Spell">пиектдиена</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp4Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option3Word">Otrdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option3Spell">отрдиена</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="task-mode" name="row2" id="item2" style="height: 15%;">
-                            <div class="item-card base" id="item2Base" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item2HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base" style="height: 100%;">
-                                    <p class="item-word base" id="item2WordBase">Июль</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp1" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item2Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item2Comp1Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option1Word">Հուլիս</p>
-                                        <p class="option-spell" id="item2Comp1Option1Spell">hулис</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp1Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option2Word"></p>
-                                        <p class="option-spell" id="item2Comp1Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp1Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option3Word"></p>
-                                        <p class="option-spell" id="item2Comp1Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp2" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item2Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item2Comp2Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option1Word">Ιουλίου</p>
-                                        <p class="option-spell" id="item2Comp2Option1Spell">иулио</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp2Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option2Word"></p>
-                                        <p class="option-spell" id="item2Comp2Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp2Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option3Word"></p>
-                                        <p class="option-spell" id="item2Comp2Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp3" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item2Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item2Comp3Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option1Word">Heinäkuu</p>
-                                        <p class="option-spell" id="item2Comp3Option1Spell">эйнакуу</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp3Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option2Word"></p>
-                                        <p class="option-spell" id="item2Comp3Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp3Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option3Word"></p>
-                                        <p class="option-spell" id="item2Comp3Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp4" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item2Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item2Comp4Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option1Word">Jūlijs</p>
-                                        <p class="option-spell" id="item2Comp4Option1Spell">Йуулийс</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp4Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option2Word"></p>
-                                        <p class="option-spell" id="item2Comp4Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp4Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option3Word"></p>
-                                        <p class="option-spell" id="item2Comp4Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="task-mode" name="row3" id="item3" style="height: 15%;">
-                            <div class="item-card base" id="item3Base" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item3HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base" style="height: 100%;">
-                                    <p class="item-word base" id="item3WordBase">Понедельник</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item3Comp1" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item3Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item3Comp1Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp1Option1Word">Երկուշաբթի</p>
-                                        <p class="option-spell" id="item3Comp1Option1Spell">еркушабtи</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item3Comp1" type="radio" id="item3Comp1Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item3Comp1Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp1Option2Word"></p>
-                                        <p class="option-spell" id="item3Comp1Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp1" type="radio" id="item3Comp1Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item3Comp1Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp1Option3Word"></p>
-                                        <p class="option-spell" id="item3Comp1Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp1" type="radio" id="item3Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item3Comp2" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item3Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item3Comp2Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp2Option1Word">Δευτέρα</p>
-                                        <p class="option-spell" id="item3Comp2Option1Spell">дефте́ра</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item3Comp2" type="radio" id="item3Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item3Comp2Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp2Option2Word"></p>
-                                        <p class="option-spell" id="item3Comp2Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp2" type="radio" id="item3Comp2Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item3Comp2Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp2Option3Word"></p>
-                                        <p class="option-spell" id="item3Comp2Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp2" type="radio" id="item3Comp2Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item3Comp3" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item3Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item3Comp3Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp3Option1Word">Maanantai</p>
-                                        <p class="option-spell" id="item3Comp3Option1Spell">маанантай</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item3Comp3" type="radio" id="item3Comp3Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item3Comp3Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp3Option2Word"></p>
-                                        <p class="option-spell" id="item3Comp3Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp3" type="radio" id="item3Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item3Comp3Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp3Option3Word"></p>
-                                        <p class="option-spell" id="item3Comp3Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp3" type="radio" id="item3Comp3Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item3Comp4" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item3Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item3Comp4Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp4Option1Word">Pirmdiena</p>
-                                        <p class="option-spell" id="item3Comp4Option1Spell">пирмдиена</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item3Comp4" type="radio" id="item3Comp4Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item3Comp4Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp4Option2Word"></p>
-                                        <p class="option-spell" id="item3Comp4Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp4" type="radio" id="item3Comp4Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item3Comp4Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item3Comp4Option3Word"></p>
-                                        <p class="option-spell" id="item3Comp4Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item3Comp4" type="radio" id="item3Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="task-mode" name="row4" id="item4" style="height: 15%;">
-                            <div class="item-card base" id="item1Base" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item4HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base" style="height: 100%;">
-                                    <p class="item-word base" id="item4WordBase">Фамилия</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item4Comp1" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item4Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item4Comp1Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp1Option1Word">հայրանուն</p>
-                                        <p class="option-spell" id="item4Comp1Option1Spell">hайранун</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item4Comp1" type="radio" id="item4Comp1Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item4Comp1Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp1Option2Word"></p>
-                                        <p class="option-spell" id="item4Comp1Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp1" type="radio" id="item4Comp1Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item4Comp1Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp1Option3Word"></p>
-                                        <p class="option-spell" id="item4Comp1Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp1" type="radio" id="item4Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item4Comp2" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item4Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item4Comp2Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp2Option1Word">επώνυμο</p>
-                                        <p class="option-spell" id="item4Comp2Option1Spell">эпо́нимо</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item4Comp2" type="radio" id="item4Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item4Comp2Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp2Option2Word"></p>
-                                        <p class="option-spell" id="item4Comp2Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp2" type="radio" id="item4Comp2Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item4Comp2Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp2Option3Word"></p>
-                                        <p class="option-spell" id="item4Comp2Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp2" type="radio" id="item4Comp2Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item4Comp3" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item4Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item4Comp3Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp3Option1Word">sukunimi</p>
-                                        <p class="option-spell" id="item4Comp3Option1Spell">сукуними</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item4Comp3" type="radio" id="item4Comp3Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item4Comp3Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp3Option2Word"></p>
-                                        <p class="option-spell" id="item4Comp3Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp3" type="radio" id="item4Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item4Comp3Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp3Option3Word"></p>
-                                        <p class="option-spell" id="item4Comp3Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp3" type="radio" id="item4Comp3Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item4Comp4" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item4Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item4Comp4Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp4Option1Word">uzvārds</p>
-                                        <p class="option-spell" id="item4Comp4Option1Spell">узваардс</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item4Comp4" type="radio" id="item4Comp4Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item4Comp4Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp4Option2Word"></p>
-                                        <p class="option-spell" id="item4Comp4Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp4" type="radio" id="item4Comp4Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item4Comp4Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item4Comp4Option3Word"></p>
-                                        <p class="option-spell" id="item4Comp4Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item4Comp4" type="radio" id="item4Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="task-mode" name="row5" id="item5" style="height: 15%;">
-                            <div class="item-card base" id="item1Base" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item5HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base" style="height: 100%;">
-                                    <p class="item-word base" id="item5WordBase">Зима</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item5Comp1" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item5Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item5Comp1Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp1Option1Word">ձմեռ</p>
-                                        <p class="option-spell" id="item5Comp1Option1Spell">дзмэр</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item5Comp1" type="radio" id="item5Comp1Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item5Comp1Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp1Option2Word"></p>
-                                        <p class="option-spell" id="item5Comp1Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp1" type="radio" id="item5Comp1Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item5Comp1Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp1Option3Word"></p>
-                                        <p class="option-spell" id="item5Comp1Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp1" type="radio" id="item5Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item5Comp2" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item5Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item5Comp2Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp2Option1Word">χειμώνας</p>
-                                        <p class="option-spell" id="item5Comp2Option1Spell">химонас</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item5Comp2" type="radio" id="item5Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item5Comp2Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp2Option2Word"></p>
-                                        <p class="option-spell" id="item5Comp2Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp2" type="radio" id="item5Comp2Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item5Comp2Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp2Option3Word"></p>
-                                        <p class="option-spell" id="item5Comp2Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp2" type="radio" id="item5Comp2Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item5Comp3" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item5Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item5Comp3Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp3Option1Word">Talvi</p>
-                                        <p class="option-spell" id="item5Comp3Option1Spell">талви</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item5Comp3" type="radio" id="item5Comp3Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item5Comp3Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp3Option2Word"></p>
-                                        <p class="option-spell" id="item5Comp3Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp3" type="radio" id="item5Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item5Comp3Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp3Option3Word"></p>
-                                        <p class="option-spell" id="item5Comp3Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp3" type="radio" id="item5Comp3Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item5Comp4" style="height: 100%;">
-                                <div class="item-heading" style="display: none;">
-                                    <p class="heading-text" id="item5Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item5Comp4Option1" style="height: 100%;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp4Option1Word">ziema</p>
-                                        <p class="option-spell" id="item5Comp4Option1Spell">зиема</p>
-                                    </div>
-                                    <div class="option-radio-block" style="display: none;">
-                                        <input class="option-radio" name="item5Comp4" type="radio" id="item5Comp4Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item5Comp4Option2" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp4Option2Word"></p>
-                                        <p class="option-spell" id="item5Comp4Option2Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp4" type="radio" id="item5Comp4Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item5Comp4Option3" style="display: none;">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item5Comp4Option3Word"></p>
-                                        <p class="option-spell" id="item5Comp4Option3Spell"></p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item5Comp4" type="radio" id="item5Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
+                            <!-- <div class="item-card" name="itemCardComp1Plain" id="item1Comp1">
+                            </div> -->
                         </div>
                     </div>
                     <div class="task-navi">
-                        <div class="navi-buttons">
-                            <button class="btn-link">Previous&nbsp;&#9668;</button>
-                            <button class="btn-link">&#9658;&nbsp;Next</button>
+                        <div class="navi-buttons" id="naviButtons">
+                            <button class="btn-link" id="prevBtn">Previous&nbsp;&#9668;</button>
+                            <ul class="pagination-list">
+                                <!-- <li class="pagination-item">1</li>
+                                <li class="pagination-item">2</li>
+                                <li class="pagination-item">3</li>
+                                <li class="pagination-item">4</li> -->
+                            </ul>
+                            <button class="btn-link" id="nextBtn">&#9658;&nbsp;Next</button>
                         </div>
                         <div class="navi-buttons">
-                            <button class="btn-link">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
+                            <button class="btn-link" onclick="window.location.href='home.html'">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
                         </div>
                     </div>
                     <div class="task-results">
@@ -832,21 +159,21 @@
                             <button class="set-get"><img src="../assets/icons/png/icon-finish-flag.png" alt="results">Results</button>                            
                         </div>
                         <div class="totals">
-                            <div class="totals-block">
+                            <div class="totals-block" style="display: none;">
                                 <div class="total-item title">
-                                    <p>Totals:</p>
+                                    <p class="total-text">Totals:</p>
                                 </div>
                                 <div class="total-item enjoy">
-                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">
-                                    <p>&nbsp;&mdash;&nbsp;64%</p>
+                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">&nbsp;&#8594;&nbsp;
+                                    <p class="total-text" id="enjoy">0</p>
                                 </div>
                                 <div class="total-item neutral">
-                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">
-                                    <p>&nbsp;&mdash;&nbsp;28%</p>
+                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">&nbsp;&mdash;&nbsp;
+                                    <p class="total-text" id="neutral">0</p>
                                 </div>
                                 <div class="total-item worry">
-                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">
-                                    <p>&nbsp;&mdash;&nbsp;8%</p>
+                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">&nbsp;&#8594;&nbsp;
+                                    <p class="total-text" id="worry">0</p>
                                 </div>                                
                             </div>
                         </div>

@@ -435,6 +435,12 @@ body {
 .wrapper .top main .main-center .modes .mode-item #modeItemChoice:hover {
   background-color: #ade0d1;
 }
+.wrapper .top main .main-center .modes .mode-item #modeItemPlain {
+  background-color: #c2fceb;
+}
+.wrapper .top main .main-center .modes .mode-item #modeItemPlain:hover {
+  background-color: #ade0d1;
+}
 .wrapper .top main .main-center .results {
   margin: 0 auto;
   margin-bottom: 4%;
