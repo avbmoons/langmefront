@@ -352,6 +352,12 @@ body {
                         #modeItemPlain:hover {
                             background-color: $color-right-dark;
                         }
+                        #modeItemMix {
+                            background-color: $color-right;
+                        }
+                        #modeItemMix:hover {
+                            background-color: $color-right-dark;
+                        }
                     }
                 }
                 .results {
