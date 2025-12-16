@@ -2,6 +2,8 @@ let optionsLang = [];///////////////////
 let taskRowsOptions = [];////////////////////////
 let compWordsTheme = [];//////////////////////
 let compOptionsLang = [];//////////////////
+let totalEnjoy = [];
+let totalWorry = [];
 
 //Classes for Prim words for modes: Plain, Choice and Mix
 
@@ -395,11 +397,17 @@ let resultWorry = document.getElementById("worry");
 
 let valueEnjoy = resultEnjoy.textContent;
 let valueWorry = resultWorry.textContent;
-console.log("Enjoy: " + valueEnjoy);
-console.log("Worry: " + valueWorry);
+// console.log("Enjoy: " + valueEnjoy);
+// console.log("Worry: " + valueWorry);
 
-let totalEnjoy = [];
-let totalWorry = [];
+function totalsEnjoy() {
+    totalEnjoy.push(valueEnjoy);
+    return totalEnjoy;
+}
+function totalsWorry() {
+    totalWorry.push(valueWorry);
+    return totalWorry;
+}
 
 // const cardCompMixHtml = new CardCompLang();
 // cardCompLangHtml.fetchCardCompLang(0,1);
@@ -632,11 +640,21 @@ function pageRowsCompLangDom(firstIndex, lastIndex) {
     }
 }
 
-// console.log("Total enjoy:");
-// console.log(totalEnjoy);
+/// Save totals by Exit button
 
-// console.log("Total worry:");
-// console.log(totalWorry);
+let exitLang = document.getElementById("exitLang");
+let totalsLang = [];
+
+setResultsLang();
+
+function setResultsLang() {    
+    exitLang.addEventListener('click', () => {
+        totalsEnjoy();
+        totalsWorry();
+        totalsLang.push(totalEnjoy, totalWorry);
+        localStorage.setItem('totalsLang', totalsLang);
+    });
+}
 
 //pageRowsCompChoiceDom(3, 6);
 

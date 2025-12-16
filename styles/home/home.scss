@@ -418,7 +418,10 @@ body {
                                     @include text-font(16px,400,16px,0);
                                     margin-left: 2.3%;
                                 }
-                            }                            
+                            } 
+                            .neutral {
+                                display: none;
+                            }                           
                         }
 
                     }

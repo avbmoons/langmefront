@@ -27,24 +27,6 @@ function getTask() {
     }
 }
 
-// function getTaskPage() {
-//     let modeChoice = resultMode.value.trim();
-//     console.log(modeChoice);
-    
-//     if (modeChoice == "Plain") {
-//         window.location.href = "../pages/taskPlain.html";
-//     } else if (modeChoice == "Choice") {
-//         window.location.href = "../pages/taskChoice.html";
-//     }  else if (modeChoice == "Lang")      {
-//         window.location.href = "../pages/taskLang.html";
-//     } else if (modeChoice == "Mix") {
-//         window.location.href = "../pages/taskMix.html";
-//     } else {
-//         window.location.href = "../pages/home.html";
-//     }          
-        
-// }
-
 function getTaskPage() {
     let modeChoice = resultMode.value.trim();
     console.log(modeChoice);
@@ -61,3 +43,4 @@ function getTaskPage() {
         window.location.href = "../pages/taskMix.html";
     }
 }
+

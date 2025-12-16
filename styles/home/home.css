@@ -515,6 +515,9 @@ body {
   letter-spacing: 0;
   margin-left: 2.3%;
 }
+.wrapper .top main .main-center .results .totals .totals-block .neutral {
+  display: none;
+}
 .wrapper .top main .main-right {
   margin: auto;
   width: 15%;
