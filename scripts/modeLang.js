@@ -461,7 +461,7 @@ function randArr(array) {
 // console.log(randArr(arr));
 
 ///////////////////////
-//Define task rows with options array for mode Mix
+//Define task rows with options array for mode Lang
 ///////let taskRowsOptions = [];////////////////////////
 
 for (let i=0; i < taskRows.length; i++) {
@@ -585,30 +585,34 @@ function pageRowsCompLangDom(firstIndex, lastIndex) {
                 let item = document.createElement("div");   // create lang's card i,j
                 item.classList.add("item-card");
 
-                item.setAttribute('name', 'item'+`${i}`+'CardComp'+`${j}`+'Mix');
+                item.setAttribute('name', 'item'+`${i}`+'CardComp'+`${j}`+'Lang');
                 item.setAttribute('id', 'item'+`${i}`+'Comp'+`${j}`);
                 parentItem.appendChild(item);
 
-                const cardCompMixHtml = new CardCompLang();    // render lang's card i,j
-                item = cardCompMixHtml;
+                const cardCompLangHtml = new CardCompLang();    // render lang's card i,j
+                item = cardCompLangHtml;
                 item.fetchCardCompLang(i,j);
                 item.fetchCompOptionsLang(i,j);//
                 item.render(i,j);
                 
-                let cardLang = document.getElementsByName("item"+`${i}`+"CardComp"+`${j}`+"Mix");
+                let cardLang = document.getElementsByName("item"+`${i}`+"CardComp"+`${j}`+"Lang");
 
-                let cardItemOptions = cardLang[0].getElementsByClassName("item-option");
+                let cardItemOptions = cardLang[0].getElementsByClassName("item-option-lang");
                 let cardLangRadios = cardLang[0].getElementsByClassName("option-radio");
 
                 for (let m=0; m < cardLangRadios.length; m++) {
                     cardLangRadios[m].name = 'item' + `${i}` + wordNum + 'Comp' + `${j}`;//
                 }
+
+                //console.log(cardLangRadios);
            
                 let radioChecked = randEl(cardLangRadios);
                 radioChecked.checked = true;
 
                 for (let n=0; n < cardLangRadios.length; n++) {
                     cardLangRadios[n].addEventListener('click', function() {
+                        //console.log(cardLangRadios[n].getAttribute('data-isright'));
+                        //console.log(cardLangRadios[n]);
 
                         if (cardLangRadios[n].getAttribute('data-isright') == "false") {
                             cardItemOptions[n].style.backgroundColor = "#fccfe0";
