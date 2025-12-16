@@ -138,7 +138,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid black;
 }
 .wrapper .top header .header-left {
   margin: 0 auto;
@@ -149,7 +148,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid blue;
 }
 .wrapper .top header .header-left .header-left-block {
   margin: 0 auto;
@@ -176,7 +174,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid red;
 }
 .wrapper .top header .header-center .header-center-block {
   margin: 0 auto;
@@ -219,11 +216,17 @@ body {
 }
 .wrapper .top header .header-center .header-center-block .service-time {
   margin: 0 auto;
+  margin-right: 1.39vw;
   width: 30%;
   height: 100%;
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  font-size: 0.97vw;
   font-weight: 300;
-  line-height: 14px;
+  line-height: 0.97vw;
   letter-spacing: 0;
   align-items: end;
   text-align: right;
@@ -237,7 +240,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid blue;
 }
 .wrapper .top header .header-right .header-right-block {
   margin: 0 auto;
@@ -267,13 +269,17 @@ body {
   height: fit-content;
   border: none;
   background: none;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  font-size: 1.11vw;
   font-weight: 300;
-  line-height: 16px;
+  line-height: 1.11vw;
   letter-spacing: 0;
   cursor: pointer;
   align-items: end;
-  border: 1px solid grey;
 }
 .wrapper .top header .header-right .header-right-block menu .menu-item img {
   margin: 0 auto;
@@ -332,13 +338,11 @@ body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 .wrapper .top main .main-left {
   margin: auto;
   width: 15%;
   height: 80vh;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center {
   margin: auto;
@@ -348,7 +352,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .settings {
   margin: 0 auto;
@@ -359,7 +362,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .settings .set-get {
   margin: 0;
@@ -375,7 +377,7 @@ body {
   line-height: 16px;
   letter-spacing: 0;
   cursor: pointer;
-  border: 1px solid grey;
+  border: none;
 }
 .wrapper .top main .main-center .settings .set-get .mode-check {
   visibility: hidden;
@@ -391,7 +393,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   flex-wrap: wrap;
-  border: 1px solid violet;
 }
 .wrapper .top main .main-center .modes .mode-item {
   margin: auto;
@@ -402,7 +403,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid blue;
 }
 .wrapper .top main .main-center .modes .mode-item .mode-item-btn {
   margin: auto;
@@ -411,6 +411,7 @@ body {
   align-items: center;
   background-color: #dae6e8;
   cursor: pointer;
+  border: 1px solid grey;
 }
 .wrapper .top main .main-center .modes .mode-item .mode-item-btn .title {
   margin-bottom: 2.2%;
@@ -447,6 +448,12 @@ body {
 .wrapper .top main .main-center .modes .mode-item #modeItemMix:hover {
   background-color: #ade0d1;
 }
+.wrapper .top main .main-center .modes .mode-item #modeItemLang {
+  background-color: #c2fceb;
+}
+.wrapper .top main .main-center .modes .mode-item #modeItemLang:hover {
+  background-color: #ade0d1;
+}
 .wrapper .top main .main-center .results {
   margin: 0 auto;
   margin-bottom: 4%;
@@ -456,7 +463,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .results .set-get {
   margin: 0;
@@ -472,7 +478,7 @@ body {
   line-height: 16px;
   letter-spacing: 0;
   cursor: pointer;
-  border: 1px solid grey;
+  border: none;
 }
 .wrapper .top main .main-center .results .set-get:hover {
   background-color: #c2cacc;
@@ -486,7 +492,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid grey;
 }
 .wrapper .top main .main-center .results .totals .totals-block {
   margin: 0;
@@ -514,7 +519,6 @@ body {
   margin: auto;
   width: 15%;
   height: 80vh;
-  border: 1px solid green;
 }
 .wrapper .modal-settings {
   margin: 0;
@@ -877,7 +881,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid black;
 }
 .wrapper footer .footer-left {
   margin: 0 auto;
@@ -887,7 +890,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid blue;
 }
 .wrapper footer .footer-left .footer-left-block {
   margin: 0 auto;
@@ -913,7 +915,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 .wrapper footer .footer-center .footer-center-block {
   margin: 0 auto;
@@ -973,7 +974,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid blue;
 }
 .wrapper footer .footer-right .footer-right-block {
   margin: 0 auto;
@@ -1009,7 +1009,6 @@ body {
   letter-spacing: 0;
   cursor: pointer;
   align-items: center;
-  border: 1px solid grey;
 }
 .wrapper footer .footer-right .footer-right-block menu .menu-item img {
   margin: 0 auto;

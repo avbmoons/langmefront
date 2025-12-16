@@ -102,14 +102,14 @@ body {
             // top: 0;
             @include flex-horizontal();
             background-color: $color-grey;
-            border: 1px solid black;
+            //border: 1px solid black;
             .header-left {
                 margin: 0 auto;
                 width: 0.5*($site-width - $block-width);
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid blue;
+                //border: 1px solid blue;
                 .header-left-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -132,7 +132,7 @@ body {
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid red;
+                //border: 1px solid red;
                 .header-center-block {
                     margin: 0 auto;
                     width: 100%;
@@ -167,9 +167,12 @@ body {
                     }
                     .service-time {
                         margin: 0 auto;
+                        margin-right: 1.39vw;
                         width: 30%; // fit-content;
                         height:100%;    // fit-content;
-                        @include text-font(14px,300,14px,0);
+                        @include flex-vertical();
+                        justify-content: flex-end;
+                        @include text-font(0.97vw,300,0.97vw,0);    //14px
                         align-items: end;
                         text-align: right;
                         //border: 1px solid grey;
@@ -182,7 +185,7 @@ body {
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid blue;
+                //border: 1px solid blue;
                 .header-right-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -206,10 +209,12 @@ body {
                             //align-items: center;
                             border: none;
                             background: none;
-                            @include text-font(16px,300,16px,0);
+                            @include flex-vertical();
+                            justify-content: flex-end;
+                            @include text-font(1.11vw,300,1.11vw,0);    //16px
                             cursor: pointer;
                             align-items: end;
-                            border: 1px solid grey;
+                            //border: 1px solid grey;
                             img {
                                 margin: 0 auto;
                                 height: 16px;
@@ -267,19 +272,19 @@ body {
             width: $site-width;
             min-height: $min-main-height;
             @include flex-horizontal();
-            border: 1px solid black;
+            //border: 1px solid black;
             .main-left {
                 margin: auto;
                 width: 0.5*($site-width - $block-width);
                 height: $min-main-height;
-                border: 1px solid green;
+                //border: 1px solid green;
             }
             .main-center {
                 margin: auto;
                 width: $block-width;
                 height: $min-main-height;
                 @include flex-vertical();
-                border: 1px solid green;
+                //border: 1px solid green;
                 .settings {
                     margin: 0 auto;
                     margin-top: 4%; //40px;
@@ -287,7 +292,7 @@ body {
                     height: 10%;
                     @include flex-horizontal();
                     justify-content: space-between;
-                    border: 1px solid green;
+                    //border: 1px solid green;
                     .set-get {
                         margin: 0;  // auto;
                         //margin-left: 40px;
@@ -298,7 +303,8 @@ body {
                         background-color: $color-grey;
                         @include text-font(16px,400,16px,0);
                         cursor: pointer;
-                        border: 1px solid grey;
+                        border: none;
+                        //border: 1px solid grey;
                         .mode-check {
                             visibility: hidden;
                         }
@@ -313,14 +319,14 @@ body {
                     height: 55%;
                     @include flex-horizontal();
                     flex-wrap: wrap;
-                    border: 1px solid violet;
+                    //border: 1px solid violet;
                     .mode-item {
                         margin: auto;
                         width: 48%;
                         height: 48%;
                         @include flex-vertical();
                         justify-content: space-between;
-                        border: 1px solid blue;
+                        //border: 1px solid blue;
                         .mode-item-btn {
                             margin: auto;
                             width: 100%;
@@ -328,6 +334,7 @@ body {
                             align-items: center;
                             background-color: $color-grey;
                             cursor: pointer;
+                            border: 1px solid grey;
                             .title {
                                 margin-bottom: 2.2%;    // 10px;
                                 @include text-font(16px,400,16px,0);
@@ -358,6 +365,12 @@ body {
                         #modeItemMix:hover {
                             background-color: $color-right-dark;
                         }
+                        #modeItemLang {
+                            background-color: $color-right;
+                        }
+                        #modeItemLang:hover {
+                            background-color: $color-right-dark;
+                        }
                     }
                 }
                 .results {
@@ -367,7 +380,7 @@ body {
                     height: 10%;
                     @include flex-horizontal();
                     justify-content: space-between;
-                    border: 1px solid green;
+                    //border: 1px solid green;
                     .set-get {
                         margin: 0;  // auto;
                         //margin-left: 40px;
@@ -378,7 +391,8 @@ body {
                         background-color: $color-grey;
                         @include text-font(16px,400,16px,0);
                         cursor: pointer;
-                        border: 1px solid grey;
+                        border: none;
+                        //border: 1px solid grey;
                     }
                     .set-get:hover {
                         background-color: $color-grey-dark;
@@ -390,7 +404,7 @@ body {
                         height: 100%;
                         @include flex-vertical();
                         background-color: $color-grey;
-                        border: 1px solid grey;
+                        //border: 1px solid grey;
                         .totals-block {
                             margin: 0;  // auto;
                             @include flex-horizontal();
@@ -414,7 +428,7 @@ body {
                 margin: auto;
                 width: 0.5*($site-width - $block-width);
                 height: $min-main-height;
-                border: 1px solid green;
+                //border: 1px solid green;
             }
         }
     }
@@ -696,14 +710,14 @@ body {
         height: $footer-height;
         @include flex-horizontal();
         background-color: $color-grey;
-        border: 1px solid black;
+        //border: 1px solid black;
         .footer-left {
             margin: 0 auto;
             width: 0.5*($site-width - $block-width);
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-start;
-            border: 1px solid blue;
+            //border: 1px solid blue;
             .footer-left-block {
                 margin: 0 auto;    // 0 auto;
                 width: 100%;
@@ -726,7 +740,7 @@ body {
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-end;
-            border: 1px solid red;
+            //border: 1px solid red;
             .footer-center-block {
                 margin: 0 auto;
                 width: 100%;
@@ -776,7 +790,7 @@ body {
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-end;
-            border: 1px solid blue;
+            //border: 1px solid blue;
                 .footer-right-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -803,7 +817,7 @@ body {
                             @include text-font(16px,300,16px,0);
                             cursor: pointer;
                             align-items: center;
-                            border: 1px solid grey;
+                            //border: 1px solid grey;
                             img {
                                 margin: 0 auto;
                                 height: 16px;

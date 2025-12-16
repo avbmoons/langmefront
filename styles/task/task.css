@@ -138,7 +138,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid black;
 }
 .wrapper .top header .header-left {
   margin: 0 auto;
@@ -149,7 +148,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid blue;
 }
 .wrapper .top header .header-left .header-left-block {
   margin: 0 auto;
@@ -176,7 +174,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid red;
 }
 .wrapper .top header .header-center .header-center-block {
   margin: 0 auto;
@@ -219,11 +216,17 @@ body {
 }
 .wrapper .top header .header-center .header-center-block .service-time {
   margin: 0 auto;
+  margin-right: 1.39vw;
   width: 30%;
   height: 100%;
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  font-size: 0.97vw;
   font-weight: 300;
-  line-height: 14px;
+  line-height: 0.97vw;
   letter-spacing: 0;
   align-items: end;
   text-align: right;
@@ -237,7 +240,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-end;
-  border: 1px solid blue;
 }
 .wrapper .top header .header-right .header-right-block {
   margin: 0 auto;
@@ -267,13 +269,17 @@ body {
   height: fit-content;
   border: none;
   background: none;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  font-size: 1.11vw;
   font-weight: 300;
-  line-height: 16px;
+  line-height: 1.11vw;
   letter-spacing: 0;
   cursor: pointer;
   align-items: end;
-  border: 1px solid grey;
 }
 .wrapper .top header .header-right .header-right-block menu .menu-item img {
   margin: 0 auto;
@@ -332,13 +338,11 @@ body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 .wrapper .top main .main-left {
   margin: auto;
   width: 15%;
   height: 80vh;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center {
   margin: 0 auto;
@@ -348,7 +352,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .task-info {
   margin: 0 auto;
@@ -359,7 +362,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid blue;
 }
 .wrapper .top main .main-center .task-info .info-title-block {
   margin: 0;
@@ -370,7 +372,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
-  border: 1px solid orangered;
 }
 .wrapper .top main .main-center .task-info .info-title-block .info-title {
   font-size: 1.67vw;
@@ -388,7 +389,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
-  border: 1px solid orangered;
 }
 .wrapper .top main .main-center .task-info .info-content-block .task-description {
   margin: 0 auto;
@@ -451,7 +451,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
-  border: 1px solid orangered;
 }
 .wrapper .top main .main-center .task-info .info-service-block .btn-link {
   margin-bottom: 2%;
@@ -470,6 +469,9 @@ body {
 }
 .wrapper .top main .main-center .task-info .info-service-block .btn-link:hover {
   color: #d91a60;
+}
+.wrapper .top main .main-center .task-info .info-service-block #changeModeBtn {
+  display: none;
 }
 .wrapper .top main .main-center .task-settings {
   margin: 0 auto;
@@ -538,7 +540,6 @@ body {
   box-sizing: border-box;
   justify-content: space-around;
   overflow-y: auto;
-  border: 2px solid red;
 }
 .wrapper .top main .main-center .task-mode-block .task-mode {
   margin: 0 auto;
@@ -548,7 +549,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-around;
-  border: 1px solid violet;
 }
 .wrapper .top main .main-center .task-mode-block .task-mode .item-card, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base {
   margin: auto 0;
@@ -561,7 +561,7 @@ body {
   justify-content: flex-start;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading-lang, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading-lang {
   width: 100%;
   height: 25%;
   display: flex;
@@ -571,7 +571,7 @@ body {
   background-color: #dae6e8;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading .heading-text, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading .heading-text {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading .heading-text, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading-lang .heading-text, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading .heading-text, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading-lang .heading-text {
   font-size: 1.11vw;
   font-weight: 300;
   line-height: 1.11vw;
@@ -579,7 +579,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang {
   width: 100%;
   height: 25%;
   display: flex;
@@ -589,7 +589,7 @@ body {
   background-color: #f2f7f7;
   border: 1px solid #c2cacc;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang .option-word-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang .option-word-block {
   width: 80%;
   height: 100%;
   display: flex;
@@ -597,7 +597,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-word, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-word {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-word, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang .option-word-block .option-word, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-word, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang .option-word-block .option-word {
   font-size: 1.11vw;
   font-weight: 300;
   line-height: 1.11vw;
@@ -605,7 +605,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-spell, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-spell {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-word-block .option-spell, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang .option-word-block .option-spell, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-word-block .option-spell, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang .option-word-block .option-spell {
   font-size: 0.97vw;
   font-weight: 300;
   line-height: 0.97vw;
@@ -613,7 +613,7 @@ body {
   color: #0f1a1c;
   text-align: center;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-radio-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-radio-block {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .option-radio-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang .option-radio-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .option-radio-block, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang .option-radio-block {
   width: 20%;
   height: 100%;
   display: flex;
@@ -621,7 +621,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .base {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option .base, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang .base {
   font-size: 1.39vw;
   font-weight: 400;
   line-height: 1.39vw;
@@ -634,6 +634,12 @@ body {
   font-weight: 400;
   background-color: #f7d5a1;
 }
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading-lang:hover, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-heading-lang:hover {
+  background-color: #f7d5a1;
+}
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-option-lang:hover, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang:hover {
+  background-color: #fff2de;
+}
 .wrapper .top main .main-center .task-navi {
   margin: 0 auto;
   width: 100%;
@@ -643,7 +649,6 @@ body {
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .task-navi .navi-buttons, .wrapper .top main .main-center .task-navi .navi-buttons-exit {
   height: 70%;
@@ -668,7 +673,6 @@ body {
   text-decoration: underline;
   background-color: #fcfcfc;
   border: none;
-  border: 1px solid red;
   outline: none;
   cursor: pointer;
   display: flex;
@@ -714,7 +718,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid green;
 }
 .wrapper .top main .main-center .task-results .results-buttons {
   height: 100%;
@@ -740,7 +743,7 @@ body {
   line-height: 1.11vw;
   letter-spacing: 0;
   cursor: pointer;
-  border: 1px solid grey;
+  border: none;
 }
 .wrapper .top main .main-center .task-results .results-buttons .set-get img {
   height: 100%;
@@ -759,7 +762,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid grey;
 }
 .wrapper .top main .main-center .task-results .totals .totals-block {
   margin: 0;
@@ -802,7 +804,6 @@ body {
   margin: auto;
   width: 15%;
   height: 80vh;
-  border: 1px solid green;
 }
 .wrapper .modal-settings {
   margin: 0;
@@ -1165,7 +1166,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #dae6e8;
-  border: 1px solid black;
 }
 .wrapper footer .footer-left {
   margin: 0 auto;
@@ -1175,7 +1175,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid blue;
 }
 .wrapper footer .footer-left .footer-left-block {
   margin: 0 auto;
@@ -1201,7 +1200,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 .wrapper footer .footer-center .footer-center-block {
   margin: 0 auto;
@@ -1261,7 +1259,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid blue;
 }
 .wrapper footer .footer-right .footer-right-block {
   margin: 0 auto;
@@ -1297,7 +1294,6 @@ body {
   letter-spacing: 0;
   cursor: pointer;
   align-items: center;
-  border: 1px solid grey;
 }
 .wrapper footer .footer-right .footer-right-block menu .menu-item img {
   margin: 0 auto;

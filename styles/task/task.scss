@@ -105,14 +105,14 @@ body {
             // top: 0;
             @include flex-horizontal();
             background-color: $color-grey;
-            border: 1px solid black;
+            //border: 1px solid black;
             .header-left {
                 margin: 0 auto;
                 width: 0.5*($site-width - $block-width);
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid blue;
+                //border: 1px solid blue;
                 .header-left-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -135,7 +135,7 @@ body {
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid red;
+                //border: 1px solid red;
                 .header-center-block {
                     margin: 0 auto;
                     width: 100%;
@@ -170,9 +170,12 @@ body {
                     }
                     .service-time {
                         margin: 0 auto;
+                        margin-right: 1.39vw;
                         width: 30%; // fit-content;
                         height:100%;    // fit-content;
-                        @include text-font(14px,300,14px,0);
+                        @include flex-vertical();
+                        justify-content: flex-end;
+                        @include text-font(0.97vw,300,0.97vw,0);  // 14px
                         align-items: end;
                         text-align: right;
                         //border: 1px solid grey;
@@ -185,7 +188,7 @@ body {
                 height: 100%;
                 @include flex-vertical();
                 justify-content: flex-end;
-                border: 1px solid blue;
+                //border: 1px solid blue;
                 .header-right-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -209,10 +212,12 @@ body {
                             //align-items: center;
                             border: none;
                             background: none;
-                            @include text-font(16px,300,16px,0);
+                            @include flex-vertical();
+                            justify-content: flex-end;
+                            @include text-font(1.11vw,300,1.11vw,0);  //16px;
                             cursor: pointer;
                             align-items: end;
-                            border: 1px solid grey;
+                            //border: 1px solid grey;
                             img {
                                 margin: 0 auto;
                                 height: 16px;
@@ -270,12 +275,12 @@ body {
             width: $site-width;
             min-height: $min-main-height;
             @include flex-horizontal();
-            border: 1px solid black;
+            //border: 1px solid black;
             .main-left {
                 margin: auto;
                 width: 0.5*($site-width - $block-width);
                 height: $min-main-height;
-                border: 1px solid green;
+                //border: 1px solid green;
             }
             .main-center {
                 margin: 0 auto;
@@ -283,7 +288,7 @@ body {
                 height: $min-main-height;
                 @include flex-vertical();
                 //overflow-y: auto;
-                border: 1px solid green;
+                //border: 1px solid green;
                 .task-info {
                     margin: 0 auto;
                     margin-top:1%;  // 2%; //40px;
@@ -291,14 +296,14 @@ body {
                     height: 8%;
                     @include flex-horizontal();
                     justify-content: space-between;
-                    border: 1px solid blue;
+                    //border: 1px solid blue;
                     .info-title-block {
                         margin: 0;  // auto;
                         width: 20%; // 25%;
                         height: 100%;
                         @include flex-vertical();
                         justify-content: flex-start;
-                        border: 1px solid orangered;
+                        //border: 1px solid orangered;
                         .info-title {
                             @include text-font(1.67vw, 400, 1.67vw, 0); // 24px
                             //@include text-font(1.94vw, 400, 1.94vw, 0); // 28px
@@ -314,7 +319,7 @@ body {
                         height: 100%;
                         @include flex-vertical();
                         justify-content: flex-start;
-                        border: 1px solid orangered;
+                        //border: 1px solid orangered;
                         .task-description {
                             margin: 0 auto;
                             width: 96%;
@@ -366,7 +371,7 @@ body {
                         height: 100%;
                         @include flex-vertical();
                         justify-content: flex-start;
-                        border: 1px solid orangered;
+                        //border: 1px solid orangered;
                         .btn-link {
                             margin-bottom: 2%;
                             @include text-font(1.11vw, 300, 1.11vw, 0); //16px
@@ -381,6 +386,9 @@ body {
                         }
                         .btn-link:hover {
                             color: $color-accent;
+                        }
+                        #changeModeBtn {
+                            display: none;
                         }
                     }
                 }
@@ -436,7 +444,7 @@ body {
                     @include flex-vertical();
                     justify-content: space-around;  // space-between;
                     overflow-y: auto;
-                    border: 2px solid red;
+                    //border: 2px solid red;
                     .task-mode {
                         margin: 0 auto;
                         width: 100%;    // 65%;
@@ -444,7 +452,7 @@ body {
                         @include flex-horizontal();
                         justify-content: space-around;
                         //flex-wrap: wrap;
-                        border: 1px solid violet;
+                        //border: 1px solid violet;
                         .item-card, .item-card-base {
                             margin: auto 0;  // auto;
                             width: 18%; // 48%;
@@ -452,7 +460,7 @@ body {
                             @include flex-vertical();
                             justify-content: flex-start;    // space-between;
                             border: 1px solid $color-grey-dark;
-                            .item-heading {
+                            .item-heading, .item-heading-lang {
                                 width: 100%;
                                 height:25%; // 10%;
                                 @include flex-horizontal();
@@ -467,7 +475,7 @@ body {
                                     text-align: center;                               
                                 }
                             }
-                            .item-option {
+                            .item-option, .item-option-lang {
                                 width: 100%;
                                 height:25%; // 30%;
                                 @include flex-horizontal();
@@ -510,6 +518,12 @@ body {
                                 font-weight: 400;
                                 background-color: $color-blick-light;
                             }
+                            .item-heading-lang:hover {
+                                background-color: $color-blick-light;
+                            }
+                            .item-option-lang:hover {
+                                background-color: $color-blick-light-lang;
+                            }
                         }
                     }                    
                 }
@@ -521,7 +535,7 @@ body {
                     @include flex-horizontal();
                     justify-content: space-between;
                     align-items: center;
-                    border: 1px solid green;
+                    //border: 1px solid green;
                     .navi-buttons, .navi-buttons-exit {
                         height: 70%;
                         width: fit-content;
@@ -540,7 +554,7 @@ body {
                             text-decoration: underline;
                             background-color: $color-light;
                             border: none;
-                            border: 1px solid red;
+                            //border: 1px solid red;
                             outline: none;
                             cursor: pointer;
                             @include flex-horizontal();
@@ -583,7 +597,7 @@ body {
                     height: 4%; //6%; // 10%;
                     @include flex-horizontal();
                     justify-content: space-between;
-                    border: 1px solid green;
+                    //border: 1px solid green;
                     .results-buttons {
                         height:100%;    // 80%;
                         width: 30%;
@@ -601,7 +615,8 @@ body {
                             background-color: $color-grey;
                             @include text-font(1.11vw,400,1.11vw,0);    // 20px
                             cursor: pointer;
-                            border: 1px solid grey;
+                            border: none;
+                            //border: 1px solid grey;
                             img {
                                 height: 100%;
                                 width: auto;
@@ -619,7 +634,7 @@ body {
                         height: 100%;
                         @include flex-vertical();
                         background-color: $color-grey;
-                        border: 1px solid grey;
+                        //border: 1px solid grey;
                         .totals-block {
                             margin: 0;  // auto;
                             height: 100%;
@@ -657,7 +672,7 @@ body {
                 margin: auto;
                 width: 0.5*($site-width - $block-width);
                 height: $min-main-height;
-                border: 1px solid green;
+                //border: 1px solid green;
             }
         }
     }
@@ -939,14 +954,14 @@ body {
         height: $footer-height;
         @include flex-horizontal();
         background-color: $color-grey;
-        border: 1px solid black;
+        //border: 1px solid black;
         .footer-left {
             margin: 0 auto;
             width: 0.5*($site-width - $block-width);
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-start;
-            border: 1px solid blue;
+            //border: 1px solid blue;
             .footer-left-block {
                 margin: 0 auto;    // 0 auto;
                 width: 100%;
@@ -969,7 +984,7 @@ body {
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-end;
-            border: 1px solid red;
+            //border: 1px solid red;
             .footer-center-block {
                 margin: 0 auto;
                 width: 100%;
@@ -1019,7 +1034,7 @@ body {
             height: 100%;
             @include flex-vertical();
             //justify-content: flex-end;
-            border: 1px solid blue;
+            //border: 1px solid blue;
                 .footer-right-block {
                     margin: 0 auto;    // 0 auto;
                     width: 100%;
@@ -1046,7 +1061,7 @@ body {
                             @include text-font(16px,300,16px,0);
                             cursor: pointer;
                             align-items: center;
-                            border: 1px solid grey;
+                            //border: 1px solid grey;
                             img {
                                 margin: 0 auto;
                                 height: 16px;
