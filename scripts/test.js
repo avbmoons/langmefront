@@ -242,15 +242,6 @@ for (let i=0; i<listLangs.arrLangs.length; i++) {
 console.log("Patterns names: ");
 console.log(patternsNames);
 
-// const myArrays = {
-//     cars: ["asdf", "ghjk", "lkjh"],
-//     bikes: ["hgfds", "vcxza", "nbvfd"]
-// }
-
-// const arrayName = "cars";
-
-// console.log(myArrays[arrayName]);
-
 let objPatternsNames = [];
 
 patternsNames.forEach(patternName => {
