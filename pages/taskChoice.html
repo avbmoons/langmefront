@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>langMe-Choice</title>
-    <link rel="stylesheet" href="../styles/task/task.css">
+    <link rel="stylesheet" href="../styles/task/task.css" />
     <script defer src="../scripts/pageLoading.js"></script>
-    <script defer src="../data/langs.js"></script> 
-    <script defer src="../data/themes.js"></script> 
+    <script defer src="../data/langs.js"></script>
+    <script defer src="../data/themes.js"></script>
     <script defer src="../data/modes.js"></script>
     <script defer src="../data/words.js"></script>
     <script defer src="../data/patterns.js"></script>
@@ -18,7 +18,7 @@
     <script defer src="../data/patternFin.js"></script>
     <script defer src="../data/patternLav.js"></script>
     <script defer src="../scripts/homeLoading.js"></script>
-    <script defer src="../scripts/pageLoading.js"></script>  
+    <script defer src="../scripts/pageLoading.js"></script>
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
     <script defer src="../scripts/listLangs.js"></script>
@@ -31,210 +31,470 @@
     <!-- <script defer src="../scripts/_modes.js"></script> -->
     <script defer src="../scripts/modeChoice.js"></script>
     <script defer src="../scripts/pagination.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="top">
-            <header>
-                <div class="header-left">
-                    <div class="header-left-block">
-                        <img src="../assets/icons/png/Logo-1-1.png" alt="logo">
-                    </div>
-                </div>
-                <div class="header-center">
-                    <div class="header-center-block">
-                        <menu>
-                            <button class="menu-item header" onclick="window.location.href='home.html'">Home</button>
-                            <button class="menu-item header" onclick="getTask()">Task</button>
-                            <button class="menu-item future">Guide</button>
-                            <button class="menu-item future">Results</button>
-                            <button class="menu-item future">About</button>
-                        </menu>
-                        <div class="service-time">
-                            <p id="currentTime"></p>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-right-block">
-                        <menu>                            
-                            <div class="combo-block" id="appLang">
-                                <button class="menu-item header" id="appLangEngChoice" onclick="openAppLangChoiceList()">Eng</button>
-                                <div class="combo-list" id="appLangChoice">
-                                    <!-- <button class="menu-item header" id="appLangEng">Eng</button>
+      <div class="top">
+        <header>
+          <div class="header-left">
+            <div class="header-left-block">
+              <img src="../assets/icons/png/logo-1-1-new2.png" alt="logo" />
+            </div>
+          </div>
+          <div class="header-center">
+            <div class="header-center-block">
+              <menu>
+                <button
+                  class="menu-item header"
+                  onclick="window.location.href='home.html'"
+                >
+                  Home
+                </button>
+                <button class="menu-item header" onclick="getTask()">
+                  Task
+                </button>
+                <button class="menu-item future">Guide</button>
+                <button class="menu-item future">Results</button>
+                <button class="menu-item future">About</button>
+              </menu>
+              <div class="service-time">
+                <p id="currentTime"></p>
+              </div>
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="header-right-block">
+              <menu>
+                <div class="combo-block" id="appLang">
+                  <button
+                    class="menu-item header"
+                    id="appLangEngChoice"
+                    onclick="openAppLangChoiceList()"
+                  >
+                    Eng
+                  </button>
+                  <div class="combo-list" id="appLangChoice">
+                    <!-- <button class="menu-item header" id="appLangEng">Eng</button>
                                    <button class="menu-item header" id="appLangRus">Rus</button>  -->
-                                </div>                                
-                            </div>
-                            <button class="menu-item header">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.4324 13.25C13.4805 11.6044 12.0137 10.4244 10.3018 9.86501C11.1486 9.36092 11.8065 8.59281 12.1744 7.67863C12.5424 6.76445 12.6001 5.75476 12.3387 4.8046C12.0773 3.85445 11.5112 3.01638 10.7274 2.41908C9.94359 1.82179 8.98538 1.49831 7.99993 1.49831C7.01447 1.49831 6.05626 1.82179 5.27244 2.41908C4.48863 3.01638 3.92255 3.85445 3.66114 4.8046C3.39973 5.75476 3.45744 6.76445 3.82542 7.67863C4.19339 8.59281 4.85128 9.36092 5.69805 9.86501C3.98618 10.4238 2.5193 11.6038 1.56743 13.25C1.53252 13.3069 1.50936 13.3703 1.49933 13.4363C1.4893 13.5023 1.49259 13.5696 1.509 13.6343C1.52542 13.6991 1.55463 13.7598 1.59492 13.8131C1.63521 13.8663 1.68575 13.911 1.74357 13.9444C1.80138 13.9778 1.8653 13.9992 1.93155 14.0075C1.99781 14.0158 2.06505 14.0108 2.12931 13.9927C2.19358 13.9745 2.25356 13.9437 2.30573 13.9021C2.3579 13.8604 2.40119 13.8087 2.43305 13.75C3.61055 11.715 5.6918 10.5 7.99993 10.5C10.3081 10.5 12.3893 11.715 13.5668 13.75C13.5987 13.8087 13.642 13.8604 13.6941 13.9021C13.7463 13.9437 13.8063 13.9745 13.8705 13.9927C13.9348 14.0108 14.002 14.0158 14.0683 14.0075C14.1345 13.9992 14.1985 13.9778 14.2563 13.9444C14.3141 13.911 14.3646 13.8663 14.4049 13.8131C14.4452 13.7598 14.4744 13.6991 14.4908 13.6343C14.5073 13.5696 14.5106 13.5023 14.5005 13.4363C14.4905 13.3703 14.4673 13.3069 14.4324 13.25ZM4.49993 6.00001C4.49993 5.30777 4.7052 4.63108 5.08978 4.05551C5.47437 3.47994 6.02099 3.03133 6.66053 2.76643C7.30007 2.50152 8.00381 2.43221 8.68274 2.56726C9.36168 2.70231 9.98531 3.03565 10.4748 3.52513C10.9643 4.01462 11.2976 4.63826 11.4327 5.31719C11.5677 5.99612 11.4984 6.69986 11.2335 7.3394C10.9686 7.97894 10.52 8.52557 9.94442 8.91015C9.36885 9.29474 8.69216 9.50001 7.99993 9.50001C7.07197 9.49901 6.18231 9.12995 5.52615 8.47378C4.86999 7.81762 4.50092 6.92796 4.49993 6.00001Z" fill="#0F1A1C"/>
-                                </svg>
-                            </button>
-                        </menu>                     
-                    </div>
+                  </div>
                 </div>
-            </header>
-            <main>
-                <div class="main-left"></div>
-                <div class="main-center">
-                    <div class="task-info">
-                        <div class="info-title-block">
-                            <p class="info-title">Choice mode</p>
-                        </div>
-                        <div class="info-content-block">
-                            <div class="task-description">
-                                <p class="info-content" id="taskDescription">Choosing the right translation for each selected languages</p>
-                            </div>
-                            <div class="task-langs">
-                                <p class="info-content" id="taskPrimLang">Russian -></p>
-                                <p class="info-content" id="taskCompLang">Armenian, Greek, Finnish, Latvian</p>
-                            </div>
-                            <div class="task-themes">
-                                <p class="info-content">World sides, Seasons, Months, Weekdays, Personal data</p>
-                            </div>                            
-                        </div>
-                        <div class="info-service-block">
-                            <button class="btn-link" id="changeModeBtn">Change mode</button>
-                            <button class="btn-link" onclick="openModalSettings()">Change settings</button>
-                        </div>
-                    </div>
-                    <div class="task-settings">
-                        <div class="counter" id="counterWords">
-                            <label class="counter-label" for="">Show</label>
-                            <button class="counter-btn" id="btnPrevNumWords" onclick="minusFunction(numWordsValue)">&#9668;</button>
-                            <input class="counter-value" id="numWordsValue" type="text" value="2" title="2 words recomended" readonly>
-                            <button class="counter-btn" id="btnNextNumWords" onclick="plusFunction(numWordsValue)">&#9658;</button>
-                            <label class="counter-label" for="">words on the list</label>
-                        </div>
-                        <div class="counter" id="counterOptions">
-                            <label class="counter-label" for="">Show</label>
-                            <button class="counter-btn" id="btnPrevNumOpt" onclick="minusFunction(numOptionsValue)">&#9668;</button>
-                            <input class="counter-value" id="numOptionsValue" type="text" value="3" title="3 options recomended" readonly>
-                            <button class="counter-btn" id="btnNextNumOpt" onclick="plusFunction(numOptionsValue)">&#9658;</button>
-                            <label class="counter-label" for="">options for each word</label>
-                        </div>
-                        <div class="counter" id="radioSpell">
-                            <label class="counter-label" for="">Show spelling on</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellRus" checked>
-                            <label class="counter-label" for="spellRus">Rus</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellEng">
-                            <label class="counter-label" for="spellEng">Eng</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellNone">
-                            <label class="counter-label" for="spellNone">None</label>
-                        </div>
-                    </div>
-                    <div class="task-mode-block" id="taskModeChoice">
-                        <div class="task-mode" name="row" id="item">
-                            <div class="item-card base" name="itemCardBase" id="itemBase">
-                                <!-- <div class="item-heading">
+                <button class="menu-item header">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.4324 13.25C13.4805 11.6044 12.0137 10.4244 10.3018 9.86501C11.1486 9.36092 11.8065 8.59281 12.1744 7.67863C12.5424 6.76445 12.6001 5.75476 12.3387 4.8046C12.0773 3.85445 11.5112 3.01638 10.7274 2.41908C9.94359 1.82179 8.98538 1.49831 7.99993 1.49831C7.01447 1.49831 6.05626 1.82179 5.27244 2.41908C4.48863 3.01638 3.92255 3.85445 3.66114 4.8046C3.39973 5.75476 3.45744 6.76445 3.82542 7.67863C4.19339 8.59281 4.85128 9.36092 5.69805 9.86501C3.98618 10.4238 2.5193 11.6038 1.56743 13.25C1.53252 13.3069 1.50936 13.3703 1.49933 13.4363C1.4893 13.5023 1.49259 13.5696 1.509 13.6343C1.52542 13.6991 1.55463 13.7598 1.59492 13.8131C1.63521 13.8663 1.68575 13.911 1.74357 13.9444C1.80138 13.9778 1.8653 13.9992 1.93155 14.0075C1.99781 14.0158 2.06505 14.0108 2.12931 13.9927C2.19358 13.9745 2.25356 13.9437 2.30573 13.9021C2.3579 13.8604 2.40119 13.8087 2.43305 13.75C3.61055 11.715 5.6918 10.5 7.99993 10.5C10.3081 10.5 12.3893 11.715 13.5668 13.75C13.5987 13.8087 13.642 13.8604 13.6941 13.9021C13.7463 13.9437 13.8063 13.9745 13.8705 13.9927C13.9348 14.0108 14.002 14.0158 14.0683 14.0075C14.1345 13.9992 14.1985 13.9778 14.2563 13.9444C14.3141 13.911 14.3646 13.8663 14.4049 13.8131C14.4452 13.7598 14.4744 13.6991 14.4908 13.6343C14.5073 13.5696 14.5106 13.5023 14.5005 13.4363C14.4905 13.3703 14.4673 13.3069 14.4324 13.25ZM4.49993 6.00001C4.49993 5.30777 4.7052 4.63108 5.08978 4.05551C5.47437 3.47994 6.02099 3.03133 6.66053 2.76643C7.30007 2.50152 8.00381 2.43221 8.68274 2.56726C9.36168 2.70231 9.98531 3.03565 10.4748 3.52513C10.9643 4.01462 11.2976 4.63826 11.4327 5.31719C11.5677 5.99612 11.4984 6.69986 11.2335 7.3394C10.9686 7.97894 10.52 8.52557 9.94442 8.91015C9.36885 9.29474 8.69216 9.50001 7.99993 9.50001C7.07197 9.49901 6.18231 9.12995 5.52615 8.47378C4.86999 7.81762 4.50092 6.92796 4.49993 6.00001Z"
+                      fill="#0F1A1C"
+                    />
+                  </svg>
+                </button>
+              </menu>
+            </div>
+          </div>
+        </header>
+        <main>
+          <div class="main-left"></div>
+          <div class="main-center">
+            <div class="task-info">
+              <div class="info-title-block">
+                <p class="info-title">Choice mode</p>
+              </div>
+              <div class="info-content-block">
+                <div class="task-description">
+                  <p class="info-content" id="taskDescription">
+                    Choosing the right translation for each selected languages
+                  </p>
+                </div>
+                <div class="task-langs">
+                  <p class="info-content" id="taskPrimLang">Russian -></p>
+                  <p class="info-content" id="taskCompLang">
+                    Armenian, Greek, Finnish, Latvian
+                  </p>
+                </div>
+                <div class="task-themes">
+                  <p class="info-content">
+                    World sides, Seasons, Months, Weekdays, Personal data
+                  </p>
+                </div>
+              </div>
+              <div class="info-service-block">
+                <button class="btn-link" id="changeModeBtn">Change mode</button>
+                <button class="btn-link" onclick="openModalSettings()">
+                  Change settings
+                </button>
+              </div>
+            </div>
+            <div class="task-settings">
+              <div class="counter" id="counterWords">
+                <label class="counter-label" for="">Show</label>
+                <button
+                  class="counter-btn"
+                  id="btnPrevNumWords"
+                  onclick="minusFunction(numWordsValue)"
+                >
+                  &#9668;
+                </button>
+                <input
+                  class="counter-value"
+                  id="numWordsValue"
+                  type="text"
+                  value="2"
+                  title="2 words recomended"
+                  readonly
+                />
+                <button
+                  class="counter-btn"
+                  id="btnNextNumWords"
+                  onclick="plusFunction(numWordsValue)"
+                >
+                  &#9658;
+                </button>
+                <label class="counter-label" for="">words on the list</label>
+              </div>
+              <div class="counter" id="counterOptions">
+                <label class="counter-label" for="">Show</label>
+                <button
+                  class="counter-btn"
+                  id="btnPrevNumOpt"
+                  onclick="minusFunction(numOptionsValue)"
+                >
+                  &#9668;
+                </button>
+                <input
+                  class="counter-value"
+                  id="numOptionsValue"
+                  type="text"
+                  value="3"
+                  title="3 options recomended"
+                  readonly
+                />
+                <button
+                  class="counter-btn"
+                  id="btnNextNumOpt"
+                  onclick="plusFunction(numOptionsValue)"
+                >
+                  &#9658;
+                </button>
+                <label class="counter-label" for=""
+                  >options for each word</label
+                >
+              </div>
+              <div class="counter" id="radioSpell">
+                <label class="counter-label" for="">Show spelling on</label>
+                <input
+                  class="counter-value"
+                  type="radio"
+                  name="spellChoice"
+                  id="spellRus"
+                  checked
+                />
+                <label class="counter-label" for="spellRus">Rus</label>
+                <input
+                  class="counter-value"
+                  type="radio"
+                  name="spellChoice"
+                  id="spellEng"
+                />
+                <label class="counter-label" for="spellEng">Eng</label>
+                <input
+                  class="counter-value"
+                  type="radio"
+                  name="spellChoice"
+                  id="spellNone"
+                />
+                <label class="counter-label" for="spellNone">None</label>
+              </div>
+            </div>
+            <div class="task-mode-block" id="taskModeChoice">
+              <div class="task-mode" name="row" id="item">
+                <div class="item-card base" name="itemCardBase" id="itemBase">
+                  <!-- <div class="item-heading">
                                     <p class="heading-text" id="item1HeadingBase">Russian</p>
                                 </div>
                                 <div class="item-option base">
                                     <p class="item-word base" id="item1WordBase">Пятница</p>
                                 </div> -->
-                            </div>
-                            <!-- <div class="item-card" name="itemCardComp1Choice" id="item1Comp1">
+                </div>
+                <!-- <div class="item-card" name="itemCardComp1Choice" id="item1Comp1">
                             </div> -->
-                        </div>
-                    </div>
-                    <div class="task-navi">
-                        <div class="navi-buttons" id="naviButtons">
-                            <button class="btn-link" id="prevBtn">Previous&nbsp;&#9668;</button>
-                            <ul class="pagination-list">
-                                <!-- <li class="pagination-item">1</li>
+              </div>
+            </div>
+            <div class="task-navi">
+              <div class="navi-buttons" id="naviButtons">
+                <button class="btn-link" id="prevBtn">
+                  Previous&nbsp;&#9668;
+                </button>
+                <ul class="pagination-list">
+                  <!-- <li class="pagination-item">1</li>
                                 <li class="pagination-item">2</li>
                                 <li class="pagination-item">3</li>
                                 <li class="pagination-item">4</li> -->
-                            </ul>
-                            <button class="btn-link" id="nextBtn">&#9658;&nbsp;Next</button>
-                        </div>
-                        <div class="navi-buttons">
-                            <button class="btn-link" onclick="window.location.href='home.html'" id="exitChoice">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
-                        </div>
-                    </div>
-                    <div class="task-results">
-                        <div class="results-buttons">
-                            <button class="set-get"><img src="../assets/icons/png/icon-finish-flag.png" alt="results">Results</button>                            
-                        </div>
-                        <div class="totals">
-                            <div class="totals-block">
-                                <div class="total-item title">
-                                    <p class="total-text">Totals:</p>
-                                </div>
-                                <div class="total-item enjoy">
-                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">&nbsp;&#8594;&nbsp;
-                                    <p class="total-text" id="enjoy">0</p>
-                                </div>
-                                <div class="total-item neutral">
-                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">&nbsp;&mdash;&nbsp;
-                                    <p class="total-text" id="neutral">0</p>
-                                </div>
-                                <div class="total-item worry">
-                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">&nbsp;&#8594;&nbsp;
-                                    <p class="total-text" id="worry">0</p>
-                                </div>                                
-                            </div>
-                        </div>
-                    </div>
+                </ul>
+                <button class="btn-link" id="nextBtn">&#9658;&nbsp;Next</button>
+              </div>
+              <div class="navi-buttons">
+                <button
+                  class="btn-link"
+                  onclick="window.location.href='home.html'"
+                  id="exitChoice"
+                  title="Save totals!"
+                >
+                  Exit&nbsp;
+                  <!-- <img src="../assets/icons/png/icon-exit.png" alt="exit" /> -->
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M15.9899 7.823C16.061 7.75467 16.1448 7.701 16.2365 7.66507C16.3283 7.62914 16.4263 7.61165 16.5248 7.6136C16.6233 7.61555 16.7205 7.6369 16.8108 7.67644C16.9011 7.71597 16.9827 7.77291 17.051 7.844L20.5409 11.481C20.6748 11.6206 20.7495 11.8066 20.7495 12C20.7495 12.1934 20.6748 12.3794 20.5409 12.519L17.051 16.156C16.9827 16.227 16.9012 16.284 16.811 16.3235C16.7207 16.363 16.6236 16.3844 16.5252 16.3864C16.4267 16.3884 16.3288 16.371 16.237 16.3351C16.1453 16.2993 16.0615 16.2457 15.9904 16.1775C15.9194 16.1093 15.8625 16.0277 15.823 15.9375C15.7834 15.8473 15.7621 15.7502 15.7601 15.6517C15.7581 15.5532 15.7755 15.4553 15.8113 15.3636C15.8472 15.2718 15.9007 15.188 15.9689 15.117L18.2399 12.75H11.2729C11.074 12.75 10.8833 12.671 10.7426 12.5303C10.602 12.3897 10.5229 12.1989 10.5229 12C10.5229 11.8011 10.602 11.6103 10.7426 11.4697C10.8833 11.329 11.074 11.25 11.2729 11.25H18.2409L15.9689 8.883C15.8314 8.73948 15.7564 8.54721 15.7605 8.34845C15.7647 8.14968 15.8475 7.96069 15.9909 7.823"
+                      fill="#0F1A1C"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.25 4C3.25 3.80109 3.32902 3.61032 3.46967 3.46967C3.61032 3.32902 3.80109 3.25 4 3.25H13.455C13.6539 3.25 13.8447 3.32902 13.9853 3.46967C14.126 3.61032 14.205 3.80109 14.205 4V7C14.205 7.19891 14.126 7.38968 13.9853 7.53033C13.8447 7.67098 13.6539 7.75 13.455 7.75C13.2561 7.75 13.0653 7.67098 12.9247 7.53033C12.784 7.38968 12.705 7.19891 12.705 7V4.75H4.75V19.25H12.704V17C12.704 16.8011 12.783 16.6103 12.9237 16.4697C13.0643 16.329 13.2551 16.25 13.454 16.25C13.6529 16.25 13.8437 16.329 13.9843 16.4697C14.125 16.6103 14.204 16.8011 14.204 17V20C14.204 20.1989 14.125 20.3897 13.9843 20.5303C13.8437 20.671 13.6529 20.75 13.454 20.75H4C3.80109 20.75 3.61032 20.671 3.46967 20.5303C3.32902 20.3897 3.25 20.1989 3.25 20V4Z"
+                      fill="#0F1A1C"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="task-results">
+              <div class="results-buttons">
+                <button class="set-get">
+                  <!-- <img
+                    src="../assets/icons/png/icon-finish-flag.png"
+                    alt="results"
+                  /> -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.5 2V14H3.5V10H13.5V2H2.5ZM3.5 3H5V4.5H6.5V3H8V4.5H9.5V3H11V4.5H12.5V6H11V7.5H12.5V9H11V7.5H9.5V9H8V7.5H6.5V9H5V7.5H3.5V6H5V4.5H3.5V3ZM5 6V7.5H6.5V6H5ZM6.5 6H8V4.5H6.5V6ZM8 6V7.5H9.5V6H8ZM9.5 6H11V4.5H9.5V6Z"
+                      fill="#0F1A1C"
+                    />
+                  </svg>
+                  &nbsp;Results
+                </button>
+              </div>
+              <div class="totals">
+                <div class="totals-block">
+                  <div class="total-item title">
+                    <p class="total-text" id="totalText">Totals:</p>
+                  </div>
+                  <div class="total-item enjoy">
+                    <!-- <img
+                      src="../assets/icons/png/emoji-smile-regular.png"
+                      alt="enjoy"
+                    /> -->
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_266_704)">
+                        <path
+                          d="M10 18.75C7.67936 18.75 5.45376 17.8281 3.81282 16.1872C2.17187 14.5462 1.25 12.3206 1.25 10C1.25 7.67936 2.17187 5.45376 3.81282 3.81282C5.45376 2.17187 7.67936 1.25 10 1.25C12.3206 1.25 14.5462 2.17187 16.1872 3.81282C17.8281 5.45376 18.75 7.67936 18.75 10C18.75 12.3206 17.8281 14.5462 16.1872 16.1872C14.5462 17.8281 12.3206 18.75 10 18.75ZM10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20Z"
+                          fill="#0f1a1c"
+                        />
+                        <path
+                          d="M14.1438 12.5175C14.2625 12.4896 14.3867 12.4969 14.5012 12.5387C14.6157 12.5805 14.7155 12.6548 14.7883 12.7526C14.8611 12.8504 14.9038 12.9673 14.911 13.089C14.9181 13.2107 14.8896 13.3318 14.8288 13.4375C14.335 14.2928 13.6248 15.003 12.7694 15.4967C11.9141 15.9904 10.9439 16.2502 9.95631 16.25C8.96873 16.2502 7.9985 15.9904 7.14318 15.4967C6.28786 15.003 5.5776 14.2928 5.08381 13.4375C5.02303 13.3318 4.99447 13.2107 5.00166 13.089C5.00885 12.9673 5.05147 12.8504 5.12427 12.7526C5.19707 12.6548 5.29687 12.5805 5.41139 12.5387C5.52591 12.4969 5.65015 12.4896 5.76881 12.5175H5.77506L5.79631 12.5238L5.88006 12.5425L6.19506 12.6113C6.46381 12.6688 6.83881 12.7463 7.26631 12.8225C8.13256 12.9775 9.16881 13.125 9.95631 13.125C10.7438 13.125 11.7813 12.9775 12.6463 12.8225C13.1103 12.7389 13.5725 12.6455 14.0326 12.5425L14.1163 12.5238L14.1376 12.5188L14.1438 12.5163V12.5175ZM5.94506 5.7075C6.89881 3.9275 10.9701 5.5575 7.13506 10C1.51506 8.005 4.19756 4.6275 5.94506 5.7075ZM14.0551 5.7075C15.8026 4.6275 18.4851 8.005 12.8651 10C9.03131 5.5575 13.1026 3.9275 14.0551 5.7075Z"
+                          fill="#0f1a1c"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_266_704">
+                          <rect width="20" height="20" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    &nbsp;&#8594;&nbsp;
+                    <p class="total-text" id="enjoy">0</p>
+                  </div>
+                  <div class="total-item neutral">
+                    <img
+                      src="../assets/icons/png/emoji-meh-regular.png"
+                      alt="neutral"
+                    />&nbsp;&mdash;&nbsp;
+                    <p class="total-text" id="neutral">0</p>
+                  </div>
+                  <div class="total-item worry">
+                    <!-- <img
+                      src="../assets/icons/png/emoji-sad-regular.png"
+                      alt="worry"
+                    /> -->
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_265_686)">
+                        <path
+                          d="M6.21006 12.1875C6.16933 12.1158 6.11482 12.053 6.04967 12.0025C5.98453 11.952 5.91004 11.9148 5.8305 11.8932C5.75095 11.8716 5.66792 11.866 5.58618 11.8766C5.50445 11.8872 5.42562 11.9139 5.35424 11.9551C5.28285 11.9964 5.22033 12.0513 5.17026 12.1168C5.12019 12.1822 5.08357 12.257 5.0625 12.3367C5.04144 12.4163 5.03634 12.4994 5.0475 12.5811C5.05867 12.6627 5.08588 12.7414 5.12757 12.8125C5.62136 13.6678 6.33162 14.378 7.18694 14.8717C8.04226 15.3654 9.01248 15.6252 10.0001 15.625C10.9876 15.6252 11.9579 15.3654 12.8132 14.8717C13.6685 14.378 14.3788 13.6678 14.8726 12.8125C14.9143 12.7414 14.9415 12.6627 14.9526 12.5811C14.9638 12.4994 14.9587 12.4163 14.9376 12.3367C14.9166 12.257 14.8799 12.1822 14.8299 12.1168C14.7798 12.0513 14.7173 11.9964 14.6459 11.9551C14.5745 11.9139 14.4957 11.8872 14.4139 11.8766C14.3322 11.866 14.2492 11.8716 14.1696 11.8932C14.0901 11.9148 14.0156 11.952 13.9505 12.0025C13.8853 12.053 13.8308 12.1158 13.7901 12.1875C13.406 12.8528 12.8535 13.4051 12.1882 13.7891C11.5229 14.1731 10.7682 14.3752 10.0001 14.375C9.2319 14.3752 8.47722 14.1731 7.81192 13.7891C7.14662 13.4051 6.59415 12.8528 6.21006 12.1875ZM8.75006 6.395V6.25C8.75006 5.91848 8.61837 5.60054 8.38395 5.36612C8.14953 5.1317 7.83159 5 7.50006 5H4.10006C3.91006 5 3.72255 5.04333 3.5518 5.12667C3.38105 5.21002 3.23154 5.33119 3.11465 5.48098C2.99775 5.63078 2.91654 5.80525 2.8772 5.99114C2.83785 6.17703 2.84139 6.36944 2.88756 6.55375L3.27631 8.10625C3.41151 8.6471 3.72359 9.12724 4.16298 9.47037C4.60236 9.8135 5.14383 9.99992 5.70131 10H6.25006C6.87837 10.0002 7.4837 9.76372 7.94557 9.33775C8.40744 8.91178 8.69199 8.32752 8.74256 7.70125C9.14719 7.56296 9.57249 7.4949 10.0001 7.5C10.4913 7.5 10.9251 7.58 11.2576 7.70125C11.3081 8.32752 11.5927 8.91178 12.0546 9.33775C12.5164 9.76372 13.1218 10.0002 13.7501 10H14.2976C14.8551 9.99992 15.3965 9.8135 15.8359 9.47037C16.2753 9.12724 16.5874 8.6471 16.7226 8.10625L17.1113 6.55375C17.1575 6.36954 17.161 6.17724 17.1217 5.99144C17.0825 5.80565 17.0014 5.63125 16.8846 5.48148C16.7679 5.33171 16.6185 5.21051 16.4479 5.12708C16.2773 5.04366 16.09 5.00019 15.9001 5H12.5001C12.1685 5 11.8506 5.1317 11.6162 5.36612C11.3818 5.60054 11.2501 5.91848 11.2501 6.25V6.395C10.8407 6.29673 10.421 6.24804 10.0001 6.25C9.56256 6.25 9.13756 6.3 8.75006 6.395Z"
+                          fill="#0f1a1c"
+                        />
+                        <path
+                          d="M20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10ZM18.75 10C18.75 7.67936 17.8281 5.45376 16.1872 3.81282C14.5462 2.17187 12.3206 1.25 10 1.25C7.67936 1.25 5.45376 2.17187 3.81282 3.81282C2.17187 5.45376 1.25 7.67936 1.25 10C1.25 12.3206 2.17187 14.5462 3.81282 16.1872C5.45376 17.8281 7.67936 18.75 10 18.75C12.3206 18.75 14.5462 17.8281 16.1872 16.1872C17.8281 14.5462 18.75 12.3206 18.75 10Z"
+                          fill="#0f1a1c"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_265_686">
+                          <rect width="20" height="20" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    &nbsp;&#8594;&nbsp;
+                    <p class="total-text" id="worry">0</p>
+                  </div>
                 </div>
-                <div class="main-right"></div>
-            </main>
-        </div>
-        <!-- Modal forms code block follow-->
-        <form class="modal-settings" id="settings" action="" method="get">
-            <div class="info">
-                <div class="info-header">
-                    <img src="../assets/icons/png/Logo-1-3.png" alt="logo">
-                    <p class="modal-title">Choose settings for your task</p>
-                    <button onclick="closeModalSettings()"><img src="../assets/icons/png/icon-close.png" alt="close"></button>
+              </div>
+            </div>
+          </div>
+          <div class="main-right"></div>
+        </main>
+      </div>
+      <!-- Modal forms code block follow-->
+      <form class="modal-settings" id="settings" action="" method="get">
+        <div class="info">
+          <div class="info-header">
+            <img src="../assets/icons/png/logo-2-3-new2-light.png" alt="logo" />
+            <p class="modal-title">Choose settings for your task</p>
+            <button onclick="closeModalSettings()">
+              <img src="../assets/icons/png/icon-close.png" alt="close" />
+            </button>
+          </div>
+          <div class="info-main">
+            <div class="combo-block" id="primLangBlock">
+              <label class="combo-label" for="primLang"
+                >Primary language:</label
+              >
+              <input
+                class="combo-input"
+                type="text"
+                id="primLang"
+                name="primLang"
+                placeholder="Select the primary language..."
+                readonly
+              />
+              <button
+                type="button"
+                class="combo-button"
+                id="btnOpenPrimLang"
+                onclick="openPrimLangsChoiceList()"
+              >
+                ...
+              </button>
+              <div class="combo-list" id="primLangChoice">
+                <div class="combo-list-item" name="choose">
+                  <input class="combo-list-input search" type="text" />
+                  <button
+                    type="button"
+                    class="btn-choose"
+                    onclick="closePrimLangsChoiceList()"
+                  >
+                    Choose
+                  </button>
                 </div>
-                <div class="info-main">
-                    <div class="combo-block" id="primLangBlock">
-                        <label class="combo-label" for="primLang">Primary language:</label>
-                        <input class="combo-input" type="text" id="primLang" name="primLang" placeholder="Select the primary language..." readonly>
-                        <button type="button" class="combo-button" id="btnOpenPrimLang" onclick="openPrimLangsChoiceList()">...</button>
-                        <div class="combo-list" id="primLangChoice">
-                            <div class="combo-list-item" name="choose">
-                                <input class="combo-list-input search" type="text">
-                                <button type="button" class="btn-choose" onclick="closePrimLangsChoiceList()">Choose</button>
-                            </div>
-                            <div class="combo-list-choice" id="primLangChoiceList">
-                            </div>
+                <div class="combo-list-choice" id="primLangChoiceList"></div>
+              </div>
+            </div>
+            <div class="combo-block" id="compLangBlock">
+              <label class="combo-label" for="compLangInput"
+                >Compared language:</label
+              >
+              <input
+                class="combo-input"
+                type="text"
+                id="compLang"
+                name="compLangInput"
+                placeholder="Select the compared language..."
+                readonly
+              />
+              <button
+                type="button"
+                class="combo-button"
+                id="btnOpenCompLang"
+                onclick="openCompLangsChoiceList()"
+              >
+                ...
+              </button>
+              <div class="combo-list" id="compLangChoice">
+                <div class="combo-list-item" name="choose">
+                  <input class="combo-list-input search" type="text" />
+                  <button
+                    type="button"
+                    class="btn-choose"
+                    onclick="closeCompLangsChoiceList()"
+                  >
+                    Choose
+                  </button>
+                </div>
+                <div class="combo-list-choice" id="compLangChoiceList"></div>
+              </div>
+            </div>
+            <div class="combo-block" id="themesBlock">
+              <label class="combo-label" for="themes">Themes:</label>
+              <input
+                class="combo-input"
+                type="text"
+                id="themeList"
+                name="themes"
+                placeholder="Select themes of words..."
+                readonly
+              />
+              <button
+                type="button"
+                class="combo-button"
+                id="btnOpenThemes"
+                onclick="openThemesChoiceList()"
+              >
+                ...
+              </button>
+              <div class="combo-list" id="themeChoice">
+                <div class="combo-list-item" name="themeList">
+                  <input class="combo-list-input search" type="text" />
+                  <!-- <img src="../assets/icons/png/icon-search.png" alt="search"> -->
+                  <button
+                    type="button"
+                    class="btn-choose"
+                    onclick="closeThemesChoiceList()"
+                  >
+                    Choose
+                  </button>
+                </div>
+                <div class="combo-list-item" name="allThemes">
+                  <input
+                    class="combo-list-input"
+                    type="checkbox"
+                    id="allThemes"
+                    name="themeList"
+                    value="allThemes"
+                  />
+                  <label for="compRu">All themes</label>
+                </div>
+                <div class="combo-list-choice" id="themeChoiceList"></div>
+              </div>
+            </div>
 
-                        </div>
-                    </div>                    
-                    <div class="combo-block" id="compLangBlock">
-                        <label class="combo-label" for="compLangInput">Compared language:</label>
-                        <input class="combo-input" type="text" id="compLang" name="compLangInput" placeholder="Select the compared language..." readonly>
-                        <button type="button" class="combo-button" id="btnOpenCompLang" onclick="openCompLangsChoiceList()">...</button>
-                        <div class="combo-list" id="compLangChoice">
-                            <div class="combo-list-item" name="choose">
-                                <input class="combo-list-input search" type="text">
-                                <button type="button" class="btn-choose" onclick="closeCompLangsChoiceList()">Choose</button>
-                            </div>
-                            <div class="combo-list-choice" id="compLangChoiceList">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="combo-block" id="themesBlock">
-                        <label class="combo-label" for="themes">Themes:</label>
-                        <input class="combo-input" type="text" id="themeList" name="themes" placeholder="Select themes of words..." readonly>
-                        <button type="button" class="combo-button" id="btnOpenThemes" onclick="openThemesChoiceList()">...</button>
-                        <div class="combo-list" id="themeChoice">
-                            <div class="combo-list-item" name="themeList">
-                                <input class="combo-list-input search" type="text">
-                                <!-- <img src="../assets/icons/png/icon-search.png" alt="search"> -->
-                                <button type="button" class="btn-choose" onclick="closeThemesChoiceList()">Choose</button>
-                            </div>
-                            <div class="combo-list-item" name="allThemes">
-                                <input class="combo-list-input" type="checkbox" id="allThemes" name="themeList" value="allThemes">
-                                <label for="compRu">All themes</label>
-                            </div>
-                            <div class="combo-list-choice" id="themeChoiceList"></div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="combo-block" id="modeButtonsBlock">
+            <!-- <div class="combo-block" id="modeButtonsBlock">
                         <label class="combo-label" for="modeButtons">Mode:</label>
                         <button type="button" class="mode-button" id="setModePlain">Plain</button>
                         <button type="button" class="mode-button" id="setModeChoice">Choice</button>
@@ -242,86 +502,152 @@
                         <button type="button" class="mode-button" id="setModeMix">Mix</button>
                     </div> -->
 
-                    <div class="combo-block" id="modeButtonsBlock">
-                        <label class="combo-label mode" for="modeButtons">Mode:</label>
-                        
-                        <div class="combo-block-choice" id="modeChoice"></div>
-                        <button type="button" class="combo-button" onclick="choosedModeItemRadio('modeButton', 'resultMode')">&check;</button>
-                    </div>
+            <div class="combo-block" id="modeButtonsBlock">
+              <label class="combo-label mode" for="modeButtons">Mode:</label>
 
-                    <div class="combo-block" id="userChoiceBlock">
-                        <label class="combo-label choice" for="userChoice">Your choice:</label>
-                        <!-- <textarea class="combo-text" name="userChoice" id="userChoice" placeholder="Your task settings here..." rows="5" readonly></textarea> -->
-                        <div class="user-choice">
-                            <div class="user-choice-result">
-                                <label class="result-label" for="resultPrim">Primary: </label>
-                                <input class="result-field" type="text" id="resultPrim" name="resultPrim">                                
-                            </div>
-                            <div class="user-choice-result">
-                                <label class="result-label" for="resultComp">Compared: </label>
-                                <!-- <input class="result-field" type="text" id="resultComp" name="resultComp"> -->
-                                <textarea class="result-field" name="resultComp" id="resultComp" readonly></textarea>
-                            </div>
-                            <div class="user-choice-result">
-                                <label class="result-label" for="resultThemes">Themes: </label>
-                                <!-- <input class="result-field" type="text" id="resultThemes" name="resultThemes"> -->
-                                <textarea class="result-field" name="resultThemes" id="resultThemes" readonly></textarea>
-                            </div>
-                            <div class="user-choice-result">
-                                <label class="result-label" for="resultMode">Mode: </label>
-                                <input class="result-field" type="text" id="resultMode" name="resultMode">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-button">
-                    <!-- <button type="submit" class="btn-go" onclick="submitTaskSettings()">Confirm</button> -->
-                    <button type="button" class="btn-go" onclick="submitTaskSettings()">Confirm</button>
-                </div>                
+              <div class="combo-block-choice" id="modeChoice"></div>
+              <button
+                type="button"
+                class="combo-button"
+                onclick="choosedModeItemRadio('modeButton', 'resultMode')"
+              >
+                &check;
+              </button>
             </div>
-        </form>
-        <footer>
-                <div class="footer-left">
-                    <div class="footer-left-block">
-                        <img src="../assets/icons/png/Logo-2-3.png" alt="logo">
-                    </div>                    
+
+            <div class="combo-block" id="userChoiceBlock">
+              <label class="combo-label choice" for="userChoice"
+                >Your choice:</label
+              >
+              <!-- <textarea class="combo-text" name="userChoice" id="userChoice" placeholder="Your task settings here..." rows="5" readonly></textarea> -->
+              <div class="user-choice">
+                <div class="user-choice-result">
+                  <label class="result-label" for="resultPrim">Primary: </label>
+                  <input
+                    class="result-field"
+                    type="text"
+                    id="resultPrim"
+                    name="resultPrim"
+                  />
                 </div>
-                <div class="footer-center">
-                    <div class="footer-center-block">
-                        <div class="copyright">
-                            <p>avb&copy;All right reserved</p>
-                        </div>
-                        <menu>
-                            <button class="menu-item footer" onclick="window.location.href='home.html'">Home</button>
-                            <button class="menu-item footer" onclick="getTask()">Task</button>
-                            <button class="menu-item future">Guide</button>
-                            <button class="menu-item future">Results</button>
-                            <button class="menu-item future">About</button>
-                        </menu>                     
-                    </div>
+                <div class="user-choice-result">
+                  <label class="result-label" for="resultComp"
+                    >Compared:
+                  </label>
+                  <!-- <input class="result-field" type="text" id="resultComp" name="resultComp"> -->
+                  <textarea
+                    class="result-field"
+                    name="resultComp"
+                    id="resultComp"
+                    readonly
+                  ></textarea>
                 </div>
-                <div class="footer-right">
-                    <div class="footer-right-block">
-                        <menu>
-                            <button class="menu-item footer">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C10.6868 2 9.38642 2.25866 8.17317 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26V21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2Z" fill="#0F1A1C"/>
-                                </svg>
-                            </button>
-                            <button class="menu-item footer">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.9359 5.17L18.9059 19.355C18.6799 20.354 18.0999 20.579 17.2619 20.128L12.7169 16.776L10.4919 18.903C10.2669 19.129 10.0409 19.355 9.52491 19.355L9.87991 14.68L18.3579 6.976C18.7119 6.621 18.2609 6.492 17.8099 6.783L7.26891 13.423L2.72291 12.037C1.72391 11.715 1.72391 11.037 2.94891 10.587L20.6139 3.72C21.4839 3.462 22.2259 3.914 21.9359 5.17Z" fill="#0F1A1C"/>
-                                </svg>
-                            </button>
-                            <button class="menu-item footer">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.001 2C17.524 2 22.001 6.477 22.001 12C22.001 17.523 17.524 22 12.001 22C10.2337 22.003 8.49757 21.5353 6.97099 20.645L2.00499 22L3.35699 17.032C2.46595 15.5049 1.99789 13.768 2.00099 12C2.00099 6.477 6.47799 2 12.001 2ZM8.59299 7.3L8.39299 7.308C8.26368 7.31691 8.13734 7.35087 8.02099 7.408C7.91257 7.46951 7.81355 7.5463 7.72699 7.636C7.60699 7.749 7.53899 7.847 7.46599 7.942C7.09611 8.4229 6.89696 9.01331 6.89999 9.62C6.90199 10.11 7.02999 10.587 7.22999 11.033C7.63899 11.935 8.31199 12.89 9.19999 13.775C9.41399 13.988 9.62399 14.202 9.84999 14.401C10.9534 15.3724 12.2683 16.073 13.69 16.447L14.258 16.534C14.443 16.544 14.628 16.53 14.814 16.521C15.1052 16.5056 15.3895 16.4268 15.647 16.29C15.7778 16.2223 15.9056 16.1489 16.03 16.07C16.03 16.07 16.0723 16.0413 16.155 15.98C16.29 15.88 16.373 15.809 16.485 15.692C16.569 15.6053 16.639 15.5047 16.695 15.39C16.773 15.227 16.851 14.916 16.883 14.657C16.907 14.459 16.9 14.351 16.897 14.284C16.893 14.177 16.804 14.066 16.707 14.019L16.125 13.758C16.125 13.758 15.255 13.379 14.723 13.137C14.6673 13.1128 14.6077 13.0989 14.547 13.096C14.4786 13.0888 14.4094 13.0965 14.3442 13.1184C14.279 13.1403 14.2192 13.176 14.169 13.223C14.164 13.221 14.097 13.278 13.374 14.154C13.3325 14.2098 13.2753 14.2519 13.2098 14.2751C13.1443 14.2982 13.0733 14.3013 13.006 14.284C12.9408 14.2666 12.877 14.2446 12.815 14.218C12.691 14.166 12.648 14.146 12.563 14.11C11.9889 13.8599 11.4574 13.5215 10.988 13.107C10.862 12.997 10.745 12.877 10.625 12.761C10.2316 12.3842 9.88874 11.958 9.60499 11.493L9.54599 11.398C9.50425 11.3338 9.47003 11.265 9.44399 11.193C9.40599 11.046 9.50499 10.928 9.50499 10.928C9.50499 10.928 9.74799 10.662 9.86099 10.518C9.97099 10.378 10.064 10.242 10.124 10.145C10.242 9.955 10.279 9.76 10.217 9.609C9.93699 8.925 9.64766 8.24467 9.34899 7.568C9.28999 7.434 9.11499 7.338 8.95599 7.319C8.90199 7.31233 8.84799 7.307 8.79399 7.303C8.65972 7.2953 8.52508 7.29663 8.39099 7.307L8.59299 7.3Z" fill="#0F1A1C"/>
-                                </svg>
-                            </button>
-                        </menu>                     
-                    </div>
+                <div class="user-choice-result">
+                  <label class="result-label" for="resultThemes"
+                    >Themes:
+                  </label>
+                  <!-- <input class="result-field" type="text" id="resultThemes" name="resultThemes"> -->
+                  <textarea
+                    class="result-field"
+                    name="resultThemes"
+                    id="resultThemes"
+                    readonly
+                  ></textarea>
                 </div>
-        </footer>
+                <div class="user-choice-result">
+                  <label class="result-label" for="resultMode">Mode: </label>
+                  <input
+                    class="result-field"
+                    type="text"
+                    id="resultMode"
+                    name="resultMode"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-button">
+            <!-- <button type="submit" class="btn-go" onclick="submitTaskSettings()">Confirm</button> -->
+            <button type="button" class="btn-go" onclick="submitTaskSettings()">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </form>
+      <footer>
+        <div class="footer-left">
+          <div class="footer-left-block">
+            <img src="../assets/icons/png/logo-2-3-new2.png" alt="logo" />
+          </div>
+        </div>
+        <div class="footer-center">
+          <div class="footer-center-block">
+            <div class="copyright">
+              <p>avb&copy;All right reserved</p>
+            </div>
+            <menu>
+              <button
+                class="menu-item footer"
+                onclick="window.location.href='home.html'"
+              >
+                Home
+              </button>
+              <button class="menu-item footer" onclick="getTask()">Task</button>
+              <button class="menu-item future">Guide</button>
+              <button class="menu-item future">Results</button>
+              <button class="menu-item future">About</button>
+            </menu>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-right-block">
+            <menu>
+              <button class="menu-item footer">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2C10.6868 2 9.38642 2.25866 8.17317 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26V21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2Z"
+                    fill="#0F1A1C"
+                  />
+                </svg>
+              </button>
+              <button class="menu-item footer">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.9359 5.17L18.9059 19.355C18.6799 20.354 18.0999 20.579 17.2619 20.128L12.7169 16.776L10.4919 18.903C10.2669 19.129 10.0409 19.355 9.52491 19.355L9.87991 14.68L18.3579 6.976C18.7119 6.621 18.2609 6.492 17.8099 6.783L7.26891 13.423L2.72291 12.037C1.72391 11.715 1.72391 11.037 2.94891 10.587L20.6139 3.72C21.4839 3.462 22.2259 3.914 21.9359 5.17Z"
+                    fill="#0F1A1C"
+                  />
+                </svg>
+              </button>
+              <button class="menu-item footer">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.001 2C17.524 2 22.001 6.477 22.001 12C22.001 17.523 17.524 22 12.001 22C10.2337 22.003 8.49757 21.5353 6.97099 20.645L2.00499 22L3.35699 17.032C2.46595 15.5049 1.99789 13.768 2.00099 12C2.00099 6.477 6.47799 2 12.001 2ZM8.59299 7.3L8.39299 7.308C8.26368 7.31691 8.13734 7.35087 8.02099 7.408C7.91257 7.46951 7.81355 7.5463 7.72699 7.636C7.60699 7.749 7.53899 7.847 7.46599 7.942C7.09611 8.4229 6.89696 9.01331 6.89999 9.62C6.90199 10.11 7.02999 10.587 7.22999 11.033C7.63899 11.935 8.31199 12.89 9.19999 13.775C9.41399 13.988 9.62399 14.202 9.84999 14.401C10.9534 15.3724 12.2683 16.073 13.69 16.447L14.258 16.534C14.443 16.544 14.628 16.53 14.814 16.521C15.1052 16.5056 15.3895 16.4268 15.647 16.29C15.7778 16.2223 15.9056 16.1489 16.03 16.07C16.03 16.07 16.0723 16.0413 16.155 15.98C16.29 15.88 16.373 15.809 16.485 15.692C16.569 15.6053 16.639 15.5047 16.695 15.39C16.773 15.227 16.851 14.916 16.883 14.657C16.907 14.459 16.9 14.351 16.897 14.284C16.893 14.177 16.804 14.066 16.707 14.019L16.125 13.758C16.125 13.758 15.255 13.379 14.723 13.137C14.6673 13.1128 14.6077 13.0989 14.547 13.096C14.4786 13.0888 14.4094 13.0965 14.3442 13.1184C14.279 13.1403 14.2192 13.176 14.169 13.223C14.164 13.221 14.097 13.278 13.374 14.154C13.3325 14.2098 13.2753 14.2519 13.2098 14.2751C13.1443 14.2982 13.0733 14.3013 13.006 14.284C12.9408 14.2666 12.877 14.2446 12.815 14.218C12.691 14.166 12.648 14.146 12.563 14.11C11.9889 13.8599 11.4574 13.5215 10.988 13.107C10.862 12.997 10.745 12.877 10.625 12.761C10.2316 12.3842 9.88874 11.958 9.60499 11.493L9.54599 11.398C9.50425 11.3338 9.47003 11.265 9.44399 11.193C9.40599 11.046 9.50499 10.928 9.50499 10.928C9.50499 10.928 9.74799 10.662 9.86099 10.518C9.97099 10.378 10.064 10.242 10.124 10.145C10.242 9.955 10.279 9.76 10.217 9.609C9.93699 8.925 9.64766 8.24467 9.34899 7.568C9.28999 7.434 9.11499 7.338 8.95599 7.319C8.90199 7.31233 8.84799 7.307 8.79399 7.303C8.65972 7.2953 8.52508 7.29663 8.39099 7.307L8.59299 7.3Z"
+                    fill="#0F1A1C"
+                  />
+                </svg>
+              </button>
+            </menu>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

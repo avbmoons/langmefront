@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: NotoSansArmenian;
-  src: url(../../assets/fonts/NotoSansArmenian-VariableFont_wdth\,wght.ttf);
+  src: url(../../assets/fonts/NotoSansArmenian-VariableFont_wdthwght.ttf);
 }
 * {
   margin: 0;
@@ -328,7 +328,7 @@ body {
 .wrapper .top main {
   margin: 0 auto;
   width: 100%;
-  min-height: 80vh;
+  min-height: 83vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -337,13 +337,13 @@ body {
 .wrapper .top main .main-left {
   margin: auto;
   width: 15%;
-  height: 80vh;
+  height: 83vh;
   border: 1px solid green;
 }
 .wrapper .top main .main-center {
   margin: 0 auto;
   width: 70%;
-  height: 80vh;
+  height: 83vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -850,7 +850,7 @@ body {
 .wrapper .top main .main-right {
   margin: auto;
   width: 15%;
-  height: 80vh;
+  height: 83vh;
   border: 1px solid green;
 }
 .wrapper .modal-settings {
@@ -870,7 +870,7 @@ body {
 .wrapper .modal-settings .info {
   margin: 0 auto;
   width: 45%;
-  height: 80vh;
+  height: 83vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1045,7 +1045,7 @@ body {
   padding: 10px;
   width: 100%;
   height: auto;
-  max-height: 40vh;
+  max-height: 41.5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1209,7 +1209,7 @@ body {
 .wrapper footer {
   margin: 0 auto;
   width: 100%;
-  height: 10vh;
+  height: 7vh;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
