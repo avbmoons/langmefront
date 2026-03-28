@@ -699,7 +699,6 @@ const _patternRus = [
         spellBase: "[сто]",
         spellEng: "[sto]",
     },
-    
     {
         id: 71,
         idTheme: 2,
@@ -709,25 +708,5 @@ const _patternRus = [
         wordName: "тысяча",
         spellBase: "[тысяча]",
         spellEng: "[tysyacha]",
-    },
-    {
-        id: 72,
-        idTheme: 2,
-        idWord: 72,
-        idLang: 1,
-        langName: "Russian",
-        wordName: "миллион",
-        spellBase: "[миллион]",
-        spellEng: "[milion]",
-    },
-    {
-        id: 73,
-        idTheme: 2,
-        idWord: 73,
-        idLang: 1,
-        langName: "Russian",
-        wordName: "миллиард",
-        spellBase: "[миллиард]",
-        spellEng: "[miliard]",
     },
 ];

@@ -168,7 +168,6 @@ body {
         height: 100%;
         @include flex-vertical();
         justify-content: flex-end;
-        //background-color: $color-blick;
         //border: 1px solid blue;
         .header-left-block {
           margin: 0 auto; // 0 auto;
@@ -178,33 +177,13 @@ body {
           @include flex-horizontal();
           //justify-content: flex-end;
           align-items: end;
-          //position: relative;
-          background-color: $color-blick;
           img {
             margin: 0 auto;
             margin-right: 8%;
             height: 80%;
             width: auto;
             align-items: end;
-            // position: absolute;
-            // top: 50%;
-            // //right: 50%;
-            // z-index: 999;
           }
-          svg {
-            margin: 0 auto;
-            margin-right: 8%;
-            height: 80%;
-            width: auto;
-            align-items: end;
-            rect {
-              fill: $color-blick;
-            }
-            .color-dark:hover {
-              fill: $color-light;
-              cursor: pointer;
-            }
-          }//          
         }
       }
       .header-center {
@@ -212,9 +191,7 @@ body {
         width: $block-width;
         height: 100%;
         @include flex-vertical();
-        //justify-content: flex-end;
-        background-color: $color-blick;
-        clip-path: polygon(0% 0%, 100% 0%, 76% 100%, 0% 100%);
+        justify-content: flex-end;
         //border: 1px solid red;
         .header-center-block {
           margin: 0 auto;
@@ -245,7 +222,7 @@ body {
               //border: 1px solid grey;
             }
             .menu-item:hover {
-              color: $color-light;  // $color-accent;
+              color: $color-accent;
               font-weight: 500;
             }
             .future {
@@ -258,7 +235,7 @@ body {
           .service-time {
             margin: 0 auto;
             padding-bottom: 1vh; // 2%;
-            margin-right: 24%;  // 1.39vw;
+            margin-right: 1.39vw;
             width: 30%; // fit-content;
             height: 100%; // fit-content;
             @include flex-vertical();
@@ -266,7 +243,6 @@ body {
             @include text-font(0.97vw, 300, 0.97vw, 0); //14px
             align-items: end;
             text-align: right;
-            z-index: 999;
             //border: 1px solid grey;
           }
         }
@@ -391,73 +367,53 @@ body {
           .set-get {
             margin: 0; // auto;
             //margin-left: 40px;
-            width: 24%; // 30%;
+            width: 30%;
             height: 100%;
             @include flex-horizontal();
             align-items: center;
-            background-color: $color-lang-light;  // $color-grey;
-            //background: none;
+            background-color: $color-grey;
+            background: none;
             border-radius: 5px;
-            @include text-font(1.39vw, 400, 1.39vw, 0); //20px; 18px; 16px
+            @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 16px
             color: $color-dark;
             cursor: pointer;
             //border: none;
-            border: 2px solid $color-grey;            
+            border: 2px solid $color-grey;
             //border: 1px solid grey;
             .mode-check {
               visibility: hidden;
             }
           }
-          #setButton {
-            box-shadow: -10px -10px 10px 0px rgba(0,0,0,0.2);//
-            border-top: 3px solid orangered;
-            border-right: 3px solid orangered;
-            border-left: none;
-            border-bottom: none;
-            border-radius: 5px;
-          }
-          #getButton {
-            box-shadow: 10px -10px 10px 0px rgba(0,0,0,0.2);//
-            border-top: 3px solid orangered;
-            border-left: 3px solid orangered;
-            border-radius: 5px;
-          }
           .set-get:hover {
-            background-color: $color-blick-dark;
-            color: $color-light;  // $color-accent;
+            color: $color-accent;
             border: 2px solid $color-blick;
             svg path {
-              fill: $color-light; // $color-accent;
-              stroke: $color-light; // $color-accent;
+              fill: $color-accent;
+              stroke: $color-accent;
             }
             //background-color: $color-grey-dark;
           }
           .get:hover {
             svg path {
               fill: none;
-              stroke: $color-light; // $color-accent;
+              stroke: $color-accent;
             }
           }
         }
         .modes {
           margin: auto;
-          width: 100%;  // 65%;
+          width: 65%;
           height: 55%;
           @include flex-horizontal();
-          justify-content: space-between;
           flex-wrap: wrap;
           //border: 1px solid violet;
-          border-radius: 5px;
           .mode-item {
-            margin: auto 0;
-            width: 24%; // 48%;
-            height: 100%;  // 48%;
+            margin: auto;
+            width: 48%;
+            height: 48%;
             @include flex-vertical();
             justify-content: space-between;
-            //border-right: 3px solid orangered;
-            border-bottom: 5px solid orangered;
-            //border-top: 1px solid $color-blick-light;
-            border-radius: 5px;
+            //border: 1px solid blue;
             .mode-item-btn {
               margin: auto;
               width: 100%;
@@ -465,133 +421,48 @@ body {
               align-items: center;
               background-color: $color-grey;
               cursor: pointer;
-              border: none; // grey;
-              outline: none;
+              border: 2px solid $color-grey-dark; // grey;
               border-radius: 5px;
-              @include flex-vertical();
-              //justify-content: space-between;
-              box-shadow: -10px 20px 10px 0px rgba(0,0,0,0.2);
-              .mode-btn-title {
-                margin: auto;
-                width: 100%;
-                height: 70%;
-                background-color: $color-lang-light;
-                //border: 1px solid orangered;
-                border-radius: 5px;
-                @include flex-vertical();
-                .title {
-                  //margin: auto;
-                  width: 100%;
-                  margin-bottom: 2.2%; // 10px;
-                  @include text-font(2.22vw, 400, 2.22vw, 10%); //32px; 18px; 16px;
-                  color: $color-dark;
-                  align-items: center;
-                }
-                .mini {
-                  @include text-font(1.39vw, 400, 1.39vw, 5%); //20px; 24px;//
-                }
+              .title {
+                margin-bottom: 2.2%; // 10px;
+                @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 16px;
+                color: $color-dark;
               }
-              .mode-btn-info {
-                margin: auto;
-                width: 100%;
-                height: 30%;
-                background-color: $color-light;
-                //border: 1px solid orangered;
-                border-radius: 5px;
-                @include flex-horizontal();
-                .info {
-                  margin: auto;
-                  //margin-top: 4.4%;
-                  width: 80%;
-                  @include text-font(1.11vw, 400, 1.11vw, 0); //16px; 14px;
-                  color: $color-dark;
-                  text-align: center;
-                }
+              .info {
+                margin-top: 4.4%;
+                //width: 80%;
+                @include text-font(1.11vw, 400, 1.11vw, 0); //16px; 14px;
+                color: $color-dark;
+                text-align: center;
               }
-              .mode-btn-title:hover {
-                background-color: orange;
-                .title {
-                  color: $color-light;//
-                }                
-              }
-              .mode-btn-info:hover {
-                background-color: $color-blick;
-                .info{
-                  color: $color-light;//
-                }                
-              }
-              // .title {
-              //   margin-bottom: 2.2%; // 10px;
-              //   @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 16px;
-              //   color: $color-dark;
-              // }
-              // .info {
-              //   margin-top: 4.4%;
-              //   //width: 80%;
-              //   @include text-font(1.11vw, 400, 1.11vw, 0); //16px; 14px;
-              //   color: $color-dark;
-              //   text-align: center;
-              // }
             }
             .mode-item-btn:hover {
               border: 2px solid $color-blick;
-              background-color: orange; // $color-grey-dark;
+              background-color: $color-grey-dark;
             }
-            #modeItemPlain, #modeItemChoice {
-              box-shadow: -10px 20px 10px 0px rgba(0,0,0,0.2);//
-              border-right: 3px solid orangered;
+            #modeItemChoice {
+              background-color: $color-right;
+            }
+            #modeItemChoice:hover {
+              background-color: $color-right-dark;
+            }
+            #modeItemPlain {
+              background-color: $color-right;
+            }
+            #modeItemPlain:hover {
+              background-color: $color-right-dark;
             }
             #modeItemMix {
-              border-left: 3px solid orangered;
-              box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.2);
+              background-color: $color-right;
             }
-            #modeItemLang, #modeItemChoice {
-              box-shadow: -10px 20px 10px 0px rgba(0,0,0,0.2),
-                           10px 20px 10px 0px rgba(0,0,0,0.2);//
+            #modeItemMix:hover {
+              background-color: $color-right-dark;
             }
             #modeItemLang {
-              border-left: 3px solid orangered;
-              //border-top: 1px solid $color-blick-light;
+              background-color: $color-right;
             }
-            // #modeItemChoice {
-            //   background-color: $color-right;
-            // }
-            // #modeItemChoice:hover {
-            //   background-color: $color-right-dark;
-            // }
-            // #modeItemPlain {
-            //   background-color: $color-right;
-            // }
-            // #modeItemPlain:hover {
-            //   background-color: $color-right-dark;
-            // }
-            // #modeItemMix {
-            //   background-color: $color-right;
-            // }
-            // #modeItemMix:hover {
-            //   background-color: $color-right-dark;
-            // }
-            // #modeItemLang {
-            //   background-color: $color-right;
-            // }
-            // #modeItemLang:hover {
-            //   background-color: $color-right-dark;
-            // }
-          }
-          .mode-item:hover {
-            .mode-item-btn {
-              .mode-btn-title {
-                background-color: $color-blick-dark;
-                .title {
-                  color: $color-light;
-                }
-              }
-              .mode-btn-info {
-                background-color: $color-blick;
-                .info {
-                  color: $color-light;
-                }
-              }
+            #modeItemLang:hover {
+              background-color: $color-right-dark;
             }
           }
         }
@@ -606,51 +477,39 @@ body {
           .set-get {
             margin: 0; // auto;
             //margin-left: 40px;
-            width:  24%;  // 30%;
+            width: 30%;
             height: 100%;
             @include flex-horizontal();
             align-items: center;
             //background-color: $color-grey;
-            //background: none;
-            background-color: $color-lang-light;
-            @include text-font(1.39vw, 400, 1.39vw, 0); //20px; 18px;  16px;
+            background: none;
+            @include text-font(1.25vw, 400, 1.25vw, 0); //18px;  16px;
             color: $color-dark;
             cursor: pointer;
             //border: none;
-            //border: 2px solid $color-grey;
-            box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.2);//
-            border-bottom: 3px solid orangered;
-            border-right: 3px solid orangered;
-            border-top: none;
-            border-left: none;
-            outline: none;
+            border: 2px solid $color-grey;
             border-radius: 5px;
             //border: 1px solid grey;
           }
           .set-get:hover {
-            background-color: $color-blick-dark;
-            //border: 2px solid $color-blick;
-            color: $color-light;  // $color-accent;
+            border: 2px solid $color-blick;
+            color: $color-accent;
             svg path {
-              fill: $color-light; // $color-accent;
+              fill: $color-accent;
             }
             //background-color: $color-grey-dark;
           }
           .totals {
             margin: 0; // auto;
             //margin-left: 1,5%;  // 20px;
-            width: 49.5%;  // 45%;
+            width: 45%;
             height: 100%;
             @include flex-vertical();
-            background-color: $color-lang-light;  // $color-grey;
-            //background: none;
-            //border: 2px solid $color-grey;
+            //background-color: $color-grey;
+            background: none;
+            border: 2px solid $color-grey;
             border-radius: 5px;
             //border: 1px solid grey;
-            border-bottom: 3px solid orangered;
-            border-right: 3px solid orangered;
-            box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.2),
-                        -10px 10px 10px 0px rgba(0,0,0,0.2);////
             .totals-block {
               margin: 0; // auto;
               @include flex-horizontal();
@@ -661,7 +520,7 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 p {
-                  @include text-font(1.53vw, 400, 1.53vw, 0); //22px; 18px;  16px;
+                  @include text-font(1.25vw, 400, 1.25vw, 0); //18px;  16px;
                   margin-left: 2.3%;
                 }
               }
@@ -671,11 +530,10 @@ body {
             }
           }
           .totals:hover {
-            background-color: $color-blick-dark;            
-            //border: 2px solid $color-blick;
-            color: $color-light;  // $color-accent;
+            border: 2px solid $color-blick;
+            color: $color-accent;
             svg g path {
-              fill: $color-light; // $color-accent;
+              fill: $color-accent;
             }
           }
         }
@@ -1115,31 +973,13 @@ body {
         @include flex-horizontal();
         //justify-content: flex-end;
         align-items: center;
-        .logo {
+        img {
           margin: 0 auto;
-          width: fit-content;
-          height: 100%;
-          @include flex-vertical();
-          img {
-            margin: 0 auto;
-            margin-right: 8%;
-            height: 50%;
-            width: auto;
-            align-items: center;
-            //border: 1px solid green;
-          }
-        }        
-        // .copyright {
-        //   display: none;
-        //   margin: 0 auto;
-        //   width: fit-content; // 30%; // fit-content;
-        //   height: 100%; // fit-content;
-        //   @include text-font(0.83vw, 300, 0.83vw, 0); //12px; 14px
-        //   align-items: center;
-        //   text-align: left;
-        //   @include flex-vertical();
-        //   //border: 1px solid grey;
-        // }
+          margin-right: 8%;
+          height: 50%;
+          width: auto;
+          align-items: center;
+        }
       }
     }
     .footer-center {
@@ -1149,8 +989,6 @@ body {
       @include flex-vertical();
       //justify-content: flex-end;
       //border: 1px solid red;
-      background-color: $color-blick-dark;
-      clip-path: polygon(24% 0%, 100% 0%, 100% 100%, 0% 100%);
       .footer-center-block {
         margin: 0 auto;
         width: 100%;
@@ -1179,7 +1017,7 @@ body {
             //border: 1px solid grey;
           }
           .menu-item:hover {
-            color: $color-light;  // $color-accent;
+            color: $color-accent;
             font-weight: 500;
           }
           .future {
@@ -1190,12 +1028,10 @@ body {
           }
         }
         .copyright {
-          //display: none;
           margin: 0 auto;
-          margin-left: 26%;
           width: 30%; // fit-content;
           height: 100%; // fit-content;
-          @include text-font(0.83vw, 300, 0.83vw, 0); //12px; 14px
+          @include text-font(0.97vw, 300, 0.97vw, 0); //14px
           align-items: center;
           text-align: left;
           //border: 1px solid grey;
@@ -1207,7 +1043,6 @@ body {
       width: 0.5 * ($site-width - $block-width);
       height: 100%;
       @include flex-vertical();
-      background-color: $color-blick-dark;
       //justify-content: flex-end;
       //border: 1px solid blue;
       .footer-right-block {
@@ -1245,11 +1080,11 @@ body {
             }
           }
           .menu-item:hover {
-            color: $color-light;  // $color-accent;
+            color: $color-accent;
             font-weight: 500;
           }
           .menu-item:hover path {
-            fill: $color-light; // $color-accent;
+            fill: $color-accent;
           }
         }
       }

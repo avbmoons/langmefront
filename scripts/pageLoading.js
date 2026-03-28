@@ -1,44 +1,12 @@
-const thisUrl = window.location.pathname;
-let urlName = thisUrl.substring(thisUrl.lastIndexOf("/") + 1);
-console.log(urlName);
+// const viewportWidth = window.innerWidth + "px";
+//console.log("ViewportWidth = ", viewportWidth);
 
-// for menu items settings (visibility)
-const menuHeader = [];
-const menuFooter = [];
+// const root = document.documentElement;
+// root.style.setProperty('--viewport-width', viewportWidth);
 
-menuHeader[0] = document.getElementById('menuHeaderHome');
-menuHeader[1] = document.getElementById('menuHeaderTask');
-menuHeader[2] = document.getElementById('menuHeaderGuide');
-menuHeader[3] = document.getElementById('menuHeaderResults');
-menuHeader[4] = document.getElementById('menuHeaderAbout');
-
-menuFooter[0] = document.getElementById('menuFooterHome');
-menuFooter[1] = document.getElementById('menuFooterTask');
-menuFooter[2] = document.getElementById('menuFooterGuide');
-menuFooter[3] = document.getElementById('menuFooterResults');
-menuFooter[4] = document.getElementById('menuFooterAbout');
-
-for (let i=0; i < menuHeader.length; i++) {
-    if (i === 0 || i === 2 || i === 4) {
-        menuHeader[i].style.display = 'block';
-    } else {
-        menuHeader[i].style.display = 'none';
-    }
-}
-
-for (let i=0; i < menuFooter.length; i++) {
-    if (i === 0 || i === 2 || i === 4) {
-        menuFooter[i].style.display = 'block';
-    } else {
-        menuFooter[i].style.display = 'none';
-    }
-}
-
-if (urlName == 'about.html') {
-    menuHeader[1].style.display = 'block';
-    menuFooter[1].style.display = 'block';
-}
-///////////
+// const pageUrl = window.location.pathname;
+// const pageName = pageUrl.substring(pageUrl.lastIndexOf('/')+1);
+// console.log(pageName);
 
 function getTask() {
     let modeChoice = localStorage.getItem('modeChoice').trim();

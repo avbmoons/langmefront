@@ -21,7 +21,7 @@ class ThemeList {
         this.cthemes = [];
     }
     fetchTheme() {
-        this.cthemes = themes.filter(item => item.status == 1);
+        this.cthemes = themes;
     }
     render() {
         let listHtmlTheme = '';

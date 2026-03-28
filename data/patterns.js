@@ -35,11 +35,5 @@ const patterns = [
         patternName: "_patternLav",
         idStatus: 1,
     },
-    {
-        id: 7,
-        idLang: 7,
-        patternName: "_patternSrb",
-        idStatus: 0,
-    },
     
 ];

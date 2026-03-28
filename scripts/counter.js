@@ -1,3 +1,7 @@
+// const btnPrevNumWords = document.getElementById("btnPrevNumWords");
+// const btnNextNumWords = document.getElementById("btnNextNumWords");
+// const btnPrevNumOpt = document.getElementById("btnPrevNumOpt");
+// const btnNextNumOpt = document.getElementById("btnNextNumOpt");
 const numWordsValue = document.getElementById("numWordsValue");
 const numOptionsValue = document.getElementById("numOptionsValue");
 

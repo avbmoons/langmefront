@@ -17,7 +17,7 @@
     <script defer src="../data/patternGre.js"></script>
     <script defer src="../data/patternFin.js"></script>
     <script defer src="../data/patternLav.js"></script>
-    <!-- <script defer src="../scripts/homeLoading.js"></script> -->
+    <script defer src="../scripts/homeLoading.js"></script>
     <script defer src="../scripts/pageLoading.js"></script>
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
@@ -28,8 +28,10 @@
     <!-- <script defer src="../scripts/taskChoice.js"></script> -->
     <script defer src="../scripts/test.js"></script>
     <script defer src="../scripts/testModes.js"></script>
- 
+    <!-- <script defer src="../scripts/_modes.js"></script> 
+    <script defer src="../scripts/_testModePlain.js"></script>-->
     <script defer src="../scripts/modePlain.js"></script>
+    <!-- <script defer src="../scripts/_modePlain.js"></script>-->
     <script defer src="../scripts/paginationPlain.js"></script>
   </head>
   <body>
@@ -44,11 +46,18 @@
           <div class="header-center">
             <div class="header-center-block">
               <menu>
-                <button class="menu-item header" id="menuHeaderHome" onclick="window.location.href='home.html'">Home</button>
-                <button class="menu-item header" id="menuHeaderTask" onclick="getTask()">Task</button>
-                <button class="menu-item future" id="menuHeaderGuide">Guide</button>
-                <button class="menu-item future" id="menuHeaderResults">Results</button>
-                <button class="menu-item" id="menuHeaderAbout" onclick="window.location.href = 'about.html'">About</button>
+                <button
+                  class="menu-item header"
+                  onclick="window.location.href='home.html'"
+                >
+                  Home
+                </button>
+                <button class="menu-item header" onclick="getTask()">
+                  Task
+                </button>
+                <button class="menu-item future">Guide</button>
+                <button class="menu-item future">Results</button>
+                <button class="menu-item future">About</button>
               </menu>
               <div class="service-time">
                 <p id="currentTime"></p>
@@ -530,11 +539,16 @@
               <p>avb&copy;All right reserved</p>
             </div>
             <menu>
-              <button class="menu-item footer" id="menuFooterHome" onclick="window.location.href='home.html'">Home</button>
-              <button class="menu-item footer" id="menuFooterTask" onclick="getTask()">Task</button>
-              <button class="menu-item future" id="menuFooterGuide">Guide</button>
-              <button class="menu-item future" id="menuFooterResults">Results</button>
-              <button class="menu-item" id="menuFooterAbout" onclick="window.location.href = 'about.html'">About</button>
+              <button
+                class="menu-item footer"
+                onclick="window.location.href='home.html'"
+              >
+                Home
+              </button>
+              <button class="menu-item footer" onclick="getTask()">Task</button>
+              <button class="menu-item future">Guide</button>
+              <button class="menu-item future">Results</button>
+              <button class="menu-item future">About</button>
             </menu>
           </div>
         </div>

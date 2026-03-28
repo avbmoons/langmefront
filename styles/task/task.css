@@ -6,14 +6,6 @@
   font-family: NotoSansArmenian;
   src: url(../../assets/fonts/NotoSansArmenian-VariableFont_wdthwght.ttf);
 }
-@font-face {
-  font-family: Roboto;
-  src: url(../../assets/fonts/Roboto.ttf);
-}
-@font-face {
-  font-family: NotoSansArmenian;
-  src: url(../../assets/fonts/NotoSansArmenian-VariableFont_wdthwght.ttf);
-}
 * {
   margin: 0;
   padding: 0;
@@ -427,20 +419,6 @@ body {
   color: #0f1a1c;
   text-align: left;
 }
-.wrapper .top main .main-center .task-info .info-content-block .task-description .then {
-  margin-top: 1.39%;
-  font-size: 1.11vw;
-  font-weight: 400;
-  line-height: 1.11vw;
-  letter-spacing: 0;
-}
-.wrapper .top main .main-center .task-info .info-content-block .about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  justify-content: space-between;
-}
 .wrapper .top main .main-center .task-info .info-content-block .task-langs {
   margin: 0 auto;
   width: 96%;
@@ -566,74 +544,6 @@ body {
   color: #0f1a1c;
   text-align: right;
 }
-.wrapper .top main .main-center .chart-rows-block {
-  margin: 0 auto;
-  margin-top: 40px;
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  justify-content: space-between;
-  overflow-y: auto;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-title-block {
-  margin: 0 auto;
-  width: 100%;
-  height: 10%;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-title-block .charts-title {
-  padding: 20px 0px;
-  font-size: 1.67vw;
-  font-weight: 400;
-  line-height: 1.67vw;
-  letter-spacing: 0;
-  color: #0f1a1c;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-mini-row {
-  margin: 0 auto;
-  width: 100%;
-  height: 38%;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-  justify-content: space-between;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-mini-row .chart-mini {
-  margin: 0 auto;
-  width: 23%;
-  height: 100%;
-  position: relative;
-  border: 1px solid blue;
-  border-radius: 5px;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-mini-row .chart-mini #testChart2, .wrapper .top main .main-center .chart-rows-block .chart-mini-row .chart-mini #testChart3, .wrapper .top main .main-center .chart-rows-block .chart-mini-row .chart-mini #testChart4, .wrapper .top main .main-center .chart-rows-block .chart-mini-row .chart-mini #testChart1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-one-row {
-  margin: 0 auto;
-  width: 98%;
-  height: 52%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-  justify-content: space-around;
-  border: 2px solid violet;
-  border-radius: 5px;
-}
-.wrapper .top main .main-center .chart-rows-block .chart-one-row #testChart {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
 .wrapper .top main .main-center .task-mode-block {
   margin: 0 auto;
   width: 100%;
@@ -664,6 +574,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
+  border: 1px solid #c2cacc;
   border-radius: 5px;
 }
 .wrapper .top main .main-center .task-mode-block .task-mode .item-card .item-heading,
@@ -773,10 +684,10 @@ body {
 .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base .item-option-lang:hover {
   background-color: #fff2de;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card:hover .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card:hover .item-option-lang, .wrapper .top main .main-center .task-mode-block .task-mode .item-card:hover .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card:hover .item-heading-lang {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card:hover {
   border: 1.5px solid #f5a836;
 }
-.wrapper .top main .main-center .task-mode-block .task-mode .item-card-base:hover .item-option, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base:hover .item-option-lang, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base:hover .item-heading, .wrapper .top main .main-center .task-mode-block .task-mode .item-card-base:hover .item-heading-lang {
+.wrapper .top main .main-center .task-mode-block .task-mode .item-card-base:hover {
   border: 1.5px solid #f5a836;
 }
 .wrapper .top main .main-center .task-navi {

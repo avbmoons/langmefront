@@ -19,9 +19,4 @@ const modes = [
         modeName: "Mix",
         status: 1,
     },
-    {
-        id: 5,
-        modeName: "Memo",
-        status: 0,
-    },
 ];

@@ -425,16 +425,4 @@ const words = [
         idStatus: 1,
         wordName: "тысяча",
     },
-    {
-        id: 72,
-        idTheme: 2,
-        idStatus: 0,
-        wordName: "миллион",
-    },
-    {
-        id: 73,
-        idTheme: 2,
-        idStatus: 0,
-        wordName: "миллиард",
-    },
 ];
