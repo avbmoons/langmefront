@@ -327,65 +327,172 @@ class CardCompMix {
             this.ctaskRows.spellEng,
         ); 
 
-        // + two versions
+        // + three versions
+        let itemOptionCompMixV1;
+        let itemOptionCompMixV2;
+        let itemOptionCompMixV3;
+        let cardOptions = [];
 
-        let itemOptionCompMixV1 = new ItemOption1CompMix(
-            this.ccompOptionsMix[0].id,
-            this.ccompOptionsMix[0].idTheme,
-            this.ccompOptionsMix[0].idWord,
-            this.ccompOptionsMix[0].idLang,
-            this.ccompOptionsMix[0].langName,
-            this.ccompOptionsMix[0].wordName,
-            this.ccompOptionsMix[0].spellBase,
-            this.ccompOptionsMix[0].spellEng,
-        );
+        switch (arrSelectedCompLangs.length) {
+            case 2:
+                itemOptionCompMixV1 = new ItemOption1CompMix(
+                    this.ccompOptionsMix[0].id,
+                    this.ccompOptionsMix[0].idTheme,
+                    this.ccompOptionsMix[0].idWord,
+                    this.ccompOptionsMix[0].idLang,
+                    this.ccompOptionsMix[0].langName,
+                    this.ccompOptionsMix[0].wordName,
+                    this.ccompOptionsMix[0].spellBase,
+                    this.ccompOptionsMix[0].spellEng,
+                );
+                this.ctaskRows = itemOptionCompMixV1;//
+                itemOptionCompMixV1Html = itemOptionCompMixV1.render();//
+                cardOptions[1] = itemOptionCompMixV1Html;//
+                break;
+            case 3:
+                itemOptionCompMixV1 = new ItemOption1CompMix(
+                    this.ccompOptionsMix[0].id,
+                    this.ccompOptionsMix[0].idTheme,
+                    this.ccompOptionsMix[0].idWord,
+                    this.ccompOptionsMix[0].idLang,
+                    this.ccompOptionsMix[0].langName,
+                    this.ccompOptionsMix[0].wordName,
+                    this.ccompOptionsMix[0].spellBase,
+                    this.ccompOptionsMix[0].spellEng,
+                );
 
-        let itemOptionCompMixV2 = new ItemOption2CompMix(
-            this.ccompOptionsMix[1].id,
-            this.ccompOptionsMix[1].idTheme,
-            this.ccompOptionsMix[1].idWord,
-            this.ccompOptionsMix[1].idLang,
-            this.ccompOptionsMix[1].langName,
-            this.ccompOptionsMix[1].wordName,
-            this.ccompOptionsMix[1].spellBase,
-            this.ccompOptionsMix[1].spellEng,
-        );
+                itemOptionCompMixV2 = new ItemOption2CompMix(
+                    this.ccompOptionsMix[1].id,
+                    this.ccompOptionsMix[1].idTheme,
+                    this.ccompOptionsMix[1].idWord,
+                    this.ccompOptionsMix[1].idLang,
+                    this.ccompOptionsMix[1].langName,
+                    this.ccompOptionsMix[1].wordName,
+                    this.ccompOptionsMix[1].spellBase,
+                    this.ccompOptionsMix[1].spellEng,
+                );
+                this.ctaskRows = itemOptionCompMixV1;//
+                this.ctaskRows = itemOptionCompMixV2;//
+                itemOptionCompMixV1Html = itemOptionCompMixV1.render();//
+                itemOptionCompMixV2Html = itemOptionCompMixV2.render();//
+                cardOptions[1] = itemOptionCompMixV1Html;//
+                cardOptions[2] = itemOptionCompMixV2Html;//
+                break;
+            case 4:
+                itemOptionCompMixV1 = new ItemOption1CompMix(
+                    this.ccompOptionsMix[0].id,
+                    this.ccompOptionsMix[0].idTheme,
+                    this.ccompOptionsMix[0].idWord,
+                    this.ccompOptionsMix[0].idLang,
+                    this.ccompOptionsMix[0].langName,
+                    this.ccompOptionsMix[0].wordName,
+                    this.ccompOptionsMix[0].spellBase,
+                    this.ccompOptionsMix[0].spellEng,
+                );
 
-        let itemOptionCompMixV3 = new ItemOption3CompMix(
-            this.ccompOptionsMix[2].id,
-            this.ccompOptionsMix[2].idTheme,
-            this.ccompOptionsMix[2].idWord,
-            this.ccompOptionsMix[2].idLang,
-            this.ccompOptionsMix[2].langName,
-            this.ccompOptionsMix[2].wordName,
-            this.ccompOptionsMix[2].spellBase,
-            this.ccompOptionsMix[2].spellEng,
-        );
+                itemOptionCompMixV2 = new ItemOption2CompMix(
+                    this.ccompOptionsMix[1].id,
+                    this.ccompOptionsMix[1].idTheme,
+                    this.ccompOptionsMix[1].idWord,
+                    this.ccompOptionsMix[1].idLang,
+                    this.ccompOptionsMix[1].langName,
+                    this.ccompOptionsMix[1].wordName,
+                    this.ccompOptionsMix[1].spellBase,
+                    this.ccompOptionsMix[1].spellEng,
+                );
 
-        //console.log(itemHeadingComp.langName);
-        //console.log(itemOptionCompMix.wordName);
+                itemOptionCompMixV3 = new ItemOption3CompMix(
+                    this.ccompOptionsMix[2].id,
+                    this.ccompOptionsMix[2].idTheme,
+                    this.ccompOptionsMix[2].idWord,
+                    this.ccompOptionsMix[2].idLang,
+                    this.ccompOptionsMix[2].langName,
+                    this.ccompOptionsMix[2].wordName,
+                    this.ccompOptionsMix[2].spellBase,
+                    this.ccompOptionsMix[2].spellEng,
+                );
+                this.ctaskRows = itemOptionCompMixV1;//
+                this.ctaskRows = itemOptionCompMixV2;//
+                this.ctaskRows = itemOptionCompMixV3;//
+                itemOptionCompMixV1Html = itemOptionCompMixV1.render();//
+                itemOptionCompMixV2Html = itemOptionCompMixV2.render();//
+                itemOptionCompMixV3Html = itemOptionCompMixV3.render();//
+                cardOptions[1] = itemOptionCompMixV1Html;//
+                cardOptions[2] = itemOptionCompMixV2Html;//
+                cardOptions[3] = itemOptionCompMixV3Html;//
+                break;
+        }
+
+        // itemOptionCompMixV1 = new ItemOption1CompMix(
+        //     this.ccompOptionsMix[0].id,
+        //     this.ccompOptionsMix[0].idTheme,
+        //     this.ccompOptionsMix[0].idWord,
+        //     this.ccompOptionsMix[0].idLang,
+        //     this.ccompOptionsMix[0].langName,
+        //     this.ccompOptionsMix[0].wordName,
+        //     this.ccompOptionsMix[0].spellBase,
+        //     this.ccompOptionsMix[0].spellEng,
+        // );
+
+        // itemOptionCompMixV2 = new ItemOption2CompMix(
+        //     this.ccompOptionsMix[1].id,
+        //     this.ccompOptionsMix[1].idTheme,
+        //     this.ccompOptionsMix[1].idWord,
+        //     this.ccompOptionsMix[1].idLang,
+        //     this.ccompOptionsMix[1].langName,
+        //     this.ccompOptionsMix[1].wordName,
+        //     this.ccompOptionsMix[1].spellBase,
+        //     this.ccompOptionsMix[1].spellEng,
+        // );
+
+        // itemOptionCompMixV3 = new ItemOption3CompMix(
+        //     this.ccompOptionsMix[2].id,
+        //     this.ccompOptionsMix[2].idTheme,
+        //     this.ccompOptionsMix[2].idWord,
+        //     this.ccompOptionsMix[2].idLang,
+        //     this.ccompOptionsMix[2].langName,
+        //     this.ccompOptionsMix[2].wordName,
+        //     this.ccompOptionsMix[2].spellBase,
+        //     this.ccompOptionsMix[2].spellEng,
+        // );
 
         this.ctaskRows = itemHeadingComp;
         this.ctaskRows = itemOptionCompMix;
-        this.ctaskRows = itemOptionCompMixV1;
-        this.ctaskRows = itemOptionCompMixV2;
-        this.ctaskRows = itemOptionCompMixV3;
+        // this.ctaskRows = itemOptionCompMixV1;//
+        // this.ctaskRows = itemOptionCompMixV2;//
+        // this.ctaskRows = itemOptionCompMixV3;//
         
         itemHeadingCompHtml = itemHeadingComp.render();
         itemOptionCompMixHtml = itemOptionCompMix.render();
-        itemOptionCompMixV1Html = itemOptionCompMixV1.render();
-        itemOptionCompMixV2Html = itemOptionCompMixV2.render();
-        itemOptionCompMixV3Html = itemOptionCompMixV3.render();
+        // itemOptionCompMixV1Html = itemOptionCompMixV1.render();//
+        // itemOptionCompMixV2Html = itemOptionCompMixV2.render();//
+        // itemOptionCompMixV3Html = itemOptionCompMixV3.render();//
 
-        let cardOptions = [];
+        //let cardOptions = [];
         cardOptions[0] = itemOptionCompMixHtml;
-        cardOptions[1] = itemOptionCompMixV1Html;
-        cardOptions[2] = itemOptionCompMixV2Html;
-        cardOptions[3] = itemOptionCompMixV3Html;
+        // cardOptions[1] = itemOptionCompMixV1Html;//
+        // cardOptions[2] = itemOptionCompMixV2Html;//
+        // cardOptions[3] = itemOptionCompMixV3Html;//
         let cardOptionsRand = randArr(cardOptions);
 
         //let itemCompMixHtml = itemHeadingCompHtml + itemOptionCompMixHtml + itemOptionCompMixV1Html + itemOptionCompMixV2Html;
-        let itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
+        let itemCompMixHtml;
+
+        switch (arrSelectedCompLangs.length) {
+            case 1:
+                itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0];
+                break;
+            case 2:
+                itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1];
+                break;
+            case 3:
+                itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2];
+                break;
+            case 4:
+                itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
+                break;
+        }
+        // itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
 
         document.querySelector("#item"+`${i}`+"Comp"+`${j}`).innerHTML = itemCompMixHtml;
     }
@@ -397,8 +504,6 @@ let resultWorry = document.getElementById("worry");
 
 let valueEnjoy = resultEnjoy.textContent;
 let valueWorry = resultWorry.textContent;
-// console.log("Enjoy: " + valueEnjoy);
-// console.log("Worry: " + valueWorry);
 
 function totalsEnjoy() {
     totalEnjoy.push(valueEnjoy);
@@ -408,10 +513,6 @@ function totalsWorry() {
     totalWorry.push(valueWorry);
     return totalWorry;
 }
-
-// const cardCompMixHtml = new CardCompMix();
-// cardCompMixHtml.fetchCardCompMix(0,1);
-// cardCompMixHtml.render();
 
 // test row render
 //cardCompMixDom();
@@ -432,30 +533,19 @@ for (let i=0; i<taskRows.length; i++) {
             }
         }
 
-        //console.log("Option Choice theme lang: " + taskRows[0][j].langName);
-        //console.log(optionsChoiceThemeLang);
         optionsMixTheme.push(optionsMixThemeLang);
     }
     optionsMix.push(optionsMixTheme);
-    //console.log("Option Mix theme: ");
-    //console.log(optionsMixTheme);
-
-    //console.log(randEl(optionsChoiceTheme[1]));
 }
 
 console.log("Options Mix : ");
 console.log(optionsMix);
 
 console.log("Random option Mix: ");
-//console.log(randOptionsMix);
-
-//console.log(randEl(randOptionsMix[1]));
-
 
 //Function get element from array by random index
 function randEl(array) {
     const randIndex = Math.floor(Math.random() * array.length);
-    //const randElement = array[randIndex];
     return array[randIndex];    // randElement;
 }
 
@@ -467,19 +557,13 @@ function randArr(array) {
     return array;
 }
 
-// let arr = [1,17,23,43,2,7,9];
-// console.log(randArr(arr));
-
 ///////////////////////
 //Define task rows with options array for mode Mix
 ///////let taskRowsOptions = [];////////////////////////
 
 for (let i=0; i < taskRows.length; i++) {
-    //console.log(taskRows[i].length);
     let rowTheme = taskRows[i][0].idTheme;
     let rowWord = taskRows[i][0].idWord;
-    //getCompWordsTheme(rowTheme, rowWord);
-    //console.log(compWordsTheme);
    
     for (let j=0; j < taskRows[i].length; j++) {
         let optionLang = taskRows[i][j].idLang;
@@ -500,13 +584,7 @@ console.log(taskRowsOptions);
 function getOptionsMix(themeId, langId, wordId) {
     compOptionsMix = [];
     compWordsTheme = [];
-    // for (let k=0; k < compWords.length; k++) {
-    //     if (compWords[k].idLang !== langId) {
-    //         continue;
-    //     } else if (compWords[k].idTheme == themeId && wordId !== compWords[k].idWord) {
-    //         compWordsTheme.push(compWords[k]);//
-    //     } else { continue;}         
-    // }
+
     for (let k=0; k < compWords.length; k++) {
         if (wordId !== compWords[k].idWord) {
             continue;
@@ -515,27 +593,52 @@ function getOptionsMix(themeId, langId, wordId) {
         } else { continue;}         
     }
 
-    //console.log(compWordsTheme);
-    
-    let option1 = randEl(compWordsTheme);
-    let newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
-    let option2 = randEl(newCompWordsTheme);
-    let otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
-    let option3 = randEl(otherNewCompWordsTheme);
-    option1.isRight = false;
-    option2.isRight = false;
-    option3.isRight = false;
-    compOptionsMix.push(option1, option2, option3);
-    //console.log(compOptionsChoise);
+    let option1;
+    let option2;
+    let option3;
+    let newCompWordsTheme;
+    let otherNewCompWordsTheme;
+
+    switch (arrSelectedCompLangs.length) {
+        case 2:
+            option1 = randEl(compWordsTheme);
+            compOptionsMix.push(option1);
+            break;
+        case 3:
+            option1 = randEl(compWordsTheme);
+            newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+            option2 = randEl(newCompWordsTheme);
+            compOptionsMix.push(option1, option2);
+            break;
+        case 4:
+            option1 = randEl(compWordsTheme);
+            newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+            option2 = randEl(newCompWordsTheme);
+            otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
+            option3 = randEl(otherNewCompWordsTheme);
+            option1.isRight = false;
+            option2.isRight = false;
+            option3.isRight = false;
+            compOptionsMix.push(option1, option2, option3);
+            break;
+    }
+   
+    // option1 = randEl(compWordsTheme);
+    // newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+    // option2 = randEl(newCompWordsTheme);
+    // otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
+    // option3 = randEl(otherNewCompWordsTheme);
+    // option1.isRight = false;
+    // option2.isRight = false;
+    // option3.isRight = false;
+    // compOptionsMix.push(option1, option2, option3);
+
     return compOptionsMix;
 }
 
 // //Example for get random comp options
 
-// getOptionsMix(3,3,40);
-// console.log("Example for get random comp options");
 console.log(compOptionsMix);
-// console.log(compOptionsMix.length);
 
 //Function for Rows counter
 let rowsList = document.getElementsByClassName("task-mode");
@@ -547,18 +650,15 @@ console.log("Rows num = " + rowsNum);
 // array - example from taskRows[]
 console.log('All rows number (taskRows.length) : ' + taskRows.length);
 let taskRowsTest = [];
-let arrNum = (taskRows.length - 1);   // 27;    // 9;    // taskRows.length;    //16;     // numbering of rows in the render list == (arrNum+1)
+let arrNum = (taskRows.length - 1);   
 
 for (let m=0; m <= arrNum; m++) {
     taskRowsTest[m] = taskRows[m];
-    //return taskRowsTest;
 }
 
 console.log("array Task rows test for render: ");
 console.log(taskRowsTest);
 console.log("taskRowsTest length : " + taskRowsTest.length);
-
-//console.log(selectedPrimLang);
 
 //rowsCompChoiceDom();
 

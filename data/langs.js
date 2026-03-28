@@ -46,5 +46,13 @@ const langs = [
         langAlias: "Lav",
         status: 1,
         position: 2,
+    },
+    {
+        id: 7,
+        langName: "Serbian",
+        langNative: "Српски језик",
+        langAlias: "Srb",
+        status: 0,
+        position: 2,
     },    
 ];

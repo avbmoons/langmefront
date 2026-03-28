@@ -7,12 +7,12 @@ const themes = [
     {
         id:2,
         themeName: "Numbers",
-        status:0,
+        status:1,
     },
     {
         id:3,
         themeName: "Colors",
-        status:0,
+        status:1,
     },
     {
         id:4,

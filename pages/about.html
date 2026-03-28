@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>langMe-task</title>
+    <title>langMe-about</title>
     <link rel="stylesheet" href="../styles/task/task.css">
     <script defer src="../scripts/pageLoading.js"></script>
     <script defer src="../data/langs.js"></script> 
@@ -17,7 +17,8 @@
     <script defer src="../data/patternGre.js"></script>
     <script defer src="../data/patternFin.js"></script>
     <script defer src="../data/patternLav.js"></script>
-    <script defer src="../scripts/homeLoading.js"></script>
+    <script defer src="../data/datachart.js"></script>
+    <!-- <script defer src="../scripts/homeLoading.js"></script> -->
     <script defer src="../scripts/pageLoading.js"></script>  
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
@@ -25,8 +26,11 @@
     <script defer src="../scripts/listThemes.js"></script>
     <script defer src="../scripts/listModes.js"></script>
     <script defer src="../scripts/counter.js"></script>
-    <!-- <script defer src="../scripts/taskChoice.js"></script> -->
-    <script defer src="../scripts/task.js"></script>
+    <!-- <script defer src="../scripts/taskChoice.js"></script> 
+    <script defer src="../scripts/task.js"></script>-->
+    <script defer src="../scripts/chart.umd.js"></script>
+    <script defer src="../scripts/chartjs-plugin-datalabels.min.js"></script>
+    <script defer src="../scripts/charts.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -34,17 +38,17 @@
             <header>
                 <div class="header-left">
                     <div class="header-left-block">
-                        <img src="../assets/icons/png/Logo-1-1.png" alt="logo">
+                        <img src="../assets/icons/png/logo-1-1-new2.png" alt="logo">
                     </div>
                 </div>
                 <div class="header-center">
                     <div class="header-center-block">
                         <menu>
-                            <button class="menu-item header" onclick="window.location.href='home.html'">Home</button>
-                            <button class="menu-item header" onclick="getTask()">Task</button>
-                            <button class="menu-item header">Guide</button>
-                            <button class="menu-item header">Results</button>
-                            <button class="menu-item header" onclick="window.location.href = 'about.html'">About</button>
+                            <button class="menu-item header" id="menuHeaderHome" onclick="window.location.href='home.html'">Home</button>
+                            <button class="menu-item header" id="menuHeaderTask" onclick="getTask()">Task</button>
+                            <button class="menu-item future" id="menuHeaderGuide">Guide</button>
+                            <button class="menu-item future" id="menuHeaderResults">Results</button>
+                            <button class="menu-item header" id="menuHeaderAbout" onclick="window.location.href = 'about.html'">About</button>
                         </menu>
                         <div class="service-time">
                             <p id="currentTime"></p>
@@ -73,28 +77,30 @@
             <main>
                 <div class="main-left"></div>
                 <div class="main-center">
-                    <div class="task-info">
+                     <div class="task-info">
                         <div class="info-title-block">
-                            <p class="info-title">Choice mode</p>
+                            <p class="info-title">About project</p>
                         </div>
                         <div class="info-content-block">
-                            <div class="task-description">
-                                <p class="info-content" id="taskDescription">Choosing the right translation for each selected languages</p>
+                            <div class="task-description about">
+                                <p class="info-content" id="taskDescription">Using langMe, you can solve the issue of several languages mixing if you trying to speak ones. Practice not to confuse words and phrases on different languages. Now we have the basic words and phrases for you on Russian, English, Armenian, Greek, Finnish and Latvian, and a few tasks so that they don't get mixed up in your practice.</p>
+                                <p class="info-content then">And then, it's just interesting for everyone!</p>
+                                
                             </div>
-                            <div class="task-langs">
+                            <!-- <div class="task-langs">
                                 <p class="info-content" id="taskPrimLang">Russian -></p>
                                 <p class="info-content" id="taskCompLang">Armenian, Greek, Finnish, Latvian</p>
                             </div>
                             <div class="task-themes">
                                 <p class="info-content">World sides, Seasons, Months, Weekdays, Personal data</p>
-                            </div>                            
+                            </div>                             -->
                         </div>
-                        <div class="info-service-block">
+                        <!-- <div class="info-service-block">
                             <button class="btn-link">Change mode</button>
                             <button class="btn-link" onclick="openModalSettings()">Change settings</button>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="task-settings">
+                    <!--<div class="task-settings">
                         <div class="counter" id="counterWords">
                             <label class="counter-label" for="">Show</label>
                             <button class="counter-btn" id="btnPrevNumWords" onclick="minusFunction(numWordsValue)">&#9668;</button>
@@ -118,8 +124,30 @@
                             <input class="counter-value" type="radio" name="spellChoice" id="spellNone">
                             <label class="counter-label" for="spellNone">None</label>
                         </div>
+                    </div> -->
+                    <div class="chart-rows-block">
+                        <div class="charts-title-block">
+                            <p class="charts-title">What we have now:</p>
+                        </div>
+                        <div class="chart-mini-row">
+                            <div class="chart-mini">
+                                <canvas id="testChart2"></canvas>
+                            </div>
+                            <div class="chart-mini">
+                                <canvas id="testChart3"></canvas>
+                            </div>
+                            <div class="chart-mini">
+                                <canvas id="testChart4"></canvas>
+                            </div>
+                            <div class="chart-mini">
+                                <canvas id="testChart1"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-one-row">
+                            <canvas id="testChart"></canvas>
+                        </div>
                     </div>
-                    <div class="task-mode-block" id="taskModeChoice">
+                    <!-- <div class="task-mode-block" id="taskModeChoice">
                         <div class="task-mode" name="row1" id="item1">
                             <div class="item-card base" id="item1Base">
                                 <div class="item-heading">
@@ -437,7 +465,7 @@
                                 </div>                                
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="main-right"></div>
             </main>
@@ -545,7 +573,7 @@
         <footer>
                 <div class="footer-left">
                     <div class="footer-left-block">
-                        <img src="../assets/icons/png/Logo-2-3.png" alt="logo">
+                        <img src="../assets/icons/png/logo-2-3-new2.png" alt="logo">
                     </div>                    
                 </div>
                 <div class="footer-center">
@@ -554,11 +582,11 @@
                             <p>avb&copy;All right reserved</p>
                         </div>
                         <menu>
-                            <button class="menu-item footer">Home</button>
-                            <button class="menu-item footer" onclick="getTask()">Task</button>
-                            <button class="menu-item footer">Guide</button>
-                            <button class="menu-item footer">Results</button>
-                            <button class="menu-item footer" onclick="window.location.href = 'about.html'">About</button>
+                            <button class="menu-item footer" id="menuFooterHome" onclick="window.location.href='home.html'">Home</button>
+                            <button class="menu-item footer" id="menuFooterTask" onclick="getTask()">Task</button>
+                            <button class="menu-item future" id="menuFooterGuide">Guide</button>
+                            <button class="menu-item future" id="menuFooterResults">Results</button>
+                            <button class="menu-item footer" id="menuFooterAbout" onclick="window.location.href = 'about.html'">About</button>
                         </menu>                     
                     </div>
                 </div>

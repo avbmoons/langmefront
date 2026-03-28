@@ -709,4 +709,25 @@ const _patternFin = [
         spellBase: "[тухат]",
         spellEng: "[tuhat]",
     },
+    
+    {
+        id: 72,
+        idTheme: 2,
+        idWord: 72,
+        idLang: 5,
+        langName: "Finnish",
+        wordName: "miljoona",
+        spellBase: "[милиоона]",
+        spellEng: "[miljoona]",
+    },
+    {
+        id: 73,
+        idTheme: 2,
+        idWord: 73,
+        idLang: 5,
+        langName: "Finnish",
+        wordName: "miljardia",
+        spellBase: "[милиарди]",
+        spellEng: "[miljardia]",
+    },
 ];

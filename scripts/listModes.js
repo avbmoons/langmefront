@@ -19,7 +19,7 @@ class ModeList {
         this.cmodes = [];
     }
     fetchMode() {
-        this.cmodes = modes;
+        this.cmodes = modes.filter(item => item.status == 1);
     }
     render() {
         let listHtmlMode = '';
