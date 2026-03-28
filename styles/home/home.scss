@@ -411,15 +411,15 @@ body {
           #setButton {
             box-shadow: -10px -10px 10px 0px rgba(0,0,0,0.2);//
             border-top: 3px solid orangered;
-            border-right: 3px solid orangered;
-            border-left: none;
+            border-left: 3px solid orangered;
+            border-right: none;
             border-bottom: none;
             border-radius: 5px;
           }
           #getButton {
             box-shadow: 10px -10px 10px 0px rgba(0,0,0,0.2);//
             border-top: 3px solid orangered;
-            border-left: 3px solid orangered;
+            border-right: 3px solid orangered;
             border-radius: 5px;
           }
           .set-get:hover {
@@ -539,18 +539,21 @@ body {
             }
             #modeItemPlain, #modeItemChoice {
               box-shadow: -10px 20px 10px 0px rgba(0,0,0,0.2);//
-              border-right: 3px solid orangered;
+              border-left: 3px solid orangered;
+              //border-top: 1px solid $color-blick-light;
             }
             #modeItemMix {
-              border-left: 3px solid orangered;
+              border-right: 3px solid orangered;
+              //border-top: 1px solid $color-blick-light;
               box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.2);
             }
             #modeItemLang, #modeItemChoice {
+              //border-top: 1px solid $color-blick-light;
               box-shadow: -10px 20px 10px 0px rgba(0,0,0,0.2),
                            10px 20px 10px 0px rgba(0,0,0,0.2);//
             }
             #modeItemLang {
-              border-left: 3px solid orangered;
+              border-right: 3px solid orangered;
               //border-top: 1px solid $color-blick-light;
             }
             // #modeItemChoice {
@@ -620,9 +623,9 @@ body {
             //border: 2px solid $color-grey;
             box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.2);//
             border-bottom: 3px solid orangered;
-            border-right: 3px solid orangered;
+            border-left: 3px solid orangered;
             border-top: none;
-            border-left: none;
+            border-right: none;
             outline: none;
             border-radius: 5px;
             //border: 1px solid grey;

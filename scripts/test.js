@@ -479,7 +479,23 @@ console.log(taskRows);
 
 console.log("Selected Prim lang id = " + selectedPrimLang[0].id);
 
+function getTaskSettings(){
+    if (urlName == 'taskPlain.html' || urlName == 'taskChoice.html' || urlName == 'taskLang.html' || urlName == 'taskMix.html') {
+        console.log('this task = ' + urlName);
+        //console.log('this comp langs = ' + arrSelectedCompLangs);
+        let taskPrimLang = document.getElementById('taskPrimLang');
+        let taskCompLangs = document.getElementById('taskCompLangs');
+        let taskThemes = document.getElementById('taskThemes');
 
+        taskPrimLang.textContent = strSelectedPrimLang;
+        taskCompLangs.textContent = arrSelectedCompLangs;
+        taskThemes.textContent = arrSelectedThemes;
+    } else {
+        console.log('No task');
+    }
+}
+
+getTaskSettings();
 
 
 

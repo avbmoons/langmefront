@@ -1,10 +1,10 @@
-const thisUrl = window.location.pathname;
+let thisUrl = window.location.pathname;
 let urlName = thisUrl.substring(thisUrl.lastIndexOf("/") + 1);
 console.log(urlName);
 
 // for menu items settings (visibility)
-const menuHeader = [];
-const menuFooter = [];
+let menuHeader = [];
+let menuFooter = [];
 
 menuHeader[0] = document.getElementById('menuHeaderHome');
 menuHeader[1] = document.getElementById('menuHeaderTask');

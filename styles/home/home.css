@@ -180,7 +180,7 @@ body {
   font-weight: 400;
   line-height: 1.39vw;
   letter-spacing: 0;
-  color: #d91a60;
+  color: #ff4500;
   background: none;
   border: none;
   outline: none;
@@ -385,11 +385,11 @@ body {
   margin-left: 15%;
 }
 .wrapper .top header .header-right .header-right-block menu .menu-item:hover {
-  color: #d91a60;
+  color: #ff4500;
   font-weight: 500;
 }
 .wrapper .top header .header-right .header-right-block menu .menu-item:hover path {
-  fill: #d91a60;
+  fill: #ff4500;
 }
 .wrapper .top header .header-right .header-right-block menu .combo-block {
   margin: 0;
@@ -483,15 +483,15 @@ body {
 .wrapper .top main .main-center .settings #setButton {
   box-shadow: -10px -10px 10px 0px rgba(0, 0, 0, 0.2);
   border-top: 3px solid orangered;
-  border-right: 3px solid orangered;
-  border-left: none;
+  border-left: 3px solid orangered;
+  border-right: none;
   border-bottom: none;
   border-radius: 5px;
 }
 .wrapper .top main .main-center .settings #getButton {
   box-shadow: 10px -10px 10px 0px rgba(0, 0, 0, 0.2);
   border-top: 3px solid orangered;
-  border-left: 3px solid orangered;
+  border-right: 3px solid orangered;
   border-radius: 5px;
 }
 .wrapper .top main .main-center .settings .set-get:hover {
@@ -611,17 +611,17 @@ body {
 }
 .wrapper .top main .main-center .modes .mode-item #modeItemPlain, .wrapper .top main .main-center .modes .mode-item #modeItemChoice {
   box-shadow: -10px 20px 10px 0px rgba(0, 0, 0, 0.2);
-  border-right: 3px solid orangered;
+  border-left: 3px solid orangered;
 }
 .wrapper .top main .main-center .modes .mode-item #modeItemMix {
-  border-left: 3px solid orangered;
+  border-right: 3px solid orangered;
   box-shadow: 10px 20px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .wrapper .top main .main-center .modes .mode-item #modeItemLang, .wrapper .top main .main-center .modes .mode-item #modeItemChoice {
   box-shadow: -10px 20px 10px 0px rgba(0, 0, 0, 0.2), 10px 20px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .wrapper .top main .main-center .modes .mode-item #modeItemLang {
-  border-left: 3px solid orangered;
+  border-right: 3px solid orangered;
 }
 .wrapper .top main .main-center .modes .mode-item:hover .mode-item-btn .mode-btn-title {
   background-color: #f58318;
@@ -662,9 +662,9 @@ body {
   cursor: pointer;
   box-shadow: -10px 10px 10px 0px rgba(0, 0, 0, 0.2);
   border-bottom: 3px solid orangered;
-  border-right: 3px solid orangered;
+  border-left: 3px solid orangered;
   border-top: none;
-  border-left: none;
+  border-right: none;
   outline: none;
   border-radius: 5px;
 }
