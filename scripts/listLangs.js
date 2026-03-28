@@ -72,7 +72,7 @@ class PrimLangList {
         this.clangs = [];
     }
     fetchPrimLang() {
-        this.clangs = langs;
+        this.clangs = langs.filter(item => item.status == 1);
     }
     render() {
         let listHtmlPrimLang = '';
@@ -96,7 +96,7 @@ class CompLangList {
         this.clangs = [];
     }
     fetchCompLang() {
-        this.clangs = langs;
+        this.clangs = langs.filter(item => item.status == 1);
     }
     render() {
         let listHtmlCompLang = '';
@@ -125,8 +125,6 @@ class AppLangList {
     render() {
         let listHtmlAppLang = '';
         for (let i=0; i<2; i++) {
-            //console.log(this.clangs[i]);
-            //const appLangItem = this.clangs[i];
             const appLangItem = new AppLangItem(
                 this.clangs[i].id,
                 this.clangs[i].langName,
@@ -135,7 +133,6 @@ class AppLangList {
                 this.clangs[i].status,
                 this.clangs[i].position,
             );
-            //console.log(appLangItem);
             listHtmlAppLang += appLangItem.render();
         };
         document.querySelector('#appLangChoice').innerHTML = listHtmlAppLang;

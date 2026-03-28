@@ -1,7 +1,7 @@
-let optionsLang = [];///////////////////
-let taskRowsOptions = [];////////////////////////
-let compWordsTheme = [];//////////////////////
-let compOptionsLang = [];//////////////////
+let optionsLang = [];
+let taskRowsOptions = [];
+let compWordsTheme = [];
+let compOptionsLang = [];
 let totalEnjoy = [];
 let totalWorry = [];
 
@@ -68,9 +68,6 @@ class CardPrimLang {
         this.itemOptionPrimLang = new ItemOptionPrimLang();
     }
     fetchCardPrimLang(i, j) {
-        // if (taskRows[i][j].idLang == selectedPrimLang[0].id) {
-        //    this.ctaskRows = taskRows[i][j]; 
-        // }
         this.ctaskRows = taskRows[i][j];
         
     }
@@ -100,16 +97,12 @@ class CardPrimLang {
             this.ctaskRows.spellEng,
         ); 
 
-        //console.log(itemHeadingPrim.langName);
-        //console.log(itemOptionPrim.wordName);
-
         this.ctaskRows = itemHeadingPrimLang;
         this.ctaskRows = itemOptionPrimLang;
         
         itemHeadingPrimLangHtml = itemHeadingPrimLang.render();
         itemOptionPrimLangHtml = itemOptionPrimLang.render();
         let itemPrimLangHtml = itemHeadingPrimLangHtml + itemOptionPrimLangHtml;
-        //document.querySelector('[name="itemCardBase"]').innerHTML = itemPrimHtml;
         document.querySelector("#item"+`${i}`+"Base").innerHTML = itemPrimLangHtml;
     }
 }
@@ -275,23 +268,20 @@ class ItemOption3CompLang {
     }
 }
 
-
 class CardCompLang {
     constructor() {
         this.ctaskRows = {};
         this.ccompOptionsLang = [];//
         this.itemHeadingCompLang = new ItemHeadingCompLang();
         this.itemOptionCompLang = new ItemOptionCompLang();
-        this.itemOption1CompLang = new ItemOption1CompLang();//
-        this.itemOption2CompLang = new ItemOption2CompLang();//
-        this.itemOption3CompLang = new ItemOption3CompLang();//
+        this.itemOption1CompLang = new ItemOption1CompLang();
+        this.itemOption2CompLang = new ItemOption2CompLang();
+        this.itemOption3CompLang = new ItemOption3CompLang();
     }
     fetchCardCompLang(i, j) {
         this.ctaskRows = taskRows[i][j];
     }
     fetchCompOptionsLang(i, j) {
-        //this.ctaskRows = taskRows[i][j];
-        //console.log(taskRows[i][j].idTheme);
         this.cTheme = taskRows[i][j].idTheme;
         this.cLang = taskRows[i][j].idLang;
         this.cWord = taskRows[i][j].idWord;
@@ -326,66 +316,174 @@ class CardCompLang {
             this.ctaskRows.spellBase,
             this.ctaskRows.spellEng,
         ); 
+        console.log("itemOptionCompLang.constructor.name = " + itemOptionCompLang.constructor.name);
 
-        // + two versions
+        // + three versions
+        let itemOptionCompLangV1;
+        let itemOptionCompLangV2;
+        let itemOptionCompLangV3;
+        let cardOptions = [];
 
-        let itemOptionCompLangV1 = new ItemOption1CompLang(
-            this.ccompOptionsLang[0].id,
-            this.ccompOptionsLang[0].idTheme,
-            this.ccompOptionsLang[0].idWord,
-            this.ccompOptionsLang[0].idLang,
-            this.ccompOptionsLang[0].langName,
-            this.ccompOptionsLang[0].wordName,
-            this.ccompOptionsLang[0].spellBase,
-            this.ccompOptionsLang[0].spellEng,
-        );
+        switch (arrSelectedCompLangs.length) {
+            case 2:
+                itemOptionCompLangV1 = new ItemOption1CompLang(
+                    this.ccompOptionsLang[0].id,
+                    this.ccompOptionsLang[0].idTheme,
+                    this.ccompOptionsLang[0].idWord,
+                    this.ccompOptionsLang[0].idLang,
+                    this.ccompOptionsLang[0].langName,
+                    this.ccompOptionsLang[0].wordName,
+                    this.ccompOptionsLang[0].spellBase,
+                    this.ccompOptionsLang[0].spellEng,
+                );                
+                this.ctaskRows = itemOptionCompLangV1;
+                itemOptionCompLangV1Html = itemOptionCompLangV1.render();
+                cardOptions[1] = itemOptionCompLangV1Html;
+                break;
+            case 3:
+                itemOptionCompLangV1 = new ItemOption1CompLang(
+                    this.ccompOptionsLang[0].id,
+                    this.ccompOptionsLang[0].idTheme,
+                    this.ccompOptionsLang[0].idWord,
+                    this.ccompOptionsLang[0].idLang,
+                    this.ccompOptionsLang[0].langName,
+                    this.ccompOptionsLang[0].wordName,
+                    this.ccompOptionsLang[0].spellBase,
+                    this.ccompOptionsLang[0].spellEng,
+                );
 
-        let itemOptionCompLangV2 = new ItemOption2CompLang(
-            this.ccompOptionsLang[1].id,
-            this.ccompOptionsLang[1].idTheme,
-            this.ccompOptionsLang[1].idWord,
-            this.ccompOptionsLang[1].idLang,
-            this.ccompOptionsLang[1].langName,
-            this.ccompOptionsLang[1].wordName,
-            this.ccompOptionsLang[1].spellBase,
-            this.ccompOptionsLang[1].spellEng,
-        );
+                itemOptionCompLangV2 = new ItemOption2CompLang(
+                    this.ccompOptionsLang[1].id,
+                    this.ccompOptionsLang[1].idTheme,
+                    this.ccompOptionsLang[1].idWord,
+                    this.ccompOptionsLang[1].idLang,
+                    this.ccompOptionsLang[1].langName,
+                    this.ccompOptionsLang[1].wordName,
+                    this.ccompOptionsLang[1].spellBase,
+                    this.ccompOptionsLang[1].spellEng,
+                );
+                this.ctaskRows = itemOptionCompLangV1;//
+                this.ctaskRows = itemOptionCompLangV2;//
+                itemOptionCompLangV1Html = itemOptionCompLangV1.render();//
+                itemOptionCompLangV2Html = itemOptionCompLangV2.render();//
+                cardOptions[1] = itemOptionCompLangV1Html;//
+                cardOptions[2] = itemOptionCompLangV2Html;//
+                break;
+            case 4:
+                itemOptionCompLangV1 = new ItemOption1CompLang(
+                    this.ccompOptionsLang[0].id,
+                    this.ccompOptionsLang[0].idTheme,
+                    this.ccompOptionsLang[0].idWord,
+                    this.ccompOptionsLang[0].idLang,
+                    this.ccompOptionsLang[0].langName,
+                    this.ccompOptionsLang[0].wordName,
+                    this.ccompOptionsLang[0].spellBase,
+                    this.ccompOptionsLang[0].spellEng,
+                );
 
-        let itemOptionCompLangV3 = new ItemOption3CompLang(
-            this.ccompOptionsLang[2].id,
-            this.ccompOptionsLang[2].idTheme,
-            this.ccompOptionsLang[2].idWord,
-            this.ccompOptionsLang[2].idLang,
-            this.ccompOptionsLang[2].langName,
-            this.ccompOptionsLang[2].wordName,
-            this.ccompOptionsLang[2].spellBase,
-            this.ccompOptionsLang[2].spellEng,
-        );
+                itemOptionCompLangV2 = new ItemOption2CompLang(
+                    this.ccompOptionsLang[1].id,
+                    this.ccompOptionsLang[1].idTheme,
+                    this.ccompOptionsLang[1].idWord,
+                    this.ccompOptionsLang[1].idLang,
+                    this.ccompOptionsLang[1].langName,
+                    this.ccompOptionsLang[1].wordName,
+                    this.ccompOptionsLang[1].spellBase,
+                    this.ccompOptionsLang[1].spellEng,
+                );
 
-        //console.log(itemHeadingCompLang.langName);
-        //console.log(itemOptionCompLang.wordName);
+                itemOptionCompLangV3 = new ItemOption3CompLang(
+                    this.ccompOptionsLang[2].id,
+                    this.ccompOptionsLang[2].idTheme,
+                    this.ccompOptionsLang[2].idWord,
+                    this.ccompOptionsLang[2].idLang,
+                    this.ccompOptionsLang[2].langName,
+                    this.ccompOptionsLang[2].wordName,
+                    this.ccompOptionsLang[2].spellBase,
+                    this.ccompOptionsLang[2].spellEng,
+                );
+                this.ctaskRows = itemOptionCompLangV1;//
+                this.ctaskRows = itemOptionCompLangV2;//
+                this.ctaskRows = itemOptionCompLangV3;//
+                itemOptionCompLangV1Html = itemOptionCompLangV1.render();//
+                itemOptionCompLangV2Html = itemOptionCompLangV2.render();//
+                itemOptionCompLangV3Html = itemOptionCompLangV3.render();//
+                cardOptions[1] = itemOptionCompLangV1Html;//
+                cardOptions[2] = itemOptionCompLangV2Html;//
+                cardOptions[3] = itemOptionCompLangV3Html;//
+                break;
+        }
+
+        // itemOptionCompLangV1 = new ItemOption1CompLang(
+        //     this.ccompOptionsLang[0].id,
+        //     this.ccompOptionsLang[0].idTheme,
+        //     this.ccompOptionsLang[0].idWord,
+        //     this.ccompOptionsLang[0].idLang,
+        //     this.ccompOptionsLang[0].langName,
+        //     this.ccompOptionsLang[0].wordName,
+        //     this.ccompOptionsLang[0].spellBase,
+        //     this.ccompOptionsLang[0].spellEng,
+        // );
+
+        // itemOptionCompLangV2 = new ItemOption2CompLang(
+        //     this.ccompOptionsLang[1].id,
+        //     this.ccompOptionsLang[1].idTheme,
+        //     this.ccompOptionsLang[1].idWord,
+        //     this.ccompOptionsLang[1].idLang,
+        //     this.ccompOptionsLang[1].langName,
+        //     this.ccompOptionsLang[1].wordName,
+        //     this.ccompOptionsLang[1].spellBase,
+        //     this.ccompOptionsLang[1].spellEng,
+        // );
+
+        // itemOptionCompLangV3 = new ItemOption3CompLang(
+        //     this.ccompOptionsLang[2].id,
+        //     this.ccompOptionsLang[2].idTheme,
+        //     this.ccompOptionsLang[2].idWord,
+        //     this.ccompOptionsLang[2].idLang,
+        //     this.ccompOptionsLang[2].langName,
+        //     this.ccompOptionsLang[2].wordName,
+        //     this.ccompOptionsLang[2].spellBase,
+        //     this.ccompOptionsLang[2].spellEng,
+        // );
 
         this.ctaskRows = itemHeadingCompLang;
         this.ctaskRows = itemOptionCompLang;
-        this.ctaskRows = itemOptionCompLangV1;
-        this.ctaskRows = itemOptionCompLangV2;
-        this.ctaskRows = itemOptionCompLangV3;
+        // this.ctaskRows = itemOptionCompLangV1;//
+        // this.ctaskRows = itemOptionCompLangV2;//
+        // this.ctaskRows = itemOptionCompLangV3;//
         
         itemHeadingCompLangHtml = itemHeadingCompLang.render();
         itemOptionCompLangHtml = itemOptionCompLang.render();
-        itemOptionCompLangV1Html = itemOptionCompLangV1.render();
-        itemOptionCompLangV2Html = itemOptionCompLangV2.render();
-        itemOptionCompLangV3Html = itemOptionCompLangV3.render();
+        // itemOptionCompLangV1Html = itemOptionCompLangV1.render();//
+        // itemOptionCompLangV2Html = itemOptionCompLangV2.render();//
+        // itemOptionCompLangV3Html = itemOptionCompLangV3.render();//
 
-        let cardOptions = [];
+        //let cardOptions = [];
         cardOptions[0] = itemOptionCompLangHtml;
-        cardOptions[1] = itemOptionCompLangV1Html;
-        cardOptions[2] = itemOptionCompLangV2Html;
-        cardOptions[3] = itemOptionCompLangV3Html;
+        // cardOptions[1] = itemOptionCompLangV1Html;//
+        // cardOptions[2] = itemOptionCompLangV2Html;//
+        // cardOptions[3] = itemOptionCompLangV3Html;//
         let cardOptionsRand = randArr(cardOptions);
 
-        //let itemCompMixHtml = itemHeadingCompHtml + itemOptionCompMixHtml + itemOptionCompMixV1Html + itemOptionCompMixV2Html;
-        let itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
+        let itemCompLangHtml;
+
+        switch (arrSelectedCompLangs.length) {
+            case 1:
+                itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0];
+                break;
+            case 2:
+                itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0] + cardOptionsRand[1];
+                break;
+            case 3:
+                itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2];
+                break;
+            case 4:
+                itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
+                break;
+        }
+
+        // itemCompLangHtml = itemHeadingCompLangHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
 
         document.querySelector("#item"+`${i}`+"Comp"+`${j}`).innerHTML = itemCompLangHtml;
     }
@@ -397,8 +495,6 @@ let resultWorry = document.getElementById("worry");
 
 let valueEnjoy = resultEnjoy.textContent;
 let valueWorry = resultWorry.textContent;
-// console.log("Enjoy: " + valueEnjoy);
-// console.log("Worry: " + valueWorry);
 
 function totalsEnjoy() {
     totalEnjoy.push(valueEnjoy);
@@ -408,10 +504,6 @@ function totalsWorry() {
     totalWorry.push(valueWorry);
     return totalWorry;
 }
-
-// const cardCompMixHtml = new CardCompLang();
-// cardCompLangHtml.fetchCardCompLang(0,1);
-// cardCompLangHtml.render();
 
 // test row render
 //cardCompMixDom();
@@ -430,30 +522,19 @@ for (let i=0; i<taskRows.length; i++) {
             }
         }
 
-        //console.log("Option Choice theme lang: " + taskRows[0][j].langName);
-        //console.log(optionsChoiceThemeLang);
         optionsLangTheme.push(optionsLangThemeLang);
     }
     optionsLang.push(optionsLangTheme);
-    //console.log("Option Lang theme: ");
-    //console.log(optionsLangTheme);
-
-    //console.log(randEl(optionsLangTheme[1]));
 }
 
 console.log("Options Lang : ");
 console.log(optionsLang);
 
 console.log("Random option Lang: ");
-//console.log(randOptionsMix);
-
-//console.log(randEl(randOptionsMix[1]));
-
 
 //Function get element from array by random index
 function randEl(array) {
     const randIndex = Math.floor(Math.random() * array.length);
-    //const randElement = array[randIndex];
     return array[randIndex];    // randElement;
 }
 
@@ -465,22 +546,15 @@ function randArr(array) {
     return array;
 }
 
-// let arr = [1,17,23,43,2,7,9];
-// console.log(randArr(arr));
-
 ///////////////////////
 //Define task rows with options array for mode Lang
 ///////let taskRowsOptions = [];////////////////////////
 
 for (let i=0; i < taskRows.length; i++) {
-    //console.log(taskRows[i].length);
     let rowTheme = taskRows[i][0].idTheme;
     let rowWord = taskRows[i][0].idWord;
-    //getCompWordsTheme(rowTheme, rowWord);
-    //console.log(compWordsTheme);
    
     for (let j=0; j < taskRows[i].length; j++) {
-        //let optionLang = taskRows[i][j].idLang;
         let optionsLang = [];
 
         optionsLang[j] = taskRows[i][j];
@@ -498,13 +572,7 @@ console.log(taskRowsOptions);
 function getOptionsLang(themeId, langId, wordId) {
     compOptionsLang = [];
     compWordsTheme = [];
-    // for (let k=0; k < compWords.length; k++) {
-    //     if (compWords[k].idLang !== langId) {
-    //         continue;
-    //     } else if (compWords[k].idTheme == themeId && wordId !== compWords[k].idWord) {
-    //         compWordsTheme.push(compWords[k]);//
-    //     } else { continue;}         
-    // }
+
     for (let k=0; k < compWords.length; k++) {
         if (wordId !== compWords[k].idWord) {
             continue;
@@ -513,27 +581,47 @@ function getOptionsLang(themeId, langId, wordId) {
         } else { continue;}         
     }
 
-    //console.log(compWordsTheme);
-    
-    let option1 = randEl(compWordsTheme);
-    let newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
-    let option2 = randEl(newCompWordsTheme);
-    let otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
-    let option3 = randEl(otherNewCompWordsTheme);
-    option1.isRight = false;
-    option2.isRight = false;
-    option3.isRight = false;
-    compOptionsLang.push(option1, option2, option3);
-    //console.log(compOptionsChoise);
+    let option1;
+    let option2;
+    let option3;
+    let newCompWordsTheme;
+    let otherNewCompWordsTheme;
+   
+    // option1 = randEl(compWordsTheme);
+    // newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+
+    switch (arrSelectedCompLangs.length) {
+        case 2:
+            option1 = randEl(compWordsTheme);
+            compOptionsLang.push(option1);
+            break;
+        case 3:
+            option1 = randEl(compWordsTheme);
+            newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+            option2 = randEl(newCompWordsTheme);
+            compOptionsLang.push(option1, option2);
+            break;
+        case 4:
+            option1 = randEl(compWordsTheme);
+            newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+            option2 = randEl(newCompWordsTheme);
+            otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
+            option3 = randEl(otherNewCompWordsTheme);
+            option1.isRight = false;
+            option2.isRight = false;
+            option3.isRight = false;
+            compOptionsLang.push(option1, option2, option3);
+            break;
+    }
+    // option2 = randEl(newCompWordsTheme);
+    // otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
+    // option3 = randEl(otherNewCompWordsTheme);
+    // option1.isRight = false;
+    // option2.isRight = false;
+    // option3.isRight = false;
+    // compOptionsLang.push(option1, option2, option3);
     return compOptionsLang;
 }
-
-// //Example for get random comp options
-
-// getOptionsMix(3,3,40);
-// console.log("Example for get random comp options");
-// console.log(compOptionsLang);
-// console.log(compOptionsLang.length);
 
 //Function for Rows counter
 let rowsList = document.getElementsByClassName("task-mode");
@@ -545,18 +633,15 @@ console.log("Rows num = " + rowsNum);
 // array - example from taskRows[]
 console.log('All rows number (taskRows.length) : ' + taskRows.length);
 let taskRowsTest = [];
-let arrNum = (taskRows.length - 1);   // 27;    // 9;    // taskRows.length;    //16;     // numbering of rows in the render list == (arrNum+1)
+let arrNum = (taskRows.length - 1); 
 
 for (let m=0; m <= arrNum; m++) {
     taskRowsTest[m] = taskRows[m];
-    //return taskRowsTest;
 }
 
 console.log("array Task rows test for render: ");
 console.log(taskRowsTest);
 console.log("taskRowsTest length : " + taskRowsTest.length);
-
-//console.log(selectedPrimLang);
 
 //rowsCompChoiceDom();
 
@@ -611,16 +696,12 @@ function pageRowsCompLangDom(firstIndex, lastIndex) {
                 for (let m=0; m < cardLangRadios.length; m++) {
                     cardLangRadios[m].name = 'item' + `${i}` + wordNum + 'Comp' + `${j}`;//
                 }
-
-                //console.log(cardLangRadios);
-           
+          
                 let radioChecked = randEl(cardLangRadios);
                 radioChecked.checked = true;
 
                 for (let n=0; n < cardLangRadios.length; n++) {
                     cardLangRadios[n].addEventListener('click', function() {
-                        //console.log(cardLangRadios[n].getAttribute('data-isright'));
-                        //console.log(cardLangRadios[n]);
 
                         if (cardLangRadios[n].getAttribute('data-isright') == "false") {
                             cardItemOptions[n].style.backgroundColor = "#fccfe0";

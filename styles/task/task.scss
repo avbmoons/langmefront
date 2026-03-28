@@ -2,6 +2,7 @@
 @use "sass:list";
 
 @import "../vars/vars.scss";
+@import "../chart/chart.scss";
 
 $viewport-width: var(--viewport-width);
 
@@ -344,8 +345,16 @@ body {
                 //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
                 @include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 color: $color-dark;
-                text-align: left;
+                text-align: left;                
               }
+              .then {
+                margin-top: 1.39%;  // 20px;
+                @include text-font(1.11vw, 400, 1.11vw, 0);
+              }
+            }
+            .about {
+              @include flex-vertical();
+              justify-content: space-between;
             }
             .task-langs {
               margin: 0 auto;
@@ -450,6 +459,7 @@ body {
             }
           }
         }
+        @include chartjs();
         .task-mode-block {
           margin: 0 auto;
           //margin-top: 1.39vw;
@@ -474,7 +484,7 @@ body {
               height: 96%; // 100%;   // 48%;
               @include flex-vertical();
               justify-content: flex-start; // space-between;
-              border: 1px solid $color-grey-dark;
+              //border: 1px solid $color-grey-dark; ////
               border-radius: 5px;
               .item-heading,
               .item-heading-lang {
@@ -542,11 +552,18 @@ body {
                 background-color: $color-blick-light-lang;
               }
             }
+            //.item-card-base
             .item-card:hover {
-              border: 1.5px solid $color-blick;
+              //border: 1.5px solid $color-blick;
+              .item-option, .item-option-lang, .item-heading, .item-heading-lang {
+                border: 1.5px solid $color-blick;
+              }
             }
             .item-card-base:hover {
-              border: 1.5px solid $color-blick;
+              //border: 1.5px solid $color-blick;
+              .item-option, .item-option-lang, .item-heading, .item-heading-lang {
+                border: 1.5px solid $color-blick;
+              }
             }
           }
         }

@@ -2,6 +2,8 @@ const products = taskRowsTest;
 
 //let productsOnPage = [];
 
+//let productCount = 3;
+
 const paginate = (products) => {
     //console.log('products: ', products);
     let productCount = 2;   // 7;   // num products on each page

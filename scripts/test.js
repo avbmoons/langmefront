@@ -47,7 +47,7 @@ class LangsList {
         this.arrLangs = [];
     }
     fetchLangsList(){
-        this.arrLangs = langs;
+        this.arrLangs = langs.filter(item => item.status == 1);
     }
     LangsList() {
         this.arrLangs.forEach(arrLangs => {
@@ -61,7 +61,7 @@ class LangsList {
             );
             arrLangs += langsItem;
         });
-        //console.log(this.arrLangs);
+
         return this.arrLangs;        
     }
 }
@@ -82,7 +82,7 @@ class ThemesList {
             );
             arrThemes += themesItem;
         });
-        //console.log(this.arrThemes);
+
         return this.arrThemes;
     }
 }
@@ -104,7 +104,7 @@ class WordsList {
             );
             arrWords += wordsItem;
         });
-        //console.log(this.arrWords);
+
         return this.arrWords;
     }
 }
@@ -350,6 +350,8 @@ primPatternFilterBySelectedThemes();
 
 console.log("Prim pattern filtered by selected themes: ");
 console.log(primPattern);
+
+//Define Comp patterns filtered by selected themes
 
 compPatternsFilterBySelectedThemes();
 
