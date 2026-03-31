@@ -100,13 +100,14 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
     display: none;
     .tutor {
       margin: 0 auto;
-      width: 45%;
-      height: 55%;
+      width: $block-width;  // 45%;
+      height: $min-main-height; // 55%;
       @include flex-vertical();
       background-color: rgba(215, 219, 219, 1); // $color-grey-dark
       border-radius: 5px;
@@ -372,7 +373,36 @@ body {
         margin: auto;
         width: 0.5 * ($site-width - $block-width);
         height: $min-main-height;
+        @include flex-vertical();
+        justify-content: flex-start;
         //border: 1px solid green;
+        .btn-tutor-block {
+          margin: 0 auto;
+          margin-top: 10%;
+          width: 100%;
+          height: 10%;
+          @include flex-vertical();
+          .btn-tutor {
+            margin: 0 auto;
+            width: 50%;
+            height: 100%;
+            padding: 5px;
+            //border: 1px solid grey;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            img {
+              height: auto; // 100%;
+              width: 100%;  // auto;
+            }
+          }
+          .btn-tutor:hover {
+            svg path {
+              fill: orangered;
+            }
+          }
+        }
       }
       .main-center {
         margin: auto;
@@ -700,6 +730,7 @@ body {
     left: 0;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
+    border-radius: 5px;
     display: none;
     .info {
       margin: 0 auto;
@@ -708,6 +739,10 @@ body {
       @include flex-vertical();
       justify-content: space-between;
       background-color: rgba(252, 252, 252, 1); // $color-light;
+      border-radius: 5px;
+      box-shadow: -20px 20px 10px 0px rgba(0,0,0,0.3);//
+      border-left: 3px solid orangered;
+      border-bottom: 5px solid orangered;
       overflow-y: auto;
       .info-header {
         margin: 0 auto;
@@ -868,8 +903,9 @@ body {
                 }
               }
               .btn-choose {
-                padding: 5px;
-                width: 15%; // 25%;
+                margin-left: -10px;
+                padding: 10px 20px;
+                //width: 15%; // 25%;
                 height: 100%;
                 @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
                 background-color: $color-grey;
@@ -877,7 +913,7 @@ body {
                 border-radius: 5px;
               }
               .btn-choose:hover {
-                background-color: $color-grey-dark;
+                background-color: $color-blick; // $color-grey-dark;
               }
               label {
                 margin-left: 10px;
@@ -888,7 +924,11 @@ body {
               .search {
                 margin-right: 20px;
                 width: 70%;
+                visibility: hidden;
               }
+            }
+            #allThemesCombo {
+              display: none;
             }
             .combo-list-choice {
               margin: auto;
@@ -974,7 +1014,7 @@ body {
           cursor: pointer;
         }
         .btn-go:hover {
-          background-color: $color-grey-dark;
+          background-color: $color-blick; // $color-grey-dark;
         }
       }
     }
@@ -996,7 +1036,11 @@ body {
       height: 55%;
       @include flex-vertical();
       justify-content: space-between;
-      background-color: $color-lang-light; // rgba(247,213,161,1);  // $color-blick-light;
+      background-color: $color-light; // rgba(247,213,161,1);  // $color-blick-light;
+      border-radius: 5px;
+      box-shadow: -20px 20px 10px 0px rgba(0,0,0,0.3);//
+      border-left: 3px solid orangered;
+      border-bottom: 5px solid orangered;
       .results-header {
         margin: 0 auto;
         margin-top: 3%; // 20px;
@@ -1005,6 +1049,12 @@ body {
         @include flex-horizontal();
         justify-content: space-between;
         //border: 1px solid blue;
+        .results-title {
+          @include text-font(1.25vw, 500, 1.25vw, 0); //18px; 16px;
+          color: $color-dark;
+          align-self: center;
+          text-align: center;
+        }
         img {
           margin-left: 3%;
         }
@@ -1025,6 +1075,7 @@ body {
         @include text-font(16px, 300, 20px, 0);
         text-align: center;
         border: 1px solid $color-lang-dark;
+        border-radius: 5px;
         .results-mode {
           margin: 0 auto;
           width: 90%;
@@ -1040,19 +1091,19 @@ body {
             align-items: center;
             //border: 1px solid blue;
             .totals-title {
-              @include text-font(1.39vw, 400, 1.39vw, 0);
+              @include text-font(1.25vw, 400, 1.25vw, 0);
               color: $color-dark;
             }
             .totals-text {
-              @include text-font(1.25vw, 300, 1.25vw, 0);
+              @include text-font(1.11vw, 300, 1.11vw, 0);
               color: $color-dark;
             }
             .grand-title {
-              @include text-font(1.67vw, 400, 1.67vw, 0);
+              @include text-font(1.39vw, 400, 1.39vw, 0);
               color: $color-dark;
             }
             .grand-text {
-              @include text-font(1.39vw, 400, 1.39vw, 0);
+              @include text-font(1.25vw, 400, 1.25vw, 0);
               color: $color-dark;
             }
           }
@@ -1064,9 +1115,9 @@ body {
       }
       .results-button {
         margin: 0 auto;
-        margin-bottom: 7%;
+        margin-bottom: 3%;  // 7%;
         width: 100%;
-        height: 10%; // 15%;    // fit-content;
+        height: 15%; // 15%;    // fit-content;
         @include flex-horizontal();
         justify-content: space-around;
         //border: 1px solid blue;
@@ -1077,11 +1128,15 @@ body {
           @include text-font(1.39vw, 300, 1.39vw, 0); //20px
           background-color: $color-grey;
           border: none;
+          border-radius: 5px;
           outline: none;
           cursor: pointer;
         }
         .btn-go:hover {
           background-color: $color-grey-dark;
+        }
+        .btn-ok:hover {
+          background-color: $color-blick;
         }
       }
       @media print {

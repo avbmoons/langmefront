@@ -62,7 +62,8 @@ function getTask() {
 function getTaskPage() {
     let modeChoice = resultMode.value.trim();
     console.log(modeChoice);
-    let pageName = window.location.pathname.substring(pageUrl.lastIndexOf('/')+1);
+    //let pageName = window.location.pathname.substring(pageUrl.lastIndexOf('/')+1);
+    let pageName = window.location.pathname.substring(thisUrl.lastIndexOf('/')+1);
     if (pageName == 'home.html') {
         window.location.href = "../pages/home.html";
     } else if (modeChoice == "Plain") {
