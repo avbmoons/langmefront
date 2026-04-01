@@ -351,10 +351,6 @@ body {
                 @include text-font(1.11vw, 400, 1.11vw, 0);
               }
             }
-            .about {
-              @include flex-vertical();
-              justify-content: space-between;
-            }
             .task-langs {
               margin: 0 auto;
               margin-top: 0.97vw;
@@ -407,6 +403,7 @@ body {
         //border: 1px solid green;
         .task-info {
           margin: 0 auto;
+          margin-bottom: 1.39vw;  // 20px;
           //margin-top: 1%; // 2%; //40px;
           width: 100%;
           height: 8%;
@@ -528,6 +525,31 @@ body {
               }
               .info-content:hover {
                 color: $color-blick;
+              }
+            }
+          }
+          .info-content-block-about {
+            margin: 0 auto;
+            width: 90%;
+            height: fit-content;
+            @include flex-vertical();
+            .task-description-about {
+              margin: 0 auto;
+              width: 96%;
+              height: 40%; // 50%;
+              @include flex-vertical();
+              justify-content: flex-start;
+              .info-content {
+                margin-bottom: 0.69vw;
+                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
+                @include text-font(0.97vw, 300, 0.97vw, 0); //16px
+                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
+                color: $color-dark;
+                text-align: left;                
+              }
+              .then {
+                //margin-top: 1.39%;  // 20px;
+                @include text-font(0.97vw, 400, 0.97vw, 0);
               }
             }
           }
@@ -1258,7 +1280,7 @@ body {
           cursor: pointer;
         }
         .btn-go:hover {
-          background-color: $color-grey-dark;
+          background-color: $color-blick; // $color-grey-dark;
         }
       }
     }

@@ -24,6 +24,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
     //opacity: 50%;
@@ -34,8 +35,12 @@ body {
       @include flex-vertical();
       justify-content: space-between;
       //background-color: rgba(247, 213, 161, 1); // $color-blick-light
-      background-color: rgba(255, 242, 222, 1); // $color-blick-light-lang
+      background-color: $color-light; // rgba(255, 242, 222, 1); // $color-blick-light-lang
       //background-color: rgba(15, 26, 28, 1); // $color-dark;$color-blick-light;
+      border-radius: 5px;
+      box-shadow: -20px 20px 10px 0px rgba(0,0,0,0.3);//
+      border-left: 3px solid orangered;
+      border-bottom: 5px solid orangered;
       .info-header {
         margin: 0 auto;
         margin-top: 3%; // 20px;
@@ -77,6 +82,7 @@ body {
         height: 15%; // fit-content;
         @include flex-horizontal();
         .btn-go {
+          //padding: 3%;
           width: 40%; // 30%;
           height: 100%;
           text-align: center;
@@ -88,7 +94,7 @@ body {
           cursor: pointer;
         }
         .btn-go:hover {
-          background-color: $color-grey-dark;
+          background-color: $color-blick; // $color-grey-dark;
         }
       }
     }
@@ -109,13 +115,20 @@ body {
       width: $block-width;  // 45%;
       height: $min-main-height; // 55%;
       @include flex-vertical();
-      background-color: rgba(215, 219, 219, 1); // $color-grey-dark
+      background-color: $color-light; // rgba(215, 219, 219, 1); // $color-grey-dark
       border-radius: 5px;
+      box-shadow: -20px 20px 10px 0px rgba(0,0,0,0.3);//
+      border-left: 3px solid orangered;
+      border-bottom: 5px solid orangered;
       .tutor-main {
         margin: 0 auto;
-        width: 70%;
-        height: 90%;
+        width: 90%;  // 70%;
+        height: 90%;  // 90%;
         @include flex-vertical();
+        background-color: $color-lang-dark;
+        border-radius: 5px;
+        box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.3),
+                    10px 10px 10px 0px rgba(0,0,0,0.3);//
         .tutor-img {
           height: 100%;
           width: auto;
@@ -125,23 +138,61 @@ body {
       .tutor-footer {
         margin: 0 auto;
         //margin-top: 3%; // 20px;
-        margin-bottom: 1%; // 2%;
-        width: 100%;
+        //margin-bottom: 1%; // 2%;
+        width: 90%;
         height: 10%; // fit-content;////
-        @include flex-horizontal();
-        justify-content: space-between;
-        .tutor-logo {
-          margin-left: 3%;
-          visibility: hidden;
-        }
-        .tutor-close {
-          margin-right: 3%;
-          @include text-font(1.39vw, 400, 1.39vw, 0);
-          color: $color-accent;
-          background: none;
-          border: none;
-          outline: none;
-          cursor: pointer;
+        @include flex-vertical();
+        //justify-content: space-between;
+        //border: 2px solid red;
+        .tutor-footer-box {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: space-between;        
+          .tutor-logo {
+            margin: auto;
+            margin-left: 3%;
+            display: none;
+          }
+          .tutor-close {
+            margin: auto;
+            margin-right: 3%;
+            height: 70%;
+            @include text-font(1.94vw, 400, 1.94vw, 0);
+            color: $color-dark; // $color-accent;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          .tutor-close:hover {
+            color: $color-accent;
+          }
+          #tutorSkip {
+            margin-right: 0;
+            @include text-font(1.67vw, 500, 1.67vw, 0);
+          }
+          .control-panels {
+            margin: auto;
+            height: 50%;
+            width: auto;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 2px solid green;
+            .dot-step {
+              height: 100%;
+              width: auto;
+              svg {
+                height: 100%;
+              }
+            }
+            .dot-step:hover {
+              svg circle {
+                fill: $color-blick;
+              }
+            }
+          }
         }
       }
     }

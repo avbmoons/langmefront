@@ -32,6 +32,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +48,11 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
-  background-color: rgb(255, 242, 222);
+  background-color: #fcfcfc;
+  border-radius: 5px;
+  box-shadow: -20px 20px 10px 0px rgba(0, 0, 0, 0.3);
+  border-left: 3px solid orangered;
+  border-bottom: 5px solid orangered;
 }
 .wrapper .index-cover .info .info-header {
   margin: 0 auto;
@@ -118,7 +123,7 @@ body {
   cursor: pointer;
 }
 .wrapper .index-cover .info .info-button .btn-go:hover {
-  background-color: #c2cacc;
+  background-color: #f5a836;
 }
 .wrapper .tutor-cover {
   margin: 0;
@@ -143,17 +148,23 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  background-color: rgb(215, 219, 219);
+  background-color: #fcfcfc;
   border-radius: 5px;
+  box-shadow: -20px 20px 10px 0px rgba(0, 0, 0, 0.3);
+  border-left: 3px solid orangered;
+  border-bottom: 5px solid orangered;
 }
 .wrapper .tutor-cover .tutor .tutor-main {
   margin: 0 auto;
-  width: 70%;
+  width: 90%;
   height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  background-color: #d7dbdb;
+  border-radius: 5px;
+  box-shadow: -10px 10px 10px 0px rgba(0, 0, 0, 0.3), 10px 10px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .wrapper .tutor-cover .tutor .tutor-main .tutor-img {
   height: 100%;
@@ -163,29 +174,69 @@ body {
 }
 .wrapper .tutor-cover .tutor .tutor-footer {
   margin: 0 auto;
-  margin-bottom: 1%;
-  width: 100%;
+  width: 90%;
   height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   justify-content: space-between;
 }
-.wrapper .tutor-cover .tutor .tutor-footer .tutor-logo {
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .tutor-logo {
+  margin: auto;
   margin-left: 3%;
-  visibility: hidden;
+  display: none;
 }
-.wrapper .tutor-cover .tutor .tutor-footer .tutor-close {
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .tutor-close {
+  margin: auto;
   margin-right: 3%;
-  font-size: 1.39vw;
+  height: 70%;
+  font-size: 1.94vw;
   font-weight: 400;
-  line-height: 1.39vw;
+  line-height: 1.94vw;
   letter-spacing: 0;
-  color: #ff4500;
+  color: #0f1a1c;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .tutor-close:hover {
+  color: #ff4500;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box #tutorSkip {
+  margin-right: 0;
+  font-size: 1.67vw;
+  font-weight: 500;
+  line-height: 1.67vw;
+  letter-spacing: 0;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .control-panels {
+  margin: auto;
+  height: 50%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .control-panels .dot-step {
+  height: 100%;
+  width: auto;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .control-panels .dot-step svg {
+  height: 100%;
+}
+.wrapper .tutor-cover .tutor .tutor-footer .tutor-footer-box .control-panels .dot-step:hover svg circle {
+  fill: #f5a836;
 }
 .wrapper .top {
   margin: 0 auto;

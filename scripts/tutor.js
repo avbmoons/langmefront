@@ -2,21 +2,22 @@ const goButton = document.getElementById('goButton');
 const tutorCover = document.getElementById('tutorCover');
 const indexCover = document.getElementById('indexCover');
 
+const slides = document.querySelector('.tutor');
+
 const slider = document.querySelectorAll('.tutor-main');
+const dots = document.querySelectorAll('.dot-step');
+
+const btnPrev = document.getElementById('tutorPrev');
+const btnNext = document.getElementById('tutorNext');
 
 let slideIndex = 0;
-//showSlides();
+
+let currentSlide = 0;
 
 const openTutor = () => {
   indexCover.style.display = 'none';
   tutorCover.style.display = 'flex';
   showSlides();
-};
-
-const openTutorPages = () => {
-  //indexCover.style.display = 'none';
-  tutorCover.style.display = 'flex';
-  showSlidesPages();
 };
 
 const closeTutorPages = () => {
@@ -25,47 +26,88 @@ const closeTutorPages = () => {
 
 function showSlides() {
   let slider = document.querySelectorAll('.tutor-main');
+  let dots = document.querySelectorAll('.dots');
   let tutorCover = document.getElementById('tutorCover');
   let tutorCoverStyle = window.getComputedStyle(tutorCover);
   let tutorCoverDisplay = tutorCoverStyle.display;
-  //console.log(tutorCoverDisplay);
 
   for (let i = 0; i < slider.length; i++) {
     slider[i].style.display = 'none';
+    dots[i].style.fill = '#DAE6E8';
   }
   slideIndex++;
   if (slideIndex > slider.length) {
-    //slideIndex = 1;
     clearInterval();
     window.location.href = 'pages/home.html';
   }
   slider[slideIndex - 1].style.display = 'flex';
+  dots[slideIndex - 1].style.fill = '#f5a836';
   if (tutorCoverDisplay == 'flex') {
-    setTimeout(showSlides, 5000); //
+    setTimeout(showSlides, 3000); //
   }
-  //setTimeout(showSlides, 5000);
 }
 
 function showSlidesPages() {
   let slider = document.querySelectorAll('.tutor-main');
+  let dots = document.querySelectorAll('.dots');
   let tutorCover = document.getElementById('tutorCover');
   let tutorCoverStyle = window.getComputedStyle(tutorCover);
   let tutorCoverDisplay = tutorCoverStyle.display;
-  //console.log(tutorCoverDisplay);
+  //console.log(slider.length);
 
   for (let i = 0; i < slider.length; i++) {
     slider[i].style.display = 'none';
+    dots[i].style.fill = '#DAE6E8';
   }
   slideIndex++;
   if (slideIndex > slider.length) {
     //slideIndex = 1;
     clearInterval();
-    //window.location.href = 'home.html';
-    closeTutorPages();
+    window.location.href = 'home.html';
+    //closeTutorPages();
   }
   slider[slideIndex - 1].style.display = 'flex';
+  dots[slideIndex - 1].style.fill = '#f5a836';
   if (tutorCoverDisplay == 'flex') {
     setTimeout(showSlidesPages, 5000); //
   }
   //setTimeout(showSlides, 5000);
 }
+
+let indexValue = 1;
+
+function btnSlide(e) {
+  showSlideManual(indexValue = e);
+}
+function sideSlide(e) {
+  showSlideManual(indexValue += e);
+}
+function showSlideManual(e) {
+  //let i;
+  let img = document.querySelectorAll('.tutor-main');
+  let slider = document.querySelectorAll('.dot-step');
+  let dots = document.querySelectorAll('.dots');
+
+  if (e > img.length) {
+    indexValue = 1;
+  }
+  if (e < 1) {
+    indexValue = img.length;
+  }
+
+  for (let i=0; i < img.length; i++) {
+    img[i].style.display = 'none';
+  }
+
+  for (let i=0; i < slider.length; i++) {
+    dots[i].style.fill = '#DAE6E8';
+  }
+
+  img[indexValue - 1].style.display = 'flex';
+  dots[indexValue - 1].style.fill = '#f5a836'; 
+}
+
+const openTutorPages = () => {
+  tutorCover.style.display = 'flex';
+  showSlideManual(indexValue);
+};
