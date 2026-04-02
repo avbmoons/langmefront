@@ -779,6 +779,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
     border-radius: 5px;

@@ -97,16 +97,78 @@ const closePrimLangsChoiceList = () => {
 const openCompLangsChoiceList = () => {
   comboCompLangsList.style.display = "flex";
   comboCompLangChoiceList.style.display = "flex"; //
+
+  
+  
+
+  const comboCompLangRus = document.getElementById("compRus");  ////
+  const comboCompLangEng = document.getElementById("compEng");  ////
+
+  // as default
   const comboCompLangArm = document.getElementById("compArm"); //
   const comboCompLangGre = document.getElementById("compGre"); //
   const comboCompLangFin = document.getElementById("compFin"); //
   const comboCompLangLav = document.getElementById("compLav"); //
-  comboCompLangArm.checked = true;
-  comboCompLangGre.checked = true;
-  comboCompLangFin.checked = true;
-  comboCompLangLav.checked = true;
+  // comboCompLangArm.checked = true;
+  // comboCompLangGre.checked = true;
+  // comboCompLangFin.checked = true;
+  // comboCompLangLav.checked = true;
   btnOpenPrimLang.disabled = true;
   btnOpenThemes.disabled = true;
+
+  let compLangsValue = compLangs.value;
+  console.log("compLangsValue = " + compLangs.value);
+
+  let arrCompLangsValue = compLangsValue.split(', ');
+  console.log("arrCompLangsValue = " + arrCompLangsValue);
+
+  let compList = [];
+  compList[0] = comboCompLangRus;
+  compList[1] = comboCompLangEng;
+  compList[2] = comboCompLangArm;
+  compList[3] = comboCompLangGre;
+  compList[4] = comboCompLangFin;
+  compList[5] = comboCompLangLav;
+
+  arrCompLangsValue.forEach(item => {
+    compList.forEach(element => {
+      if (item == element.value) {
+        element.checked = true;
+      }
+    });
+  });
+
+  //console.log("primLang = " + primLang.value);
+  let primLangValue = getFirstWord(primLang.value);
+
+  switch (primLangValue) {
+    case "Russian":
+      comboCompLangRus.checked = false;
+      comboCompLangRus.disabled = true;
+      break;
+    case "English":
+      comboCompLangEng.checked = false;
+      comboCompLangEng.disabled = true;
+      break;
+    case "Armenian":
+      comboCompLangArm.checked = false;
+      comboCompLangArm.disabled = true;
+      break;
+    case "Greek":
+      comboCompLangGre.checked = false;
+      comboCompLangGre.disabled = true;
+      break;
+    case "Finnish":
+      comboCompLangFin.checked = false;
+      comboCompLangFin.disabled = true;
+      break;
+    case "Latvian":
+      comboCompLangLav.checked = false;
+      comboCompLangLav.disabled = true;
+      break;
+  }
+
+  //alert(primLangValue + " selected as Prime language.\nIf you want to compare this language,\nplease change the Prime language selection.");
 };
 const closeCompLangsChoiceList = () => {
   comboCompLangsList.style.display = "none";
@@ -212,3 +274,8 @@ function submitTaskSettings() {
   getTaskPage();
 }
 
+function getFirstWord(str) {
+  const firstWord = str.trim().split(' ')[0];
+  //console.log("firstWord = " + firstWord);
+  return firstWord;
+}
