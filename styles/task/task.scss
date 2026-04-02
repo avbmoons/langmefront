@@ -30,7 +30,6 @@ body {
     left: 0;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
-    //opacity: 50%;
     .info {
       margin: 0 auto;
       width: 45%;
@@ -40,7 +39,7 @@ body {
       background-color: rgba(247, 213, 161, 1); // $color-blick-light;
       .info-header {
         margin: 0 auto;
-        margin-top: 3%; // 20px;
+        margin-top: 3%; 
         width: 100%;
         height: fit-content;
         @include flex-horizontal();
@@ -74,10 +73,10 @@ body {
         margin: 0 auto;
         margin-bottom: 7%;
         width: 100%;
-        height: 15%; // fit-content;
+        height: 15%; 
         @include flex-horizontal();
         .btn-go {
-          width: 40%; // 30%;
+          width: 40%; 
           height: 100%;
           text-align: center;
           @include text-font(20px, 300, 20px, 0);
@@ -103,29 +102,21 @@ body {
       margin: 0 auto;
       width: $header-width;
       height: $header-height;
-      // position: fixed;
-      // top: 0;
       @include flex-horizontal();
-      background-color: $color-lang-light; // $color-grey;
-      //border-bottom: 2px solid $color-grey-dark;
-      //border: 1px solid black;
+      background-color: $color-lang-light; 
       .header-left {
         margin: 0 auto;
         width: 0.5 * ($site-width - $block-width);
         height: 100%;
         @include flex-vertical();
         justify-content: flex-end;
-        //background-color: $color-blick;
-        //border: 1px solid blue;
         .header-left-block {
-          margin: 0 auto; // 0 auto;
+          margin: 0 auto; 
           padding-bottom: 1vh;
           width: 100%;
-          height: 100%; // fit-content;
+          height: 100%; 
           @include flex-horizontal();
-          //justify-content: flex-end;
           align-items: end;
-          //position: relative;
           background-color: $color-blick;
           img {
             margin: 0 auto;
@@ -133,10 +124,6 @@ body {
             height: 80%;
             width: auto;
             align-items: end;
-            // position: absolute;
-            // top: 50%;
-            // //right: 50%;
-            // z-index: 999;
           }
           svg {
             margin: 0 auto;
@@ -151,7 +138,7 @@ body {
               fill: $color-light;
               cursor: pointer;
             }
-          }//          
+          }         
         }
       }
       .header-center {
@@ -159,40 +146,34 @@ body {
         width: $block-width;
         height: 100%;
         @include flex-vertical();
-        //justify-content: flex-end;
         background-color: $color-blick;
         clip-path: polygon(0% 0%, 100% 0%, 76% 100%, 0% 100%);
-        //border: 1px solid red;
         .header-center-block {
           margin: 0 auto;
           width: 100%;
-          height: fit-content; // 100%;
+          height: fit-content; 
           @include flex-horizontal();
           justify-content: space-between;
-          //align-items: flex-end;
           menu {
             margin: 0 auto;
-            padding-bottom: 1vh; // 2%;
-            width: 70%; // auto;    // fit-content;
-            height: 100%; // fit-content;
+            padding-bottom: 1vh; 
+            width: 70%; 
+            height: 100%; 
             @include flex-horizontal();
             justify-content: flex-start;
             align-items: end;
-            //border: 1px solid grey;
             .menu-item {
-              margin: auto 0; // 0 auto;
+              margin: auto 0; 
               margin-right: 4%;
               width: fit-content;
               height: fit-content;
-              //align-items: center;
               border: none;
               background: none;
-              @include text-font(1.25vw, 300, 1.25vw, 0); //18px; //16px
+              @include text-font(1.25vw, 300, 1.25vw, 0); //18px; 
               cursor: pointer;
-              //border: 1px solid grey;
             }
             .menu-item:hover {
-              color: $color-light;  // $color-accent;
+              color: $color-light; 
               font-weight: 500;
             }
             .future {
@@ -204,17 +185,16 @@ body {
           }
           .service-time {
             margin: 0 auto;
-            padding-bottom: 1vh; // 2%;
-            margin-right: 24%;  // 1.39vw;
-            width: 30%; // fit-content;
-            height: 100%; // fit-content;
+            padding-bottom: 1vh; 
+            margin-right: 24%;  
+            width: 30%; 
+            height: 100%; 
             @include flex-vertical();
             justify-content: flex-end;
             @include text-font(0.97vw, 300, 0.97vw, 0); //14px
             align-items: end;
             text-align: right;
             z-index: 999;
-            //border: 1px solid grey;
           }
         }
       }
@@ -224,29 +204,25 @@ body {
         height: 100%;
         @include flex-vertical();
         justify-content: flex-end;
-        //border: 1px solid blue;
         .header-right-block {
-          margin: 0 auto; // 0 auto;
+          margin: 0 auto; 
           width: 100%;
-          height: 100%; // fit-content;
+          height: 100%; 
           @include flex-horizontal();
-          //justify-content: flex-end;
           align-items: end;
           menu {
             margin: 0 auto;
-            padding-bottom: 1vh; // 2%;
-            width: 100%; // 70%; // auto;    // fit-content;
-            height: 100%; // fit-content;
+            padding-bottom: 1vh; 
+            width: 100%; 
+            height: 100%; 
             @include flex-horizontal();
             justify-content: flex-start;
             align-items: end;
-            //border: 1px solid grey;
             .menu-item {
-              margin: 0; // 0 auto; // auto 0;   // 0 auto;
+              margin: 0; 
               margin-left: 8%;
               width: fit-content;
               height: fit-content;
-              //align-items: center;
               border: none;
               background: none;
               @include flex-vertical();
@@ -254,7 +230,6 @@ body {
               @include text-font(1.11vw, 300, 1.11vw, 0); //16px
               cursor: pointer;
               align-items: end;
-              //border: 1px solid grey;
               img {
                 margin: 0 auto;
                 height: 16px;
@@ -273,25 +248,22 @@ body {
               fill: $color-accent;
             }
             .combo-block {
-              margin: 0; // auto;
-              width: fit-content; // 100%;
+              margin: 0; 
+              width: fit-content; 
               height: auto;
               @include flex-vertical();
               position: relative;
-              // top: 100%;
-              // z-index: 99;
-              // //display: none;
               #appLangEng,
               #appLangRus,
               #appLangEngChoice {
-                margin-left: 40%; // 20px;
+                margin-left: 40%; 
                 margin-top: 15%;
                 opacity: 1;
                 border: none;
                 outline: none;
               }
               .combo-list {
-                margin: 0; // auto;
+                margin: 0; 
                 width: 100%;
                 height: auto;
                 @include flex-vertical();
@@ -310,25 +282,20 @@ body {
     }
     main {
       margin: 0 auto;
-      //margin-top: $header-height;
       width: $site-width;
       min-height: $min-main-height;
       @include flex-horizontal();
-      //border: 1px solid black;
       .main-left {
         margin: auto;
         width: 0.5 * ($site-width - $block-width);
         height: $min-main-height;
         @include flex-vertical();
-        //border: 1px solid green;
         .info-content-block {
             margin: 0 auto;
             padding: 10px;
-            width: 65%; // 50%;
-            height: fit-content;  // 100%;
+            width: 65%; 
+            height: fit-content;  
             @include flex-vertical();
-            //justify-content: flex-start;
-            //border: 1px solid orangered;
             border-left: 2px solid orangered;
             border-bottom: 3px solid orangered;
             border-radius: 5px;
@@ -336,35 +303,30 @@ body {
             .task-description {
               margin: 0 auto;
               width: 96%;
-              height: 40%; // 50%;
+              height: 40%; 
               @include flex-horizontal();
               justify-content: flex-start;
               .info-content {
-                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
-                //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
                 @include text-font(0.97vw, 300, 0.97vw, 0); //14px
-                color: $color-blick;  // $color-grey-dark; // $color-dark;
+                color: $color-blick; 
                 text-align: left;                
               }
               .then {
-                margin-top: 1.39%;  // 20px;
+                margin-top: 1.39%;  
                 @include text-font(1.11vw, 400, 1.11vw, 0);
               }
             }
             .task-langs {
               margin: 0 auto;
               margin-top: 0.97vw;
-              width: 100%;  // 96%;
-              height: fit-content;  // 30%; // 25%;
+              width: 100%;  
+              height: fit-content;  
               @include flex-vertical();
               justify-content: flex-start;
               cursor: pointer;
               .info-content {
-                //padding: 0.83vw 0;
-                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
-                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 @include text-font(0.83vw, 300, 1.11vw, 0); //14px
-                color: grey;  // $color-grey-dark;  // $color-dark;
+                color: grey;  
                 text-align: left;
               }
               .info-content:hover {
@@ -374,18 +336,15 @@ body {
             .task-themes {
               margin: 0 auto;
               margin-top: 0.97vw;
-              width: 100%;  // 96%;
-              height: fit-content;  // 30%; // 25%;
+              width: 100%;  
+              height: fit-content;  
               @include flex-horizontal();
               justify-content: flex-start;
               flex-wrap: wrap;
               cursor: pointer;
               .info-content {
-                //padding: 1.39vw 0;
-                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
-                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 @include text-font(0.83vw, 300, 1.11vw, 0); //14px
-                color: grey;  // $color-grey-dark;  // $color-dark;
+                color: grey;  
                 text-align: left;
               }
               .info-content:hover {
@@ -399,50 +358,35 @@ body {
         width: $block-width;
         height: $min-main-height;
         @include flex-vertical();
-        //overflow-y: auto;
-        //border: 1px solid green;
         .task-info {
           margin: 0 auto;
-          margin-bottom: 1.39vw;  // 20px;
-          //margin-top: 1%; // 2%; //40px;
+          margin-bottom: 1.39vw;  
           width: 100%;
           height: 8%;
           @include flex-horizontal();
           justify-content: space-between;
-          //border: 1px solid blue;
           position: relative;
           .info-title-block {
-            margin: 0; // auto;
-            width: 20%; // 25%;
+            margin: 0; 
+            width: 20%; 
             height: 100%;
             @include flex-vertical();
-            //justify-content: flex-start;
-            //border: 1px solid orangered;
             .info-title {
               @include text-font(1.67vw, 400, 1.67vw, 0); // 24px
-              //@include text-font(1.94vw, 400, 1.94vw, 0); // 28px
-              //@include text-font(2.73vh, 400, 2.73vh, 0);
               color: $color-dark;
-              //@include text-size($maket-width,$viewport-width,32px);
-              //font-weight: 400;
             }
           }
           .info-description-block {
             margin: 0 auto;
             width: 60%;
-            height: 100%; // fit-content;
+            height: 100%; 
             @include flex-vertical();
             .task-description {
-              //margin: 0 auto;
               width: 96%;
-              //height: inherit;
               @include flex-horizontal();
-              //justify-content: flex-start;
               .info-content {
-                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
-                //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
                 @include text-font(1.11vw, 300, 1.11vw, 0); //16px
-                color: $color-dark;  // $color-grey-dark; // $color-dark;
+                color: $color-dark;  
                 text-align: left;                
               }
             }
@@ -450,12 +394,10 @@ body {
           .info-content-block {
             margin: 0 auto;
             padding: 0.69vw 1.39vw; //10 px 20px;
-            width: fit-content; // 65%; // 50%;
+            width: fit-content; 
             max-width: 12vw;
-            height: fit-content;  // 100%;
+            height: fit-content;  
             @include flex-vertical();
-            //justify-content: flex-start;
-            //border: 1px solid orangered;
             border-left: 2px solid orangered;
             border-bottom: 3px solid orangered;
             border-radius: 5px;
@@ -471,14 +413,12 @@ body {
               @include flex-horizontal();
               justify-content: flex-start;
               .info-content {
-                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
-                //@include text-font(1.11vw, 300, 1.11vw, 0); //16px
                 @include text-font(0.97vw, 300, 0.97vw, 0); //14px
-                color: $color-blick;  // $color-grey-dark; // $color-dark;
+                color: $color-blick;  
                 text-align: left;                
               }
               .then {
-                margin-top: 1.39%;  // 20px;
+                margin-top: 1.39%;  
                 @include text-font(1.11vw, 400, 1.11vw, 0);
               }
             }
@@ -489,17 +429,14 @@ body {
             .task-langs {
               margin: 0 auto;
               margin-top: 0.97vw;
-              width: 100%;  // 96%;
-              height: fit-content;  // 30%; // 25%;
+              width: 100%;  
+              height: fit-content;  
               @include flex-vertical();
               justify-content: flex-start;
               cursor: pointer;
               .info-content {
-                //padding: 0.83vw 0;
-                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
-                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 @include text-font(0.83vw, 300, 1.11vw, 0); //14px
-                color: grey;  // $color-grey-dark;  // $color-dark;
+                color: grey;  
                 text-align: left;
               }
               .info-content:hover {
@@ -509,18 +446,15 @@ body {
             .task-themes {
               margin: 0 auto;
               margin-top: 0.97vw;
-              width: 100%;  // 96%;
-              height: fit-content;  // 30%; // 25%;
+              width: 100%;  
+              height: fit-content;  
               @include flex-horizontal();
               justify-content: flex-start;
               flex-wrap: wrap;
               cursor: pointer;
               .info-content {
-                //padding: 1.39vw 0;
-                //@include text-font(1.36vh, 300, 1.36vh, 0); //14px
-                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 @include text-font(0.83vw, 300, 1.11vw, 0); //14px
-                color: grey;  // $color-grey-dark;  // $color-dark;
+                color: grey; 
                 text-align: left;
               }
               .info-content:hover {
@@ -536,30 +470,25 @@ body {
             .task-description-about {
               margin: 0 auto;
               width: 96%;
-              height: 40%; // 50%;
+              height: 40%; 
               @include flex-vertical();
               justify-content: flex-start;
               .info-content {
                 margin-bottom: 0.69vw;
-                //@include text-font(1.56vh, 300, 1.56vh, 0); //16px
                 @include text-font(0.97vw, 300, 0.97vw, 0); //16px
-                //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                 color: $color-dark;
                 text-align: left;                
               }
               .then {
-                //margin-top: 1.39%;  // 20px;
                 @include text-font(0.97vw, 400, 0.97vw, 0);
               }
             }
           }
           .info-service-block {
-            margin: 0; // auto;
-            width: 20%; // 25%;
+            margin: 0; 
+            width: 20%; 
             height: 100%;
             @include flex-vertical();
-            //justify-content: flex-start;
-            //border: 1px solid orangered;
             .btn-link {
               margin-bottom: 2%;
               @include text-font(1.11vw, 300, 1.11vw, 0); //16px
@@ -582,9 +511,9 @@ body {
         }
         .task-settings {
           margin: 0 auto;
-          margin-top: 0.5%; //1%;  // 2%; //40px;
+          margin-top: 0.5%; 
           width: 100%;
-          height: 4%; // 10%;
+          height: 4%; 
           @include flex-horizontal();
           justify-content: space-between;
           border: 1px solid green;
@@ -629,34 +558,29 @@ body {
         @include chartjs();
         .task-mode-block {
           margin: 0 auto;
-          //margin-top: 1.39vw;
           width: 100%;
-          height: 74%; // 0.74*80vh;  // 74%; // 70%;
+          height: 74%; 
           @include flex-vertical();
-          justify-content: space-around; // space-between;
+          justify-content: space-around;
           overflow-y: auto;
-          //border: 2px solid red;
           .task-mode {
             margin: 0 auto;
-            width: 100%; // 65%;
-            height: 48%; // 0.48*(0.74*80vh);   // 48%;    // 70%; // 55%;
+            width: 100%; 
+            height: 48%; 
             @include flex-horizontal();
             justify-content: space-around;
-            //flex-wrap: wrap;
-            //border: 1px solid violet;
             .item-card,
             .item-card-base {
-              margin: auto 0; // auto;
-              width: 18%; // 48%;
-              height: 96%; // 100%;   // 48%;
+              margin: auto 0; 
+              width: 18%; 
+              height: 96%; 
               @include flex-vertical();
-              justify-content: flex-start; // space-between;
-              //border: 1px solid $color-grey-dark; ////
+              justify-content: flex-start; 
               border-radius: 5px;
               .item-heading,
               .item-heading-lang {
                 width: 100%;
-                height: 25%; // 10%;
+                height: 25%; 
                 @include flex-horizontal();
                 align-items: center;
                 background-color: $color-grey;
@@ -664,9 +588,7 @@ body {
                 border-top-right-radius: 5px;
                 border-top-left-radius: 5px;
                 .heading-text {
-                  //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
                   @include text-font(1.11vw, 300, 1.11vw, 0); //16px
-                  //@include text-font(0.97vw, 300, 0.97vw, 0); //14px
                   color: $color-dark;
                   text-align: center;
                 }
@@ -674,7 +596,7 @@ body {
               .item-option,
               .item-option-lang {
                 width: 100%;
-                height: 25%; // 30%;
+                height: 25%; 
                 @include flex-horizontal();
                 align-items: center;
                 background-color: $color-lang-light;
@@ -684,15 +606,12 @@ body {
                   height: 100%;
                   @include flex-vertical();
                   .option-word {
-                    //margin-bottom: 8%;
-                    //@include text-font(1.25vw, 300, 1.25vw, 0); //18px
                     @include text-font(1.11vw, 300, 1.11vw, 0); //16px
                     color: $color-dark;
                     text-align: center;
                   }
                   .option-spell {
                     @include text-font(0.97vw, 300, 0.97vw, 0); //14px
-                    //@include text-font(0.83vw, 300, 0.83vw, 0); //12px
                     color: $color-dark;
                     text-align: center;
                   }
@@ -729,15 +648,12 @@ body {
                 background-color: $color-blick-light-lang;
               }
             }
-            //.item-card-base
             .item-card:hover {
-              //border: 1.5px solid $color-blick;
               .item-option, .item-option-lang, .item-heading, .item-heading-lang {
                 border: 1.5px solid $color-blick;
               }
             }
             .item-card-base:hover {
-              //border: 1.5px solid $color-blick;
               .item-option, .item-option-lang, .item-heading, .item-heading-lang {
                 border: 1.5px solid $color-blick;
               }
@@ -746,33 +662,29 @@ body {
         }
         .task-navi {
           margin: 0 auto;
-          margin-top: 2%; //40px;
+          margin-top: 2%; 
           width: 100%;
-          height: 7%; // 5%; // 10%;
+          height: 7%; 
           @include flex-horizontal();
           justify-content: space-between;
           align-items: center;
-          //border: 1px solid green;
           .navi-buttons,
           .navi-buttons-exit {
             height: 70%;
             width: fit-content;
-            //max-width: 60%;
             @include flex-horizontal();
             align-self: center;
             align-items: center;
             .btn-link {
-              //margin-bottom: 2%;
               padding: 0 1.39vw;
-              height: 100%; // 70%;
-              @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 16px
+              height: 100%; 
+              @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 
               color: $color-dark;
               align-self: flex-end;
               text-align: right;
               text-decoration: underline;
               background-color: $color-light;
               border: none;
-              //border: 1px solid red;
               outline: none;
               cursor: pointer;
               @include flex-horizontal();
@@ -793,11 +705,8 @@ body {
             .pagination-list {
               @include flex-horizontal();
               justify-content: space-around;
-              // white-space: nowrap;
-              // overflow: hidden;
-              // text-overflow: ellipsis;
               .pagination-item {
-                padding: 5px 10px; // 0 1.39vw; //20px;
+                padding: 5px 10px; 
                 list-style-type: none;
                 @include text-font(1.25vw, 300, 1.25vw, 0); //18px;
                 color: $color-dark;
@@ -817,38 +726,32 @@ body {
         }
         .task-results {
           margin: 0 auto;
-          margin-bottom: 0%;  // 0.5%; // 1%;   // 2%; //40px;
+          margin-bottom: 0%;  
           width: 100%;
-          height: 1%; // 4%; //6%; // 10%;
+          height: 1%; 
           @include flex-horizontal();
           justify-content: space-between;
-          //border: 1px solid green;
           .results-buttons {
-            height: 100%; // 80%;
+            height: 100%; 
             width: 30%;
             @include flex-horizontal();
             align-self: center;
             align-items: center;
             .set-get {
               visibility: hidden;
-              margin: 0; // auto;
-              //margin-left: 40px;
-              width: 100%; // 30%;
+              margin: 0; 
+              width: 100%; 
               height: 100%;
               @include flex-horizontal();
               align-items: center;
               align-self: center;
-              //background-color: $color-grey;
               background: none;
               border-radius: 5px;
-              //border: 2px solid $color-grey-dark;
               border: none;
               @include text-font(1.11vw, 400, 1.11vw, 0); // 20px
               text-decoration: underline;
               color: $color-dark;
               cursor: pointer;
-              //border: none;
-              //border: 1px solid grey;
               img {
                 height: 100%;
                 width: auto;
@@ -860,39 +763,31 @@ body {
               svg path {
                 fill: $color-accent;
               }
-              //border: 2px solid $color-blick;
-              //background-color: $color-grey-dark;
             }
           }
           .totals {
-            margin: 0; // auto;
-            //margin-left: 1,5%;  // 20px;
+            margin: 0; 
             width: 45%;
             height: 100%;
             @include flex-vertical();
             background-color: $color-grey;
             background: none;
-            //border: 2px solid $color-grey-dark;
             border: none;
             border-radius: 5px;
-            //border: 1px solid grey;
             position: relative;
             .totals-block {
-              margin: 0 auto; // 0; // auto;
+              margin: 0 auto; 
               padding: 0.69vw 2.08vw; // 10px 30px;
-              width: fit-content; // 65%;
+              width: fit-content; 
               height: fit-content;
               @include flex-vertical();
-              //justify-content: space-between;
-              //border: 1px solid orangered;
               border-right: 2px solid orangered;
               border-bottom: 3px solid orangered;
               border-radius: 5px;
-              //box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
               box-shadow: 0.69vw 0.69vw 0.69vw 0.69vw rgba(0,0,0,0.2);
               position: absolute;
-              top: -50vh;  // -600%;
-              right: -13vw;  // -50%;
+              top: -50vh;  
+              right: -13vw;  
               .total-item {
                 margin: auto;
                 margin-bottom: 0.97vw;
@@ -903,7 +798,7 @@ body {
                 align-items: center;
                 cursor: pointer;
                 .total-text {
-                  @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 22px; 18px;  16px;
+                  @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 
                   margin-left: 2.3%;
                   color: grey;              
                 }
@@ -939,7 +834,6 @@ body {
             #totalText {
               color: $color-accent;
             }
-            //border: 2px solid $color-blick;
           }
         }
       }
@@ -948,15 +842,12 @@ body {
         width: 0.5 * ($site-width - $block-width);
         height: $min-main-height;
         @include flex-vertical();
-        //border: 1px solid green;
         .totals-block {
-          margin: 0 auto; // 0; // auto;
+          margin: 0 auto; 
           padding: 10px;
           width: 65%;
           height: fit-content;
           @include flex-vertical();
-          //justify-content: space-between;
-          //border: 1px solid orangered;
           border-right: 2px solid orangered;
           border-bottom: 3px solid orangered;
           border-radius: 5px;
@@ -971,7 +862,7 @@ body {
             align-items: center;
             cursor: pointer;
             .total-text {
-              @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 22px; 18px;  16px;
+              @include text-font(1.25vw, 400, 1.25vw, 0); //18px; 
               margin-left: 2.3%;
               color: grey;              
             }
@@ -1004,25 +895,22 @@ body {
     left: 0;
     @include flex-vertical();
     background-color: rgba(15, 26, 28, 0.5); // $color-dark;
-    //border-radius: 5px;
     display: none;
     .info {
       margin: 0 auto;
       width: 45%;
-      height: 100vh - $header-height - $footer-height; // 55%;
+      height: 100vh - $header-height - $footer-height; 
       @include flex-vertical();
       justify-content: space-between;
       background-color: rgba(252, 252, 252, 1); // $color-blick-light;
       overflow-y: auto;
-      //border-radius: 5px;
       .info-header {
         margin: 0 auto;
-        margin-top: 3%; // 20px;
+        margin-top: 3%; 
         width: 100%;
         height: fit-content;
         @include flex-horizontal();
         justify-content: space-between;
-        //border: 1px solid blue;
         img {
           margin-left: 3%;
         }
@@ -1034,7 +922,7 @@ body {
           cursor: pointer;
         }
         .modal-title {
-          @include text-font(1.25vw, 500, 1.25vw, 0); //18px; 16px;
+          @include text-font(1.25vw, 500, 1.25vw, 0); //18px; 
           color: $color-dark;
           align-self: center;
           text-align: center;
@@ -1042,11 +930,10 @@ body {
       }
       .info-main {
         margin: 0 auto;
-        width: 90%; // 70%;
+        width: 90%; 
         height: fit-content;
         @include flex-vertical();
         text-align: center;
-        //border: 1px solid blue;
         .combo-block {
           margin: 0 auto;
           margin-bottom: 2%;
@@ -1058,7 +945,7 @@ body {
           position: relative;
           .combo-label {
             width: 34%;
-            @include text-font(1.25vw, 300, 1.25vw, 0); //18px; 16px;
+            @include text-font(1.25vw, 300, 1.25vw, 0); //18px; 
             text-align: left;
             align-self: center;
           }
@@ -1067,29 +954,27 @@ body {
           }
           .choice {
             width: 20%;
-            //border: 1px solid $color-dark;
           }
           .combo-input {
             margin-left: 10px;
             padding: 5px;
             width: 60%;
-            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
             color: $color-dark;
             border: 1px solid $color-grey-dark;
             border-radius: 5px;
-            //position: relative;
           }
           .combo-input::placeholder {
             padding: 10px 5px 10px 10px;
             color: $color-grey-dark;
             font-style: italic;
-            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
           }
           .combo-button {
             margin-left: 1%;
             padding: 5px;
             width: 6%; // 5.2%;
-            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 14px;
+            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 
             text-align: center;
             background-color: $color-grey;
             border-radius: 5px;
@@ -1100,15 +985,8 @@ body {
             background-color: $color-blick;
           }
           .mode-button {
-            margin-left: 2%; // 4%;
-            //padding: 5px;
-            width: 18%; // 22%;
-            // @include text-font(14px,300,14px,0);
-            // color: red;
-            // text-align: center;
-            // background-color: $color-grey;
-            // border: none;
-            // outline: none;
+            margin-left: 2%; 
+            width: 18%; 
             label {
               @include text-font(1.11vw, 300, 1.11vw, 0); //16px;
               color: red;
@@ -1116,8 +994,7 @@ body {
             }
           }
           .mode-button-label {
-            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 14px;
-            //color: red;
+            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 
             text-align: center;
             align-self: center;
           }
@@ -1128,42 +1005,37 @@ body {
             margin-left: 10px;
             padding: 5px;
             width: 96%;
-            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 14px;
+            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 
             color: $color-dark;
           }
           .combo-text::placeholder {
             padding: 10px 5px 10px 10px;
             color: $color-grey-dark;
             font-style: italic;
-            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+            @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
           }
           .combo-list {
-            margin: auto; // auto 0;   // 0;  // auto;
-            //margin-left: 10px;
+            margin: auto; 
             padding: 10px;
-            width: 100%; // fit-content; // 60%;
-            //min-height: 0.5*(100vh - $header-height - $footer-height);
+            width: 100%; 
             height: auto;
             max-height: 0.5 * (100vh - $header-height - $footer-height);
             @include flex-vertical();
             justify-content: space-between;
-            //align-items: center;
             overflow-y: auto;
             display: none;
-            background-color: $color-light; // $color-blick-light;
+            background-color: $color-light; 
             border: 2px solid $color-grey;
             position: absolute;
             top: 100%;
             z-index: 99;
             .combo-list-item {
               margin-bottom: 2%;
-              width: auto; // inherit; // 90%;
+              width: auto; 
               @include flex-horizontal();
-              //justify-content: space-between;
               align-items: center;
               .combo-list-input {
                 padding: 5px;
-                //width: 70%;
                 @include text-font(0.97vw, 300, 0.97vw, 0); //14px;
                 color: $color-dark;
                 border: 1px solid $color-grey-dark;
@@ -1175,9 +1047,9 @@ body {
               }
               .btn-choose {
                 padding: 5px;
-                width: 15%; // 25%;
+                width: 15%; 
                 height: 100%;
-                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
                 background-color: $color-grey;
                 border: none;
                 border-radius: 5px;
@@ -1188,7 +1060,7 @@ body {
               label {
                 margin-left: 10px;
                 width: 70%;
-                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
                 text-align: left;
               }
               .search {
@@ -1209,7 +1081,7 @@ body {
           }
           #modeChoice {
             margin-right: 4%;
-            width: 80%; // 90%;
+            width: 80%; 
             height: 100%;
             @include flex-horizontal();
             justify-content: space-between;
@@ -1218,7 +1090,7 @@ body {
           .user-choice {
             margin-left: 10px;
             padding: 5px;
-            width: 80%; // 96%;
+            width: 80%; 
             height: auto;
             border: 1px solid $color-grey-dark;
             border-radius: 5px;
@@ -1235,7 +1107,7 @@ body {
               align-items: center;
               .result-label {
                 width: 20%;
-                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
                 align-self: flex-start;
                 text-align: left;
               }
@@ -1244,9 +1116,8 @@ body {
                 width: 80%;
                 height: auto;
                 font-family: Roboto;
-                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 12px;
+                @include text-font(0.97vw, 300, 0.97vw, 0); //14px; 
                 @include flex-vertical();
-                //align-self: center;
                 align-items: center;
                 align-content: center;
                 text-align: left;
@@ -1266,13 +1137,13 @@ body {
         margin: 0 auto;
         margin-bottom: 7%;
         width: 100%;
-        height: 14%; // fit-content;
+        height: 14%; 
         @include flex-horizontal();
         .btn-go {
-          width: 40%; // 30%;
+          width: 40%; 
           height: 100%;
           text-align: center;
-          @include text-font(1.53vw, 300, 1.53vw, 0); //22px; 20px;
+          @include text-font(1.53vw, 300, 1.53vw, 0); //22px; 
           background-color: $color-grey;
           border-radius: 5px;
           border: none;
@@ -1280,7 +1151,7 @@ body {
           cursor: pointer;
         }
         .btn-go:hover {
-          background-color: $color-blick; // $color-grey-dark;
+          background-color: $color-blick; 
         }
       }
     }
@@ -1290,22 +1161,17 @@ body {
     width: $footer-width;
     height: $footer-height;
     @include flex-horizontal();
-    background-color: $color-lang-light; // $color-grey;
-    //border-top: 2px solid $color-grey-dark;
-    //border: 1px solid black;
+    background-color: $color-lang-light; 
     .footer-left {
       margin: 0 auto;
       width: 0.5 * ($site-width - $block-width);
       height: 100%;
       @include flex-vertical();
-      //justify-content: flex-start;
-      //border: 1px solid blue;
       .footer-left-block {
-        margin: 0 auto; // 0 auto;
+        margin: 0 auto; 
         width: 100%;
-        height: 100%; // fit-content;
+        height: 100%; 
         @include flex-horizontal();
-        //justify-content: flex-end;
         align-items: center;
         .logo {
           margin: 0 auto;
@@ -1318,20 +1184,8 @@ body {
             height: 50%;
             width: auto;
             align-items: center;
-            //border: 1px solid green;
           }
         }        
-        // .copyright {
-        //   display: none;
-        //   margin: 0 auto;
-        //   width: fit-content; // 30%; // fit-content;
-        //   height: 100%; // fit-content;
-        //   @include text-font(0.83vw, 300, 0.83vw, 0); //12px; 14px
-        //   align-items: center;
-        //   text-align: left;
-        //   @include flex-vertical();
-        //   //border: 1px solid grey;
-        // }
       }
     }
     .footer-center {
@@ -1339,39 +1193,33 @@ body {
       width: $block-width;
       height: 100%;
       @include flex-vertical();
-      //justify-content: flex-end;
-      //border: 1px solid red;
       background-color: $color-blick-dark;
       clip-path: polygon(24% 0%, 100% 0%, 100% 100%, 0% 100%);
       .footer-center-block {
         margin: 0 auto;
         width: 100%;
-        height: fit-content; // 100%;
+        height: fit-content; 
         @include flex-horizontal();
         justify-content: space-between;
-        //align-items: flex-end;
         menu {
           margin: 0 auto;
-          width: 70%; // auto;    // fit-content;
-          height: 100%; // fit-content;
+          width: 70%; 
+          height: 100%; 
           @include flex-horizontal();
           justify-content: flex-end;
           align-items: center;
-          //border: 1px solid grey;
           .menu-item {
-            margin: auto 0; // 0 auto;
+            margin: auto 0; 
             margin-right: 4%;
             width: fit-content;
             height: fit-content;
-            //align-items: center;
             border: none;
             background: none;
-            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; //14px
+            @include text-font(1.11vw, 300, 1.11vw, 0); //16px; 
             cursor: pointer;
-            //border: 1px solid grey;
           }
           .menu-item:hover {
-            color: $color-light;  // $color-accent;
+            color: $color-light;  
             font-weight: 500;
           }
           .future {
@@ -1382,15 +1230,13 @@ body {
           }
         }
         .copyright {
-          //display: none;
           margin: 0 auto;
           margin-left: 26%;
-          width: 30%; // fit-content;
-          height: 100%; // fit-content;
-          @include text-font(0.83vw, 300, 0.83vw, 0); //12px; 14px
+          width: 30%;
+          height: 100%; 
+          @include text-font(0.83vw, 300, 0.83vw, 0); //12px; 
           align-items: center;
           text-align: left;
-          //border: 1px solid grey;
         }
       }
     }
@@ -1400,35 +1246,29 @@ body {
       height: 100%;
       @include flex-vertical();
       background-color: $color-blick-dark;
-      //justify-content: flex-end;
-      //border: 1px solid blue;
       .footer-right-block {
-        margin: 0 auto; // 0 auto;
+        margin: 0 auto; 
         width: 100%;
-        height: 100%; // fit-content;
+        height: 100%; 
         @include flex-horizontal();
-        //justify-content: flex-end;
         align-items: center;
         menu {
           margin: 0 auto;
-          width: 100%; // 70%; // auto;    // fit-content;
-          height: 100%; // fit-content;
+          width: 100%; 
+          height: 100%; 
           @include flex-horizontal();
           justify-content: flex-start;
           align-items: center;
-          //border: 1px solid grey;
           .menu-item {
-            margin: 0; // 0 auto; // auto 0;   // 0 auto;
+            margin: 0; 
             margin-left: 8%;
             width: fit-content;
             height: fit-content;
-            //align-items: center;
             border: none;
             background: none;
             @include text-font(16px, 300, 16px, 0);
             cursor: pointer;
             align-items: center;
-            //border: 1px solid grey;
             img {
               margin: 0 auto;
               height: 16px;
@@ -1437,11 +1277,11 @@ body {
             }
           }
           .menu-item:hover {
-            color: $color-light;  // $color-accent;
+            color: $color-light;  
             font-weight: 500;
           }
           .menu-item:hover path {
-            fill: $color-light; // $color-accent;
+            fill: $color-light; 
           }
         }
       }

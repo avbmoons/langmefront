@@ -18,7 +18,6 @@
     <script defer src="../data/patternFin.js"></script>
     <script defer src="../data/patternLav.js"></script>
     <script defer src="../data/datachart.js"></script>
-    <!-- <script defer src="../scripts/homeLoading.js"></script> -->
     <script defer src="../scripts/pageLoading.js"></script>  
     <script defer src="../scripts/timenow.js"></script>
     <script defer src="../scripts/showModals.js"></script>
@@ -26,8 +25,6 @@
     <script defer src="../scripts/listThemes.js"></script>
     <script defer src="../scripts/listModes.js"></script>
     <script defer src="../scripts/counter.js"></script>
-    <!-- <script defer src="../scripts/taskChoice.js"></script> 
-    <script defer src="../scripts/task.js"></script>-->
     <script defer src="../scripts/chart.umd.js"></script>
     <script defer src="../scripts/chartjs-plugin-datalabels.min.js"></script>
     <script defer src="../scripts/charts.js"></script>
@@ -76,8 +73,6 @@
                             <div class="combo-block" id="appLang">
                                 <button class="menu-item header" id="appLangEngChoice" onclick="openAppLangChoiceList()">Eng</button>
                                 <div class="combo-list" id="appLangChoice">
-                                    <!-- <button class="menu-item header" id="appLangEng">Eng</button>
-                                   <button class="menu-item header" id="appLangRus">Rus</button>  -->
                                 </div>                                
                             </div>
                             <button class="menu-item header">
@@ -103,44 +98,8 @@
                                 <p class="info-content then">And then, it's just interesting for everyone!</p>
                                 
                             </div>
-                            <!-- <div class="task-langs">
-                                <p class="info-content" id="taskPrimLang">Russian -></p>
-                                <p class="info-content" id="taskCompLang">Armenian, Greek, Finnish, Latvian</p>
-                            </div>
-                            <div class="task-themes">
-                                <p class="info-content">World sides, Seasons, Months, Weekdays, Personal data</p>
-                            </div>                             -->
                         </div>
-                        <!-- <div class="info-service-block">
-                            <button class="btn-link">Change mode</button>
-                            <button class="btn-link" onclick="openModalSettings()">Change settings</button>
-                        </div> -->
                     </div>
-                    <!--<div class="task-settings">
-                        <div class="counter" id="counterWords">
-                            <label class="counter-label" for="">Show</label>
-                            <button class="counter-btn" id="btnPrevNumWords" onclick="minusFunction(numWordsValue)">&#9668;</button>
-                            <input class="counter-value" id="numWordsValue" type="text" value="2" title="2 words recomended" readonly>
-                            <button class="counter-btn" id="btnNextNumWords" onclick="plusFunction(numWordsValue)">&#9658;</button>
-                            <label class="counter-label" for="">words on the list</label>
-                        </div>
-                        <div class="counter" id="counterOptions">
-                            <label class="counter-label" for="">Show</label>
-                            <button class="counter-btn" id="btnPrevNumOpt" onclick="minusFunction(numOptionsValue)">&#9668;</button>
-                            <input class="counter-value" id="numOptionsValue" type="text" value="3" title="3 options recomended" readonly>
-                            <button class="counter-btn" id="btnNextNumOpt" onclick="plusFunction(numOptionsValue)">&#9658;</button>
-                            <label class="counter-label" for="">options for each word</label>
-                        </div>
-                        <div class="counter" id="radioSpell">
-                            <label class="counter-label" for="">Show spelling on</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellRus" checked>
-                            <label class="counter-label" for="spellRus">Rus</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellEng">
-                            <label class="counter-label" for="spellEng">Eng</label>
-                            <input class="counter-value" type="radio" name="spellChoice" id="spellNone">
-                            <label class="counter-label" for="spellNone">None</label>
-                        </div>
-                    </div> -->
                     <div class="chart-rows-block">
                         <div class="charts-title-block">
                             <p class="charts-title">What we have now:</p>
@@ -163,325 +122,6 @@
                             <canvas id="testChart"></canvas>
                         </div>
                     </div>
-                    <!-- <div class="task-mode-block" id="taskModeChoice">
-                        <div class="task-mode" name="row1" id="item1">
-                            <div class="item-card base" id="item1Base">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item1HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base">
-                                    <p class="item-word base" id="item1WordBase">Пятница</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp1">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item1Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item1Comp1Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option1Word">Ուրբաթ</p>
-                                        <p class="option-spell" id="item1Comp1Option1Spell">урбаt</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item1Comp1Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option2Word">Հինգշաբթի</p>
-                                        <p class="option-spell" id="item1Comp1Option2Spell">hингшабtи</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp1Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp1Option3Word">Երկուշաբթի</p>
-                                        <p class="option-spell" id="item1Comp1Option3Spell">еркушабtи</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp1" type="radio" id="item1Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp2">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item1Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item1Comp2Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option1Word">Πέμπτη</p>
-                                        <p class="option-spell" id="item1Comp2Option1Spell">пе́мпти</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item1Comp2Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option2Word">Σάββατο</p>
-                                        <p class="option-spell" id="item1Comp2Option2Spell">са́бато</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp2Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp2Option3Word">Παρασκευή</p>
-                                        <p class="option-spell" id="item1Comp2Option3Spell">параскеви́</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp2" type="radio" id="item1Comp2Option3Radio" checked>
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp3">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item1Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item1Comp3Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option1Word">Tiistai</p>
-                                        <p class="option-spell" id="item1Comp3Option1Spell">тиистай</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item1Comp3Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option2Word">viikonpäivät</p>
-                                        <p class="option-spell" id="item1Comp3Option2Spell">вииконпайват</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp3Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp3Option3Word">Perjantai</p>
-                                        <p class="option-spell" id="item1Comp3Option3Spell">перйантай</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp3" type="radio" id="item1Comp3Option3Radio" checked>
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item1Comp4">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item1Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item1Comp4Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option1Word">Trešdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option1Spell">трешдиена</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item1Comp4Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option2Word">Piektdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option2Spell">пиектдиена</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item1Comp4Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item1Comp4Option3Word">Otrdiena</p>
-                                        <p class="option-spell" id="item1Comp4Option3Spell">отрдиена</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item1Comp4" type="radio" id="item1Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="task-mode" name="row2" id="item2">
-                            <div class="item-card base" id="item1Base">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item2HeadingBase">Russian</p>
-                                </div>
-                                <div class="item-option base">
-                                    <p class="item-word base" id="item2WordBase">Север</p>
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp1">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item2Comp1Heading">Armenian</p>
-                                </div>
-                                <div class="item-option" id="item2Comp1Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option1Word">հարավ</p>
-                                        <p class="option-spell" id="item2Comp1Option1Spell">харав</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp1Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option2Word">հյուսիս</p>
-                                        <p class="option-spell" id="item2Comp1Option2Spell">хюсис</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp1Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp1Option3Word">արևմուտք</p>
-                                        <p class="option-spell" id="item2Comp1Option3Spell">аревмутк</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp1" type="radio" id="item2Comp1Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp2">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item2Comp2Heading">Greek</p>
-                                </div>
-                                <div class="item-option" id="item2Comp2Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option1Word">Δύση</p>
-                                        <p class="option-spell" id="item2Comp2Option1Spell">диси</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option1Radio">
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp2Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option2Word">βόρειο</p>
-                                        <p class="option-spell" id="item2Comp2Option2Spell">вóрео</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option2Radio" checked>
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp2Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp2Option3Word">Ανατολή</p>
-                                        <p class="option-spell" id="item2Comp2Option3Spell">анатоли</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp2" type="radio" id="item2Comp2Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp3">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item2Comp3Heading">Finnish</p>
-                                </div>
-                                <div class="item-option" id="item2Comp3Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option1Word">Pohjoinen</p>
-                                        <p class="option-spell" id="item2Comp3Option1Spell">похьйойнен</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp3Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option2Word">Itä</p>
-                                        <p class="option-spell" id="item2Comp3Option2Spell">ита</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp3Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp3Option3Word">Etelä</p>
-                                        <p class="option-spell" id="item2Comp3Option3Spell">этэла</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp3" type="radio" id="item2Comp3Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                            <div class="item-card" id="item2Comp4">
-                                <div class="item-heading">
-                                    <p class="heading-text" id="item2Comp4Heading">Latvian</p>
-                                </div>
-                                <div class="item-option" id="item2Comp4Option1">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option1Word">ziemeļi</p>
-                                        <p class="option-spell" id="item2Comp4Option1Spell">зиемели</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option1Radio" checked>
-                                    </div>
-                                    
-                                </div>
-                                <div class="item-option" id="item2Comp4Option2">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option2Word">rietumi</p>
-                                        <p class="option-spell" id="item2Comp4Option2Spell">риетуми</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option2Radio">
-                                    </div>                                
-                                </div>
-                                <div class="item-option" id="item2Comp4Option3">
-                                    <div class="option-word-block">
-                                        <p class="option-word" id="item2Comp4Option3Word">austrumi</p>
-                                        <p class="option-spell" id="item2Comp4Option3Spell">ауструми</p>
-                                    </div>
-                                    <div class="option-radio-block">
-                                        <input class="option-radio" name="item2Comp4" type="radio" id="item2Comp4Option3Radio">
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-navi">
-                        <div class="navi-buttons">
-                            <button class="btn-link">Previous&nbsp;&#9668;</button>
-                            <button class="btn-link">&#9658;&nbsp;Next</button>
-                        </div>
-                        <div class="navi-buttons">
-                            <button class="btn-link">Exit&nbsp;<img src="../assets/icons/png/icon-exit.png" alt="exit"></button>
-                        </div>
-                    </div>
-                    <div class="task-results">
-                        <div class="results-buttons">
-                            <button class="set-get"><img src="../assets/icons/png/icon-finish-flag.png" alt="results">Results</button>                            
-                        </div>
-                        <div class="totals">
-                            <div class="totals-block">
-                                <div class="total-item title">
-                                    <p>Totals:</p>
-                                </div>
-                                <div class="total-item enjoy">
-                                    <img src="../assets/icons/png/emoji-smile-regular.png" alt="enjoy">
-                                    <p>&nbsp;&mdash;&nbsp;64%</p>
-                                </div>
-                                <div class="total-item neutral">
-                                    <img src="../assets/icons/png/emoji-meh-regular.png" alt="neutral">
-                                    <p>&nbsp;&mdash;&nbsp;28%</p>
-                                </div>
-                                <div class="total-item worry">
-                                    <img src="../assets/icons/png/emoji-sad-regular.png" alt="worry">
-                                    <p>&nbsp;&mdash;&nbsp;8%</p>
-                                </div>                                
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="main-right"></div>
             </main>
@@ -506,7 +146,6 @@
                             </div>
                             <div class="combo-list-choice" id="primLangChoiceList">
                             </div>
-
                         </div>
                     </div>                    
                     <div class="combo-block" id="compLangBlock">
@@ -529,7 +168,6 @@
                         <div class="combo-list" id="themeChoice">
                             <div class="combo-list-item" name="themeList">
                                 <input class="combo-list-input search" type="text">
-                                <!-- <img src="../assets/icons/png/icon-search.png" alt="search"> -->
                                 <button type="button" class="btn-choose" onclick="closeThemesChoiceList()">Choose</button>
                             </div>
                             <div class="combo-list-item" name="allThemes">
@@ -539,15 +177,6 @@
                             <div class="combo-list-choice" id="themeChoiceList"></div>
                         </div>
                     </div>
-
-                    <!-- <div class="combo-block" id="modeButtonsBlock">
-                        <label class="combo-label" for="modeButtons">Mode:</label>
-                        <button type="button" class="mode-button" id="setModePlain">Plain</button>
-                        <button type="button" class="mode-button" id="setModeChoice">Choice</button>
-                        <button type="button" class="mode-button" id="setModeLang">Lang</button>
-                        <button type="button" class="mode-button" id="setModeMix">Mix</button>
-                    </div> -->
-
                     <div class="combo-block" id="modeButtonsBlock">
                         <label class="combo-label mode" for="modeButtons">Mode:</label>
                         
@@ -557,7 +186,6 @@
 
                     <div class="combo-block" id="userChoiceBlock">
                         <label class="combo-label choice" for="userChoice">Your choice:</label>
-                        <!-- <textarea class="combo-text" name="userChoice" id="userChoice" placeholder="Your task settings here..." rows="5" readonly></textarea> -->
                         <div class="user-choice">
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultPrim">Primary: </label>
@@ -565,12 +193,10 @@
                             </div>
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultComp">Compared: </label>
-                                <!-- <input class="result-field" type="text" id="resultComp" name="resultComp"> -->
                                 <textarea class="result-field" name="resultComp" id="resultComp" readonly></textarea>
                             </div>
                             <div class="user-choice-result">
                                 <label class="result-label" for="resultThemes">Themes: </label>
-                                <!-- <input class="result-field" type="text" id="resultThemes" name="resultThemes"> -->
                                 <textarea class="result-field" name="resultThemes" id="resultThemes" readonly></textarea>
                             </div>
                             <div class="user-choice-result">
@@ -581,7 +207,6 @@
                     </div>
                 </div>
                 <div class="info-button">
-                    <!-- <button type="submit" class="btn-go" onclick="submitTaskSettings()">Confirm</button> -->
                     <button type="button" class="btn-go" onclick="submitTaskSettings()">Confirm</button>
                 </div>                
             </div>

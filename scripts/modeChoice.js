@@ -344,8 +344,7 @@ function totalsWorry() {
     return totalWorry;
 }
 
-// test row render
-//cardCompChoiceDom();
+// row render
 
 for (let i=0; i<taskRows.length; i++) {
     let optionsChoiceTheme = [];
@@ -492,14 +491,11 @@ let arrNum = (taskRows.length - 1);
 
 for (let m=0; m <= arrNum; m++) {
     taskRowsTest[m] = taskRows[m];
-    //return taskRowsTest;
 }
 
 console.log("array Task rows test for render: ");
 console.log(taskRowsTest);
 console.log("taskRowsTest length : " + taskRowsTest.length);
-
-//rowsCompChoiceDom();
 
 function createRow(index) {
     let rowsBlock = document.getElementById("taskModeChoice");
@@ -569,10 +565,6 @@ function rowsCompChoiceDom() {
             }
         }
     }
-}
-
-function resultsTotals() {
-    //
 }
 
 function pageRowsCompChoiceDom(firstIndex, lastIndex) {

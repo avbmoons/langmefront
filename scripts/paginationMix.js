@@ -1,9 +1,6 @@
 const products = taskRowsTest;
 
-//let productsOnPage = [];
-
 const paginate = (products) => {
-    //console.log('products: ', products);
     let productCount = 2;   // 7;   // num products on each page
     let currentPage = 1;    // current page
 
@@ -18,7 +15,6 @@ const paginate = (products) => {
     const renderProducts = (products, container, numberOfProducts, page) => {
 
         productContainer.innerHTML = "";
-        //console.log(productContainer);
 
         const firstProductIndex = numberOfProducts * page - numberOfProducts;
         console.log('firstProductIndex: ', firstProductIndex);
@@ -30,18 +26,6 @@ const paginate = (products) => {
         console.log('productsOnPage: ', productsOnPage);
 
         pageRowsCompMixDom(firstProductIndex, lastProductIndex);
-
-        // productsOnPage.forEach(({id, info}) => {
-        //     const div = document.createElement('div');
-        //     //console.log(div);
-        //     div.classList.add('row');
-        //     div.innerHTML = `<div class="row">
-        //                         <p class="this-id">${id}</p>
-        //                         <p class="this-info">${info}</p>
-        //                     </div>`;
-        //     container.append(div);
-        //     //productContainer.appendChild(div);
-        // });
 
     };
 
@@ -84,7 +68,7 @@ const paginate = (products) => {
                 return;
             } else {
                 currentPage = event.target.textContent;
-                //console.log('currentPage: ', currentPage);
+
                 console.log('Click on none');
                 renderProducts(products, productContainer, productCount, currentPage);
 
@@ -117,7 +101,6 @@ const paginate = (products) => {
             for (let j=1; j < 8; j++) {
                 links[j].style.display = '';
             }
-            //links[0].style.display = '';
             links[links.length - 1].style.display = '';
         } else {
             links.forEach(link => link.style.display = '');
@@ -127,9 +110,6 @@ const paginate = (products) => {
             }
         }
     };
-
-    // document.addEventListener('DOMContentLoaded', managePagination);
-    // window.addEventListener('resize', managePagination);
 
     renderProducts(products, productContainer, productCount, currentPage);
     renderPagination(products, productCount);

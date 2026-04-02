@@ -97,10 +97,7 @@ const closePrimLangsChoiceList = () => {
 const openCompLangsChoiceList = () => {
   comboCompLangsList.style.display = "flex";
   comboCompLangChoiceList.style.display = "flex"; //
-
   
-  
-
   const comboCompLangRus = document.getElementById("compRus");  ////
   const comboCompLangEng = document.getElementById("compEng");  ////
 
@@ -138,7 +135,6 @@ const openCompLangsChoiceList = () => {
     });
   });
 
-  //console.log("primLang = " + primLang.value);
   let primLangValue = getFirstWord(primLang.value);
 
   switch (primLangValue) {
@@ -276,6 +272,5 @@ function submitTaskSettings() {
 
 function getFirstWord(str) {
   const firstWord = str.trim().split(' ')[0];
-  //console.log("firstWord = " + firstWord);
   return firstWord;
 }

@@ -53,7 +53,6 @@ function showSlidesPages() {
   let tutorCover = document.getElementById('tutorCover');
   let tutorCoverStyle = window.getComputedStyle(tutorCover);
   let tutorCoverDisplay = tutorCoverStyle.display;
-  //console.log(slider.length);
 
   for (let i = 0; i < slider.length; i++) {
     slider[i].style.display = 'none';
@@ -61,17 +60,14 @@ function showSlidesPages() {
   }
   slideIndex++;
   if (slideIndex > slider.length) {
-    //slideIndex = 1;
     clearInterval();
     window.location.href = 'home.html';
-    //closeTutorPages();
   }
   slider[slideIndex - 1].style.display = 'flex';
   dots[slideIndex - 1].style.fill = '#f5a836';
   if (tutorCoverDisplay == 'flex') {
     setTimeout(showSlidesPages, 5000); //
   }
-  //setTimeout(showSlides, 5000);
 }
 
 let indexValue = 1;
@@ -83,7 +79,6 @@ function sideSlide(e) {
   showSlideManual(indexValue += e);
 }
 function showSlideManual(e) {
-  //let i;
   let img = document.querySelectorAll('.tutor-main');
   let slider = document.querySelectorAll('.dot-step');
   let dots = document.querySelectorAll('.dots');

@@ -505,8 +505,7 @@ function totalsWorry() {
     return totalWorry;
 }
 
-// test row render
-//cardCompMixDom();
+// row render
 
 for (let i=0; i<taskRows.length; i++) {
     let optionsLangTheme = [];
@@ -548,7 +547,6 @@ function randArr(array) {
 
 ///////////////////////
 //Define task rows with options array for mode Lang
-///////let taskRowsOptions = [];////////////////////////
 
 for (let i=0; i < taskRows.length; i++) {
     let rowTheme = taskRows[i][0].idTheme;
@@ -585,10 +583,7 @@ function getOptionsLang(themeId, langId, wordId) {
     let option2;
     let option3;
     let newCompWordsTheme;
-    let otherNewCompWordsTheme;
-   
-    // option1 = randEl(compWordsTheme);
-    // newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+    let otherNewCompWordsTheme;   
 
     switch (arrSelectedCompLangs.length) {
         case 2:
@@ -613,13 +608,7 @@ function getOptionsLang(themeId, langId, wordId) {
             compOptionsLang.push(option1, option2, option3);
             break;
     }
-    // option2 = randEl(newCompWordsTheme);
-    // otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
-    // option3 = randEl(otherNewCompWordsTheme);
-    // option1.isRight = false;
-    // option2.isRight = false;
-    // option3.isRight = false;
-    // compOptionsLang.push(option1, option2, option3);
+
     return compOptionsLang;
 }
 
@@ -736,6 +725,4 @@ function setResultsLang() {
         localStorage.setItem('totalsLang', totalsLang);
     });
 }
-
-//pageRowsCompChoiceDom(3, 6);
 

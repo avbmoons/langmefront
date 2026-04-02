@@ -385,7 +385,6 @@ function randArr(array) {
 
 ///////////////////////
 //Define task rows with options array for mode Choice
-///////let taskRowsOptions = [];////////////////////////
 
 for (let i=0; i < taskRows.length; i++) {
 
@@ -428,7 +427,6 @@ function getOptionsPlain(themeId, langId, wordId) {
 
     return compOptionsPlain;
 }
-
 
 //Function for Rows counter
 let rowsList = document.getElementsByClassName("task-mode");

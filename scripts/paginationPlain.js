@@ -1,71 +1,6 @@
-// const products = [
-//     {
-//         id: "q1",
-//         info: "info1",
-//     },
-//     {
-//         id: "q2",
-//         info: "info2",
-//     },
-//     {
-//         id: "q3",
-//         info: "info3",
-//     },
-//     {
-//         id: "q4",
-//         info: "info4",
-//     },
-//     {
-//         id: "q5",
-//         info: "info5",
-//     },
-//     {
-//         id: "q6",
-//         info: "info6",
-//     },
-//     {
-//         id: "q7",
-//         info: "info7",
-//     },
-//     {
-//         id: "q8",
-//         info: "info8",
-//     },
-//     {
-//         id: "q9",
-//         info: "info9",
-//     },
-//     {
-//         id: "q10",
-//         info: "info10",
-//     },
-//     {
-//         id: "q11",
-//         info: "info11",
-//     },
-//     {
-//         id: "q12",
-//         info: "info12",
-//     },
-//     {
-//         id: "q13",
-//         info: "info13",
-//     },
-// ];
-
-// const func = (products) => {
-//     console.log(products);
-// }
-
-// func(products);
-// //console.log(products);
-
 const products = taskRowsTest;
 
-//let productsOnPage = [];
-
 const paginate = (products) => {
-    //console.log('products: ', products);
     let productCount = 5;   //2;   // 7;   // num products on each page
     let currentPage = 1;    // current page
 
@@ -80,7 +15,6 @@ const paginate = (products) => {
     const renderProducts = (products, container, numberOfProducts, page) => {
 
         productContainer.innerHTML = "";
-        //console.log(productContainer);
 
         const firstProductIndex = numberOfProducts * page - numberOfProducts;
         console.log('firstProductIndex: ', firstProductIndex);
@@ -91,20 +25,7 @@ const paginate = (products) => {
         const productsOnPage = products.slice(firstProductIndex, lastProductIndex);
         console.log('productsOnPage: ', productsOnPage);
 
-        //pageRowsCompChoiceDom(firstProductIndex, lastProductIndex);
         pageRowsCompPlainDom(firstProductIndex, lastProductIndex);
-
-        // productsOnPage.forEach(({id, info}) => {
-        //     const div = document.createElement('div');
-        //     //console.log(div);
-        //     div.classList.add('row');
-        //     div.innerHTML = `<div class="row">
-        //                         <p class="this-id">${id}</p>
-        //                         <p class="this-info">${info}</p>
-        //                     </div>`;
-        //     container.append(div);
-        //     //productContainer.appendChild(div);
-        // });
 
     };
 
@@ -147,7 +68,7 @@ const paginate = (products) => {
                 return;
             } else {
                 currentPage = event.target.textContent;
-                //console.log('currentPage: ', currentPage);
+
                 console.log('Click on none');
                 renderProducts(products, productContainer, productCount, currentPage);
 
@@ -180,7 +101,6 @@ const paginate = (products) => {
             for (let j=1; j < 8; j++) {
                 links[j].style.display = '';
             }
-            //links[0].style.display = '';
             links[links.length - 1].style.display = '';
         } else {
             links.forEach(link => link.style.display = '');
@@ -190,9 +110,6 @@ const paginate = (products) => {
             }
         }
     };
-
-    // document.addEventListener('DOMContentLoaded', managePagination);
-    // window.addEventListener('resize', managePagination);
 
     renderProducts(products, productContainer, productCount, currentPage);
     renderPagination(products, productCount);

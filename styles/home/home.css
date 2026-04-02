@@ -459,6 +459,8 @@ body {
 .wrapper .top header .header-right .header-right-block menu .combo-block #appLangEngChoice {
   margin-left: 40%;
   margin-top: 15%;
+  width: -moz-fit-content;
+  width: fit-content;
   opacity: 1;
   border: none;
   outline: none;
@@ -471,8 +473,6 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  border: 2px solid #dae6e8;
-  background-color: #dae6e8;
   opacity: 1;
   position: absolute;
   top: -100%;

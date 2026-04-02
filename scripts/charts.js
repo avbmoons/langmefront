@@ -1,8 +1,3 @@
-//const { Chart } = require("chart.js");
-
-//const { Chart } = require("chart.js");
-
-//let modesCh = modesCh;
 Chart.register(ChartDataLabels);
 
 const ctx = document.getElementById('testChart');
@@ -17,10 +12,10 @@ console.log('modesStr = ' + modesStr);
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: themesCh,    // ['Plain', 'Choice', 'Lang', 'Mix', 'Memo'],
+        labels: themesCh,    
         datasets: [{
             label: 'Words',
-            data: themesWordsStr, // ['2', '2', '2', '2', '1'],
+            data: themesWordsStr, 
             backgroundColor: [
                 'rgba(125, 121, 66, 0.7)',
                 'rgba(66, 125, 107, 0.7)',
@@ -53,7 +48,7 @@ new Chart(ctx, {
                 beginAtZero: true,
                 ticks: {
                     maxRotation: 45,
-                    minRotation: 0, //45,                    
+                    minRotation: 0,                     
                 }
             }
         },
@@ -90,10 +85,10 @@ new Chart(ctx, {
 new Chart(ctx2, {
     type: 'bar',
     data: {
-        labels: modesCh,    // ['Plain', 'Choice', 'Lang', 'Mix', 'Memo'],
+        labels: modesCh,    
         datasets: [{
             label: 'Modes',
-            data: modesStr, // ['2', '2', '2', '2', '1'],
+            data: modesStr, 
             backgroundColor: [
                 'rgba(29, 57, 164, 0.7)',
                 'rgba(132, 117, 167, 0.7)',
@@ -130,11 +125,11 @@ new Chart(ctx2, {
                         if (value === 2) {return 'Active'};
                         if (value === 3) {return 'Blocked'};
                         if (value === 4) {return 'Close'};
-                        //return value;
+
                         return '';     
                     },
                     maxRotation: 45,
-                    minRotation: 0, //45,                    
+                    minRotation: 0,                     
                 }
             }
         },
@@ -171,10 +166,10 @@ new Chart(ctx2, {
 new Chart(ctx3, {
     type: 'bar',
     data: {
-        labels: langsCh,    // ['Plain', 'Choice', 'Lang', 'Mix', 'Memo'],
+        labels: langsCh,    
         datasets: [{
             label: 'Langs',
-            data: langsStr, // ['2', '2', '2', '2', '2', '2', '1'],
+            data: langsStr, 
             backgroundColor: [
                 'rgba(29, 57, 164, 0.7)',
                 'rgba(132, 117, 167, 0.7)',
@@ -211,11 +206,9 @@ new Chart(ctx3, {
                         if (value === 2) {return 'Active'};
                         if (value === 3) {return 'Blocked'};
                         if (value === 4) {return 'Close'};
-                        //return value;
+
                         return '';     
-                    },
-                    // maxRotation: 45,
-                    // minRotation: 0, //45,                    
+                    },                 
                     font: {
                         size: 12,
                     }
@@ -257,7 +250,7 @@ new Chart(ctx4, {
     data: {
         labels: ['Draft', 'Active', 'Blocked', 'Close'],
         datasets: [{
-            data: [sumWordsDraft, sumWordsActive, sumWordsBlocked, sumWordsClose],  // [300, 50, 100, 70],   // [sumWordsDraftStr, sumWordsActiveStr, sumWordsBlockedStr, sumWordsCloseStr],  // [300, 50, 100],
+            data: [sumWordsDraft, sumWordsActive, sumWordsBlocked, sumWordsClose],  
             backgroundColor: [
                 'rgba(252, 207, 194, 0.7)',
                 'rgba(29, 57, 164, 0.7)',
@@ -279,7 +272,6 @@ new Chart(ctx4, {
         maintainAspectRatio: false,
         plugins: {
             datalabels: {
-                //display: true,
                 display: function(context) {
                     return context.dataset.data[context.dataIndex] !== 0;
                 },
@@ -287,14 +279,14 @@ new Chart(ctx4, {
                 font: {
                     weight: 'normal',
                 },
-                anchor: 'right',    // 'end',
-                align: 'left',   // 'start',
+                anchor: 'right',    
+                align: 'left',   
                 offset: 10,
                 formatter: (value, ctx4) => {
                     let sum = ctx4.dataset.data.reduce((a, b) => a + b, 0);
                     let percentage = ((value * 100) / sum).toFixed(0) + " %";
                     let text = ctx4.chart.data.labels[ctx4.dataIndex] + ' ' + percentage;
-                    return text;    // percentage;  // value;
+                    return text;    
                 },
                 borderColor: 'grey',
                 borderWidth: 1,
@@ -332,7 +324,7 @@ new Chart(ctx1, {
     data: {
         labels: ['Draft', 'Active', 'Blocked', 'Close'],
         datasets: [{
-            data: [sumThemesDraft, sumThemesActive, sumThemesBlocked, sumThemesClose],  // [300, 50, 100, 70],   // [sumWordsDraftStr, sumWordsActiveStr, sumWordsBlockedStr, sumWordsCloseStr],  // [300, 50, 100],
+            data: [sumThemesDraft, sumThemesActive, sumThemesBlocked, sumThemesClose],  
             backgroundColor: [
                 'rgba(252, 207, 194, 0.7)',
                 'rgba(29, 57, 164, 0.7)',
@@ -353,11 +345,7 @@ new Chart(ctx1, {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            // legend: {
-            //     position: top,
-            // },
             datalabels: {
-                //display: true,
                 display: function(context) {
                     return context.dataset.data[context.dataIndex] !== 0;
                 },
@@ -365,14 +353,14 @@ new Chart(ctx1, {
                 font: {
                     weight: 'normal',
                 },
-                anchor: 'left',    // 'end',
-                align: 'right',   // 'start',
+                anchor: 'left',    
+                align: 'right',   
                 offset: 10,
                 formatter: (value, ctx4) => {
                     let sum = ctx4.dataset.data.reduce((a, b) => a + b, 0);
                     let percentage = ((value * 100) / sum).toFixed(0) + " %";
                     let text = ctx4.chart.data.labels[ctx4.dataIndex] + ' ' + percentage;
-                    return text;    // percentage;  // value;
+                    return text;    
                 },
                 borderColor: 'grey',
                 borderWidth: 1,

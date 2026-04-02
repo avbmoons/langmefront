@@ -238,7 +238,6 @@ for (let i=0; i<listLangs.arrLangs.length; i++) {
     patternsNames[i] = "_pattern" + listLangs.arrLangs[i].langAlias;
 }
 
-//console.log(listLangs.arrLangs[3]);
 console.log("Patterns names: ");
 console.log(patternsNames);
 
@@ -247,8 +246,6 @@ let objPatternsNames = [];
 patternsNames.forEach(patternName => {
         objPatternsNames.push(patternName);
     });
-
-//console.log(objPatternsNames);
 
 const objPatterns = {
     _patternRus: _patternRus,
@@ -259,24 +256,14 @@ const objPatterns = {
     _patternLav: _patternLav
 }
 
-//console.log(arrPatterns[arrPatternName]);
-//let basePattern = objPatterns[objPatternBaseName];
-
-let basePatterns = [];   // = objPatterns[objPatternsNames[2]];
-//let basePatternItem;
+let basePatterns = [];  
 
 for (let i=0; i<objPatternsNames.length; i++) {
-    //basePatternItem[i] = objPatterns[objPatternsNames[i]];
     basePatterns[i] = objPatterns[objPatternsNames[i]];
 }
 
 console.log("Base patterns: ");
 console.log(basePatterns);
-//console.log(objPatterns[objPatternsNames[3]]);
-
-// console.log("Base pattern: ");
-// console.log(basePattern);
-// //let basePatternLength = basePattern.length;
 
 //Define base selected words array
 
@@ -297,8 +284,6 @@ let arrPatterns = Object.entries(objPatterns);
 
 console.log("All patterns: ");
 console.log(arrPatterns);
-// console.log(arrPatterns[1][0]);
-// console.log(arrPatterns[1][1][1].idWord);
 
 //Define pattern for Prim lang
 
@@ -314,13 +299,10 @@ for (let i=0; i<selectedPrimLang.length; i++) {
     primPattern[i]['isPrim'] = true;
 }
 
-//primPattern.isPrim = true;
 primPattern['isPrim'] = true;
 
 console.log("Prim pattern:");
 console.log(primPattern);
-// console.log(primPattern[0]);
-// console.log(primPattern[0][1][5].idTheme);
 
 //Define patterns for Comp langs
 
@@ -344,7 +326,6 @@ console.log(compPatterns);
 let primPatternSelectedThemes = [];
 
 let patternWordsLength;
-//console.log(patternWordsLength);
 
 primPatternFilterBySelectedThemes();
 
@@ -362,28 +343,25 @@ function primPatternFilterBySelectedThemes() {
     let primPatternSelectedThemes = [];
 
     let patternWordsLength;
-    //console.log(patternWordsLength);
 
     for (let i=0; i<primPattern.length; i++) {
-        //console.log(primPattern.length);
         let patternLength = primPattern[i].length;
-        //console.log(patternLength);
+
         for (let j=0; j<patternLength; j++){
-            //console.log(primPattern[i][j]);
+
             if (Array.isArray(primPattern[i][j])) {
                 patternWordsLength = primPattern[i][j].length;
-                //console.log(patternWordsLength);
+
                 for (let k=0; k<selectedThemes.length; k++) {
-                    //console.log(selectedThemes[k].themeName);
+
                     for (let m=0; m<patternWordsLength; m++) {
-                        //console.log(primPattern[i][j][m]);
+
                         if (primPattern[i][j][m].idTheme == selectedThemes[k].id) {
-                            //console.log(primPattern[i][j][m]);
+
                             primPatternSelectedThemes.push(primPattern[i][j][m]);
                         }
                     }
                 }
-                //console.log(primPatternSelectedThemes);
                 primPattern[i][j] = primPatternSelectedThemes;
             } else { continue }
         }
@@ -394,30 +372,22 @@ function primPatternFilterBySelectedThemes() {
 function compPatternsFilterBySelectedThemes() {
     let patternWordsLength;
     for (let i=0; i<compPatterns.length; i++) {
-        //console.log(compPatterns.length);
-        //console.log(i);
-        //console.log(compPatterns[i]);
-        //console.log(compPatterns[i].length);
         let patternLength = compPatterns[i].length;
-        //console.log(patternLength);
+
         for (let j=0; j<patternLength; j++) {
-            //console.log(compPatterns[i][j]);
             patternWordsLength = compPatterns[i][j].length;
-            //console.log(patternWordsLength);
+
             if (Array.isArray(compPatterns[i][j])) {
-                //console.log(compPatterns[i][j]);
                 let compPatternSelectedThemes = [];////
                 for (let k=0; k<selectedThemes.length; k++) {
-                    //console.log(selectedThemes[k].themeName);
+
                     for (let m=0; m<patternWordsLength; m++) {
-                        //console.log(compPatterns[i][j][m]);                    
+                    
                         if (compPatterns[i][j][m].idTheme == selectedThemes[k].id) {
-                            //console.log(compPatterns[i][j][m]);
                             compPatternSelectedThemes.push(compPatterns[i][j][m]);
                         }
                     }
                 }
-                //console.log(compPatternSelectedThemes);
                 compPatterns[i][j] = compPatternSelectedThemes;
             } else { continue }
         }
@@ -438,17 +408,13 @@ let compWords = [];
 
 for (let i=0; i<taskPatterns.length; i++) {
     if (taskPatterns[i].isPrim == true) {
-        //console.log(taskPatterns[i]);
+
         for (let j=0; j<taskPatterns[i][1].length; j++) {
-            //let primWord = [];
             primWords.push(taskPatterns[i][1][j]);
-            //primWords.push(primWord[i]);
         }
     } else {
         for (let j=0; j<taskPatterns[i][1].length; j++) {
-            //let compWord = [];
             compWords.push(taskPatterns[i][1][j]);
-            //compWords.push(compWords[i]);
         }
     }
 }
@@ -466,23 +432,17 @@ for (let i=0; i<primWords.length; i++) {
             wordRow.push(compWords[j]);
         }
     }
-    //console.log(wordRow);
     taskRows.push(wordRow);
 }
 
 console.log("Task rows: ");
 console.log(taskRows);
 
-// console.log(selectedPrimLang);
-// console.log(selectedCompLangs);
-// console.log(selectedCompLangs.length);
-
 console.log("Selected Prim lang id = " + selectedPrimLang[0].id);
 
 function getTaskSettings(){
     if (urlName == 'taskPlain.html' || urlName == 'taskChoice.html' || urlName == 'taskLang.html' || urlName == 'taskMix.html') {
         console.log('this task = ' + urlName);
-        //console.log('this comp langs = ' + arrSelectedCompLangs);
         let taskPrimLang = document.getElementById('taskPrimLang');
         let taskCompLangs = document.getElementById('taskCompLangs');
         let taskThemes = document.getElementById('taskThemes');
