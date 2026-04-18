@@ -332,6 +332,9 @@ class CardCompChoice {
 let resultEnjoy = document.getElementById("enjoy");
 let resultWorry = document.getElementById("worry");
 
+let resultEnjoy2 = document.getElementById("enjoy2");
+let resultWorry2 = document.getElementById("worry2");
+
 let valueEnjoy = resultEnjoy.textContent;
 let valueWorry = resultWorry.textContent;
 
@@ -555,10 +558,12 @@ function rowsCompChoiceDom() {
                             cardItemOptions[n].style.backgroundColor = "#fccfe0";
                             valueWorry++;
                             resultWorry.textContent = valueWorry;
+                            resultWorry2.textContent = valueWorry;
                         } else {
                             cardItemOptions[n].style.backgroundColor = "#c2fceb";
                             valueEnjoy++;
                             resultEnjoy.textContent = valueEnjoy;
+                            resultEnjoy2.textContent = valueEnjoy;
                         }
                     });
                 }
@@ -619,11 +624,13 @@ function pageRowsCompChoiceDom(firstIndex, lastIndex) {
                             cardItemOptions[n].style.backgroundColor = "#fccfe0";
                             valueWorry++;
                             resultWorry.textContent = valueWorry;
+                            resultWorry2.textContent = valueWorry;
 
                         } else {
                             cardItemOptions[n].style.backgroundColor = "#c2fceb";
                             valueEnjoy++;
                             resultEnjoy.textContent = valueEnjoy;
+                            resultEnjoy2.textContent = valueEnjoy;
                         }
                     });
                 }

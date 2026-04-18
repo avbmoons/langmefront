@@ -39,9 +39,12 @@ new Chart(ctx, {
         scales: {
             x: {
                 ticks: {
-                    autoSkip: false,
+                    autoSkip: true,  // false,
                     maxRotation: 45,
                     minRotation: 0,
+                    font: {
+                        size: 10,
+                    }
                 }
             },
             y: {
@@ -60,8 +63,9 @@ new Chart(ctx, {
                 display: true,
                 text: 'Words by Themes',
                 color: 'rgba(83, 56, 33, 1)',
+                color: 'rgba(12, 51, 135, 1)',
                 font: {
-                    size: 14,
+                    size: 12,
                     weight: 'bold',
                     family: 'Roboto',
                 },
@@ -115,6 +119,9 @@ new Chart(ctx2, {
                     autoSkip: false,
                     maxRotation: 45,
                     minRotation: 0,
+                    font: {
+                        size: 10,
+                    }
                 }
             },
             y: {
@@ -127,6 +134,9 @@ new Chart(ctx2, {
                         if (value === 4) {return 'Close'};
 
                         return '';     
+                    },
+                    font: {
+                        size: 10,
                     },
                     maxRotation: 45,
                     minRotation: 0,                     
@@ -141,8 +151,9 @@ new Chart(ctx2, {
                 display: true,
                 text: 'Modes',
                 color: 'rgba(83, 56, 33, 1)',
+                color: 'rgba(12, 51, 135, 1)',
                 font: {
-                    size: 14,
+                    size: 12,
                     weight: 'bold',
                     family: 'Roboto',
                 },
@@ -196,6 +207,9 @@ new Chart(ctx3, {
                     autoSkip: false,
                     maxRotation: 45,
                     minRotation: 0,
+                    font: {
+                        size: 10,
+                    }
                 }
             },
             y: {
@@ -210,7 +224,7 @@ new Chart(ctx3, {
                         return '';     
                     },                 
                     font: {
-                        size: 12,
+                        size: 10,
                     }
                 }
             }
@@ -223,8 +237,9 @@ new Chart(ctx3, {
                 display: true,
                 text: 'Langs',
                 color: 'rgba(83, 56, 33, 1)',
+                color: 'rgba(12, 51, 135, 1)',
                 font: {
-                    size: 14,
+                    size: 12,
                     weight: 'bold',
                     family: 'Roboto',
                 },
@@ -278,6 +293,7 @@ new Chart(ctx4, {
                 color: '#000',
                 font: {
                     weight: 'normal',
+                    size: 10,
                 },
                 anchor: 'right',    
                 align: 'left',   
@@ -298,7 +314,7 @@ new Chart(ctx4, {
                 text: 'Words',
                 color: 'rgba(12, 51, 135, 1)',
                 font: {
-                    size: 14,
+                    size: 12,
                     weight: 'bold',
                     family: 'Roboto',
                 },
@@ -372,7 +388,7 @@ new Chart(ctx1, {
                 text: 'Themes',
                 color: 'rgba(12, 51, 135, 1)',
                 font: {
-                    size: 14,
+                    size: 12,
                     weight: 'bold',
                     family: 'Roboto',
                 },
@@ -392,3 +408,4 @@ new Chart(ctx1, {
         },
     },
 });
+

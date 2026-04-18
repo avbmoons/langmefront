@@ -21,7 +21,12 @@ const openTutor = () => {
 };
 
 const closeTutorPages = () => {
-  tutorCover.style.display = 'none';
+  if (thisUrl.includes('index.html')) {
+    window.location.href = "./home.html"
+  } else {
+    tutorCover.style.display = 'none';
+  }
+  //tutorCover.style.display = 'none';
 }
 
 function showSlides() {

@@ -1,3 +1,14 @@
+const viewportWidth = window.innerWidth + "px";
+console.log("ViewportWidth = ", viewportWidth);
+
+const viewportHeight = window.innerHeight + "px";
+console.log("ViewportHeight = ", viewportHeight);
+
+const root = document.documentElement;
+root.style.setProperty("--viewport-width", viewportWidth);
+root.style.setProperty("--viewport-height", viewportHeight);
+
+
 let thisUrl = window.location.pathname;
 let urlName = thisUrl.substring(thisUrl.lastIndexOf("/") + 1);
 console.log(urlName);

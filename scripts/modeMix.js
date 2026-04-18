@@ -269,6 +269,39 @@ class ItemOption3CompMix {
     }
 }
 
+class ItemOption4CompMix {
+    constructor (
+        id,
+        idTheme,
+        idWord,
+        idLang,
+        langName,
+        wordName,
+        spellBase,
+        spellEng,
+    ) {
+        this.id = id;
+        this.idTheme = idTheme;
+        this.idWord = idWord;
+        this.idLang = idLang;
+        this.langName = langName;
+        this.wordName = wordName;
+        this.spellBase = spellBase;
+        this.spellEng = spellEng;
+    }
+    render() {
+        return `<div class="item-option" id="item${this.idWord}Comp${this.idLang}Option4">
+                    <div class="option-word-block">
+                        <p class="option-word" id="item${this.idWord}Comp${this.idLang}Option4Word" style="display: none;">${this.wordName}</p>
+                        <p class="option-spell" id="item${this.idWord}Comp${this.idLang}Option4Spell" style="font-size: 1.25vw;">${this.spellEng}</p>
+                    </div>
+                    <div class="option-radio-block">
+                        <input class="option-radio" name="item${this.idWord}Comp${this.idLang}" type="radio" id="item${this.idWord}Comp${this.idLang}Option4Radio" data-isright="false">
+                    </div>                                    
+                </div>`;
+    }
+}
+
 
 class CardCompMix {
     constructor() {
@@ -279,6 +312,7 @@ class CardCompMix {
         this.itemOption1CompMix = new ItemOption1CompMix();//
         this.itemOption2CompMix = new ItemOption2CompMix();//
         this.itemOption3CompMix = new ItemOption3CompMix();//
+        this.itemOption4CompMix = new ItemOption4CompMix();//
     }
     fetchCardCompMix(i, j) {
         this.ctaskRows = taskRows[i][j];
@@ -296,6 +330,7 @@ class CardCompMix {
         let itemOptionCompMixV1Html = '';
         let itemOptionCompMixV2Html = '';
         let itemOptionCompMixV3Html = '';
+        let itemOptionCompMixV4Html = '';
 
         let itemHeadingComp = new ItemHeadingComp(
             this.ctaskRows.id,
@@ -319,10 +354,11 @@ class CardCompMix {
             this.ctaskRows.spellEng,
         ); 
 
-        // + three versions
+        // + four versions
         let itemOptionCompMixV1;
         let itemOptionCompMixV2;
         let itemOptionCompMixV3;
+        let itemOptionCompMixV4;
         let cardOptions = [];
 
         switch (arrSelectedCompLangs.length) {
@@ -413,6 +449,63 @@ class CardCompMix {
                 cardOptions[2] = itemOptionCompMixV2Html;//
                 cardOptions[3] = itemOptionCompMixV3Html;//
                 break;
+            case 5:
+                itemOptionCompMixV1 = new ItemOption1CompMix(
+                    this.ccompOptionsMix[0].id,
+                    this.ccompOptionsMix[0].idTheme,
+                    this.ccompOptionsMix[0].idWord,
+                    this.ccompOptionsMix[0].idLang,
+                    this.ccompOptionsMix[0].langName,
+                    this.ccompOptionsMix[0].wordName,
+                    this.ccompOptionsMix[0].spellBase,
+                    this.ccompOptionsMix[0].spellEng,
+                );
+
+                itemOptionCompMixV2 = new ItemOption2CompMix(
+                    this.ccompOptionsMix[1].id,
+                    this.ccompOptionsMix[1].idTheme,
+                    this.ccompOptionsMix[1].idWord,
+                    this.ccompOptionsMix[1].idLang,
+                    this.ccompOptionsMix[1].langName,
+                    this.ccompOptionsMix[1].wordName,
+                    this.ccompOptionsMix[1].spellBase,
+                    this.ccompOptionsMix[1].spellEng,
+                );
+
+                itemOptionCompMixV3 = new ItemOption3CompMix(
+                    this.ccompOptionsMix[2].id,
+                    this.ccompOptionsMix[2].idTheme,
+                    this.ccompOptionsMix[2].idWord,
+                    this.ccompOptionsMix[2].idLang,
+                    this.ccompOptionsMix[2].langName,
+                    this.ccompOptionsMix[2].wordName,
+                    this.ccompOptionsMix[2].spellBase,
+                    this.ccompOptionsMix[2].spellEng,
+                );
+
+                itemOptionCompMixV4 = new ItemOption4CompMix(
+                    this.ccompOptionsMix[3].id,
+                    this.ccompOptionsMix[3].idTheme,
+                    this.ccompOptionsMix[3].idWord,
+                    this.ccompOptionsMix[3].idLang,
+                    this.ccompOptionsMix[3].langName,
+                    this.ccompOptionsMix[3].wordName,
+                    this.ccompOptionsMix[3].spellBase,
+                    this.ccompOptionsMix[3].spellEng,
+                );
+                this.ctaskRows = itemOptionCompMixV1;//
+                this.ctaskRows = itemOptionCompMixV2;//
+                this.ctaskRows = itemOptionCompMixV3;//
+                this.ctaskRows = itemOptionCompMixV4;//
+                itemOptionCompMixV1Html = itemOptionCompMixV1.render();//
+                itemOptionCompMixV2Html = itemOptionCompMixV2.render();//
+                itemOptionCompMixV3Html = itemOptionCompMixV3.render();//
+                itemOptionCompMixV4Html = itemOptionCompMixV4.render();//
+                cardOptions[1] = itemOptionCompMixV1Html;//
+                cardOptions[2] = itemOptionCompMixV2Html;//
+                cardOptions[3] = itemOptionCompMixV3Html;//
+                cardOptions[4] = itemOptionCompMixV4Html;//
+                break;
         }
 
         this.ctaskRows = itemHeadingComp;
@@ -440,6 +533,9 @@ class CardCompMix {
             case 4:
                 itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3];
                 break;
+            case 5:
+                itemCompMixHtml = itemHeadingCompHtml + cardOptionsRand[0] + cardOptionsRand[1] + cardOptionsRand[2] + cardOptionsRand[3] + cardOptionsRand[4];
+                break;
         }
 
         document.querySelector("#item"+`${i}`+"Comp"+`${j}`).innerHTML = itemCompMixHtml;
@@ -449,6 +545,9 @@ class CardCompMix {
 //  elements for results:
 let resultEnjoy = document.getElementById("enjoy");
 let resultWorry = document.getElementById("worry");
+
+let resultEnjoy2 = document.getElementById("enjoy2");
+let resultWorry2 = document.getElementById("worry2");
 
 let valueEnjoy = resultEnjoy.textContent;
 let valueWorry = resultWorry.textContent;
@@ -542,8 +641,10 @@ function getOptionsMix(themeId, langId, wordId) {
     let option1;
     let option2;
     let option3;
+    let option4;
     let newCompWordsTheme;
     let otherNewCompWordsTheme;
+    let anotherNewCompWordsTheme;
 
     switch (arrSelectedCompLangs.length) {
         case 2:
@@ -566,6 +667,20 @@ function getOptionsMix(themeId, langId, wordId) {
             option2.isRight = false;
             option3.isRight = false;
             compOptionsMix.push(option1, option2, option3);
+            break;
+        case 5:
+            option1 = randEl(compWordsTheme);
+            newCompWordsTheme = compWordsTheme.filter(item => item !== option1);
+            option2 = randEl(newCompWordsTheme);
+            otherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2);
+            option3 = randEl(otherNewCompWordsTheme);
+            anotherNewCompWordsTheme = compWordsTheme.filter(item => item !== option1 && item !== option2 && item !== option3);
+            option4 = randEl(anotherNewCompWordsTheme);
+            option1.isRight = false;
+            option2.isRight = false;
+            option3.isRight = false;
+            option4.isRight = false;
+            compOptionsMix.push(option1, option2, option3, option4);
             break;
     }
    
@@ -658,11 +773,13 @@ function pageRowsCompMixDom(firstIndex, lastIndex) {
                             cardItemOptions[n].style.backgroundColor = "#fccfe0";
                             valueWorry++;
                             resultWorry.textContent = valueWorry;
+                            resultWorry2.textContent = valueWorry;
 
                         } else {
                             cardItemOptions[n].style.backgroundColor = "#c2fceb";
                             valueEnjoy++;
                             resultEnjoy.textContent = valueEnjoy;
+                            resultEnjoy2.textContent = valueEnjoy;
                         }
                     });
                 }

@@ -1,8 +1,12 @@
-const viewportWidth = window.innerWidth + "px";
-console.log("ViewportWidth = ", viewportWidth);
+// const viewportWidth = window.innerWidth + "px";
+// console.log("ViewportWidth = ", viewportWidth);
 
-const root = document.documentElement;
-root.style.setProperty("--viewport-width", viewportWidth);
+// const viewportHeight = window.innerHeight + "px";
+// console.log("ViewportHeight = ", viewportHeight);
+
+// const root = document.documentElement;
+// root.style.setProperty("--viewport-width", viewportWidth);
+// root.style.setProperty("--viewport-height", viewportHeight);
 
 const pageUrl = window.location.pathname;
 let pageName = pageUrl.substring(pageUrl.lastIndexOf("/") + 1);
@@ -71,7 +75,7 @@ function verifyStorage() {
 
 const resultsButton = document.getElementById("resultsButton");
 const resultsModal = document.getElementById("resultsModal");
-const redultsClose = document.getElementById("resultsClose");
+const resultsClose = document.getElementById("resultsClose");
 
 const openModalResults = () => {
   resultsModal.style.display = "flex";

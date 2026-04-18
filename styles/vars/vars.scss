@@ -55,7 +55,11 @@ $color-chart-blue-light: #4B74B3; //rgb(75, 116, 179)
 
 
 $maket-width: 1440px;
+$maket-height: 1024px;
 $viewport-width: var(--viewport-width);
+$viewport-height: var(--viewport-height);
+
+//$deltaViewPort: ($viewport-width) - ($viewport-height);
 
 @font-face {
   font-family: Roboto;
@@ -87,6 +91,41 @@ $viewport-width: var(--viewport-width);
   letter-spacing: $letter-spacing;
 }
 
-@mixin text-size($maket-width, $viewport-width, $font-size) {
-  font-size: list.slash($viewport-width * $font-size, $maket-width);
+// @mixin text-size($maket-width, $viewport-width, $font-size) {
+//   font-size: list.slash($viewport-width * $font-size, $maket-width);
+// }
+
+// @mixin text-size($font-vw, $font-vh) {
+//   @if $deltaViewPort < 0px {
+//     font-size: $font-vh;
+//     line-height: $font-vh;
+//   } @else {
+//     font-size: $font-vw;
+//     line-height: $font-vw;
+//   }
+// }
+
+
+@mixin media-mobile {
+  @media only screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin media-desk {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-phone {
+  @media only screen and (max-width: 376px) {
+    @content;
+  }
+}
+
+@mixin media-smart {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
 }
