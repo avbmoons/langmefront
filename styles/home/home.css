@@ -131,7 +131,7 @@ body {
 }
 .wrapper .index-cover .info .info-button {
   margin: 0 auto;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
   width: 100%;
   height: 15%;
   display: flex;
@@ -538,7 +538,10 @@ body {
   }
 }
 .wrapper .top header .header-center .header-center-block .btn-tutor-block-header .btn-tutor:hover svg path {
-  fill: orangered;
+  fill: #fcfcfc;
+}
+.wrapper .top header .header-center .header-center-block .btn-tutor-block-header .btn-tutor:hover svg circle {
+  stroke: #fcfcfc;
 }
 .wrapper .top header .header-center .header-center-block .menu-right {
   margin: 0;
